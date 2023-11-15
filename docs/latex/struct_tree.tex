@@ -1,0 +1,924 @@
+\doxysection{Tree Struct Reference}
+\hypertarget{struct_tree}{}\label{struct_tree}\index{Tree@{Tree}}
+
+
+Specifies tree data.  
+
+
+
+
+{\ttfamily \#include $<$Tree.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06d}{Results}} \{ \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}} = 0x000000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\+\_\+\+ERR}} = 0x000002
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\+\_\+\+INITIALISED}} = 0x000004
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}} = 0x000008
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\+\_\+\+NODE\+\_\+\+PTR}} = 0x000010
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\+\_\+\+VAL\+\_\+\+FOUND}} = 0x000020
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\+\_\+\+SIZE}} = 0x000800
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\+\_\+\+SIZE}} = 0x001000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\+\_\+\+PATH}} = 0x040000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\+\_\+\+ERROR}} = 0x080000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\+\_\+\+ALREADY\+\_\+\+EXISTS}} = 0x100000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\+\_\+\+DELETE}} = 0x200000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE}} = 0x400000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\+\_\+\+VERIFY\+\_\+\+FAIL}} = 0x800000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}} = 0x000000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\+\_\+\+ERR}} = 0x000002
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\+\_\+\+INITIALISED}} = 0x000004
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}} = 0x000008
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\+\_\+\+NODE\+\_\+\+PTR}} = 0x000010
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\+\_\+\+VAL\+\_\+\+FOUND}} = 0x000020
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\+\_\+\+SIZE}} = 0x000800
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\+\_\+\+SIZE}} = 0x001000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\+\_\+\+PATH}} = 0x040000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\+\_\+\+ERROR}} = 0x080000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\+\_\+\+ALREADY\+\_\+\+EXISTS}} = 0x100000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\+\_\+\+DELETE}} = 0x200000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE}} = 0x400000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\+\_\+\+VERIFY\+\_\+\+FAIL}} = 0x800000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}} = 0x000000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\+\_\+\+ERR}} = 0x000002
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\+\_\+\+INITIALISED}} = 0x000004
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}} = 0x000008
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\+\_\+\+NODE\+\_\+\+PTR}} = 0x000010
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\+\_\+\+VAL\+\_\+\+FOUND}} = 0x000020
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\+\_\+\+SIZE}} = 0x000800
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\+\_\+\+SIZE}} = 0x001000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\+\_\+\+PATH}} = 0x040000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\+\_\+\+ERROR}} = 0x080000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\+\_\+\+ALREADY\+\_\+\+EXISTS}} = 0x100000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\+\_\+\+DELETE}} = 0x200000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE}} = 0x400000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\+\_\+\+VERIFY\+\_\+\+FAIL}} = 0x800000
+ \}
+\item 
+enum \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06d}{Results}} \{ \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}} = 0x000000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\+\_\+\+ERR}} = 0x000002
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\+\_\+\+INITIALISED}} = 0x000004
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}} = 0x000008
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\+\_\+\+NODE\+\_\+\+PTR}} = 0x000010
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\+\_\+\+VAL\+\_\+\+FOUND}} = 0x000020
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\+\_\+\+SIZE}} = 0x000800
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\+\_\+\+SIZE}} = 0x001000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\+\_\+\+PATH}} = 0x040000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\+\_\+\+ERROR}} = 0x080000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\+\_\+\+ALREADY\+\_\+\+EXISTS}} = 0x100000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\+\_\+\+DELETE}} = 0x200000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE}} = 0x400000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\+\_\+\+VERIFY\+\_\+\+FAIL}} = 0x800000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}} = 0x000000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\+\_\+\+ERR}} = 0x000002
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\+\_\+\+INITIALISED}} = 0x000004
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}} = 0x000008
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\+\_\+\+NODE\+\_\+\+PTR}} = 0x000010
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\+\_\+\+VAL\+\_\+\+FOUND}} = 0x000020
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\+\_\+\+SIZE}} = 0x000800
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\+\_\+\+SIZE}} = 0x001000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\+\_\+\+PATH}} = 0x040000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\+\_\+\+ERROR}} = 0x080000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\+\_\+\+ALREADY\+\_\+\+EXISTS}} = 0x100000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\+\_\+\+DELETE}} = 0x200000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE}} = 0x400000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\+\_\+\+VERIFY\+\_\+\+FAIL}} = 0x800000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}} = 0x000000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\+\_\+\+ERR}} = 0x000002
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\+\_\+\+INITIALISED}} = 0x000004
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}} = 0x000008
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\+\_\+\+NODE\+\_\+\+PTR}} = 0x000010
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\+\_\+\+VAL\+\_\+\+FOUND}} = 0x000020
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\+\_\+\+SIZE}} = 0x000800
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\+\_\+\+SIZE}} = 0x001000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\+\_\+\+PATH}} = 0x040000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\+\_\+\+ERROR}} = 0x080000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\+\_\+\+ALREADY\+\_\+\+EXISTS}} = 0x100000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\+\_\+\+DELETE}} = 0x200000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE}} = 0x400000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\+\_\+\+VERIFY\+\_\+\+FAIL}} = 0x800000
+ \}
+\item 
+enum \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06d}{Results}} \{ \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}} = 0x000000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\+\_\+\+ERR}} = 0x000002
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\+\_\+\+INITIALISED}} = 0x000004
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}} = 0x000008
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\+\_\+\+NODE\+\_\+\+PTR}} = 0x000010
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\+\_\+\+VAL\+\_\+\+FOUND}} = 0x000020
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\+\_\+\+SIZE}} = 0x000800
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\+\_\+\+SIZE}} = 0x001000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\+\_\+\+PATH}} = 0x040000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\+\_\+\+ERROR}} = 0x080000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\+\_\+\+ALREADY\+\_\+\+EXISTS}} = 0x100000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\+\_\+\+DELETE}} = 0x200000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE}} = 0x400000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\+\_\+\+VERIFY\+\_\+\+FAIL}} = 0x800000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}} = 0x000000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\+\_\+\+ERR}} = 0x000002
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\+\_\+\+INITIALISED}} = 0x000004
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}} = 0x000008
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\+\_\+\+NODE\+\_\+\+PTR}} = 0x000010
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\+\_\+\+VAL\+\_\+\+FOUND}} = 0x000020
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\+\_\+\+SIZE}} = 0x000800
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\+\_\+\+SIZE}} = 0x001000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\+\_\+\+PATH}} = 0x040000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\+\_\+\+ERROR}} = 0x080000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\+\_\+\+ALREADY\+\_\+\+EXISTS}} = 0x100000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\+\_\+\+DELETE}} = 0x200000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE}} = 0x400000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\+\_\+\+VERIFY\+\_\+\+FAIL}} = 0x800000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}} = 0x000000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\+\_\+\+ERR}} = 0x000002
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\+\_\+\+INITIALISED}} = 0x000004
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}} = 0x000008
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\+\_\+\+NODE\+\_\+\+PTR}} = 0x000010
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\+\_\+\+VAL\+\_\+\+FOUND}} = 0x000020
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\+\_\+\+SIZE}} = 0x000800
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\+\_\+\+SIZE}} = 0x001000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\+\_\+\+PATH}} = 0x040000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\+\_\+\+ERROR}} = 0x080000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\+\_\+\+ALREADY\+\_\+\+EXISTS}} = 0x100000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\+\_\+\+DELETE}} = 0x200000
+, \newline
+\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE}} = 0x400000
+, \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\+\_\+\+VERIFY\+\_\+\+FAIL}} = 0x800000
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ssize\+\_\+t \mbox{\hyperlink{struct_tree_af4e7a6220b7940f6ddc831ec5354e491}{size}} = \mbox{\hyperlink{struct_tree_ae05e207c9782d93e767bf318c833dc46}{UNITIALISED\+\_\+\+VAL}}
+\item 
+ssize\+\_\+t \mbox{\hyperlink{struct_tree_a89756c94ede1566589695e9d2274933b}{elem\+\_\+size}} = \mbox{\hyperlink{struct_tree_ae05e207c9782d93e767bf318c833dc46}{UNITIALISED\+\_\+\+VAL}}
+\item 
+\mbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}} = nullptr
+\item 
+\mbox{\hyperlink{src_2tree_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\+\_\+t\+\_\+func}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_tree_a50de21bd338de0aee6355686b0690fe1}{node\+\_\+elem\+\_\+t\+\_\+dtor}} = nullptr
+\item 
+\mbox{\hyperlink{struct_var_code_data}{Var\+Code\+Data}} \mbox{\hyperlink{struct_tree_ad7c76730c28c19500ec415650ddbb472}{var\+\_\+data}} = \{\}
+\item 
+\mbox{\hyperlink{src_2tree_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\+\_\+t\+\_\+func}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_tree_a14559dbf39cc57a78748434c525be95d}{node\+\_\+elem\+\_\+t\+\_\+verify}} = nullptr
+\item 
+\mbox{\hyperlink{src_2tree_8h_ae4b34cec7b2a895b95fbb884ef2fb6f5}{Elem\+\_\+t\+\_\+val\+\_\+str}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_tree_aac492462a75d560e10d46ca48baf07e7}{node\+\_\+elem\+\_\+t\+\_\+val\+\_\+str}} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const ssize\+\_\+t \mbox{\hyperlink{struct_tree_ae05e207c9782d93e767bf318c833dc46}{UNITIALISED\+\_\+\+VAL}} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specifies tree data. 
+
+Definition at line \mbox{\hyperlink{releases_2_tree_2tree_8h_source_l00061}{61}} of file \mbox{\hyperlink{releases_2_tree_2tree_8h_source}{Tree.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06d}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06d} 
+\index{Tree@{Tree}!Results@{Results}}
+\index{Results@{Results}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{Results}{Results}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06d}{Tree\+::\+Results}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!Tree@{Tree}}\index{Tree@{Tree}!OK@{OK}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALLOC\_ERR@{ALLOC\_ERR}!Tree@{Tree}}\index{Tree@{Tree}!ALLOC\_ERR@{ALLOC\_ERR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4} 
+ALLOC\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALREADY\_INITIALISED@{ALREADY\_INITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!ALREADY\_INITIALISED@{ALREADY\_INITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9} 
+ALREADY\+\_\+\+INITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNITIALISED@{UNITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!UNITIALISED@{UNITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e} 
+UNITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8} 
+INVALID\+\_\+\+NODE\+\_\+\+PTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}!Tree@{Tree}}\index{Tree@{Tree}!POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068} 
+POISON\+\_\+\+VAL\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_SIZE@{INVALID\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_SIZE@{INVALID\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd} 
+INVALID\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATIVE\_SIZE@{NEGATIVE\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!NEGATIVE\_SIZE@{NEGATIVE\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438} 
+NEGATIVE\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DAMAGED\_PATH@{DAMAGED\_PATH}!Tree@{Tree}}\index{Tree@{Tree}!DAMAGED\_PATH@{DAMAGED\_PATH}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71} 
+DAMAGED\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_ERROR@{ACTION\_ERROR}!Tree@{Tree}}\index{Tree@{Tree}!ACTION\_ERROR@{ACTION\_ERROR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4} 
+ACTION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6} 
+NODE\+\_\+\+ALREADY\+\_\+\+EXISTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CANNOT\_DELETE@{CANNOT\_DELETE}!Tree@{Tree}}\index{Tree@{Tree}!CANNOT\_DELETE@{CANNOT\_DELETE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3} 
+CANNOT\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f} 
+INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa} 
+NODE\+\_\+\+VERIFY\+\_\+\+FAIL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!Tree@{Tree}}\index{Tree@{Tree}!OK@{OK}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALLOC\_ERR@{ALLOC\_ERR}!Tree@{Tree}}\index{Tree@{Tree}!ALLOC\_ERR@{ALLOC\_ERR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4} 
+ALLOC\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALREADY\_INITIALISED@{ALREADY\_INITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!ALREADY\_INITIALISED@{ALREADY\_INITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9} 
+ALREADY\+\_\+\+INITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNITIALISED@{UNITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!UNITIALISED@{UNITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e} 
+UNITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8} 
+INVALID\+\_\+\+NODE\+\_\+\+PTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}!Tree@{Tree}}\index{Tree@{Tree}!POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068} 
+POISON\+\_\+\+VAL\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_SIZE@{INVALID\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_SIZE@{INVALID\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd} 
+INVALID\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATIVE\_SIZE@{NEGATIVE\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!NEGATIVE\_SIZE@{NEGATIVE\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438} 
+NEGATIVE\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DAMAGED\_PATH@{DAMAGED\_PATH}!Tree@{Tree}}\index{Tree@{Tree}!DAMAGED\_PATH@{DAMAGED\_PATH}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71} 
+DAMAGED\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_ERROR@{ACTION\_ERROR}!Tree@{Tree}}\index{Tree@{Tree}!ACTION\_ERROR@{ACTION\_ERROR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4} 
+ACTION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6} 
+NODE\+\_\+\+ALREADY\+\_\+\+EXISTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CANNOT\_DELETE@{CANNOT\_DELETE}!Tree@{Tree}}\index{Tree@{Tree}!CANNOT\_DELETE@{CANNOT\_DELETE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3} 
+CANNOT\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f} 
+INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa} 
+NODE\+\_\+\+VERIFY\+\_\+\+FAIL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!Tree@{Tree}}\index{Tree@{Tree}!OK@{OK}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALLOC\_ERR@{ALLOC\_ERR}!Tree@{Tree}}\index{Tree@{Tree}!ALLOC\_ERR@{ALLOC\_ERR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4} 
+ALLOC\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALREADY\_INITIALISED@{ALREADY\_INITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!ALREADY\_INITIALISED@{ALREADY\_INITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9} 
+ALREADY\+\_\+\+INITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNITIALISED@{UNITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!UNITIALISED@{UNITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e} 
+UNITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8} 
+INVALID\+\_\+\+NODE\+\_\+\+PTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}!Tree@{Tree}}\index{Tree@{Tree}!POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068} 
+POISON\+\_\+\+VAL\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_SIZE@{INVALID\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_SIZE@{INVALID\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd} 
+INVALID\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATIVE\_SIZE@{NEGATIVE\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!NEGATIVE\_SIZE@{NEGATIVE\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438} 
+NEGATIVE\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DAMAGED\_PATH@{DAMAGED\_PATH}!Tree@{Tree}}\index{Tree@{Tree}!DAMAGED\_PATH@{DAMAGED\_PATH}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71} 
+DAMAGED\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_ERROR@{ACTION\_ERROR}!Tree@{Tree}}\index{Tree@{Tree}!ACTION\_ERROR@{ACTION\_ERROR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4} 
+ACTION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6} 
+NODE\+\_\+\+ALREADY\+\_\+\+EXISTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CANNOT\_DELETE@{CANNOT\_DELETE}!Tree@{Tree}}\index{Tree@{Tree}!CANNOT\_DELETE@{CANNOT\_DELETE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3} 
+CANNOT\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f} 
+INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa} 
+NODE\+\_\+\+VERIFY\+\_\+\+FAIL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{releases_2_tree_2tree_8h_source_l00065}{65}} of file \mbox{\hyperlink{releases_2_tree_2tree_8h_source}{Tree.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x000000,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\_ERR}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x000002,}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\_INITIALISED}}\ =\ 0x000004,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}}\ \ \ \ \ \ \ \ \ =\ 0x000008,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\_NODE\_PTR}}\ \ \ \ =\ 0x000010,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\_VAL\_FOUND}}\ \ \ \ =\ 0x000020,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\_SIZE}}\ \ \ \ \ \ \ \ =\ 0x000800,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\_SIZE}}\ \ \ \ \ \ \ =\ 0x001000,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\_PATH}}\ \ \ \ \ \ \ \ =\ 0x040000,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\_ERROR}}\ \ \ \ \ \ \ \ =\ 0x080000,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\_ALREADY\_EXISTS}}\ =\ 0x100000,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\_DELETE}}\ \ \ \ \ \ \ =\ 0x200000,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\_ELEM\_T\_SIZE}}\ =\ 0x400000,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\_VERIFY\_FAIL}}\ \ \ \ =\ 0x800000,}
+\DoxyCodeLine{00081\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06d}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06d} 
+\index{Tree@{Tree}!Results@{Results}}
+\index{Results@{Results}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{Results}{Results}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06d}{Tree\+::\+Results}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!Tree@{Tree}}\index{Tree@{Tree}!OK@{OK}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALLOC\_ERR@{ALLOC\_ERR}!Tree@{Tree}}\index{Tree@{Tree}!ALLOC\_ERR@{ALLOC\_ERR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4} 
+ALLOC\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALREADY\_INITIALISED@{ALREADY\_INITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!ALREADY\_INITIALISED@{ALREADY\_INITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9} 
+ALREADY\+\_\+\+INITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNITIALISED@{UNITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!UNITIALISED@{UNITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e} 
+UNITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8} 
+INVALID\+\_\+\+NODE\+\_\+\+PTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}!Tree@{Tree}}\index{Tree@{Tree}!POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068} 
+POISON\+\_\+\+VAL\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_SIZE@{INVALID\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_SIZE@{INVALID\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd} 
+INVALID\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATIVE\_SIZE@{NEGATIVE\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!NEGATIVE\_SIZE@{NEGATIVE\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438} 
+NEGATIVE\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DAMAGED\_PATH@{DAMAGED\_PATH}!Tree@{Tree}}\index{Tree@{Tree}!DAMAGED\_PATH@{DAMAGED\_PATH}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71} 
+DAMAGED\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_ERROR@{ACTION\_ERROR}!Tree@{Tree}}\index{Tree@{Tree}!ACTION\_ERROR@{ACTION\_ERROR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4} 
+ACTION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6} 
+NODE\+\_\+\+ALREADY\+\_\+\+EXISTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CANNOT\_DELETE@{CANNOT\_DELETE}!Tree@{Tree}}\index{Tree@{Tree}!CANNOT\_DELETE@{CANNOT\_DELETE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3} 
+CANNOT\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f} 
+INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa} 
+NODE\+\_\+\+VERIFY\+\_\+\+FAIL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!Tree@{Tree}}\index{Tree@{Tree}!OK@{OK}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALLOC\_ERR@{ALLOC\_ERR}!Tree@{Tree}}\index{Tree@{Tree}!ALLOC\_ERR@{ALLOC\_ERR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4} 
+ALLOC\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALREADY\_INITIALISED@{ALREADY\_INITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!ALREADY\_INITIALISED@{ALREADY\_INITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9} 
+ALREADY\+\_\+\+INITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNITIALISED@{UNITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!UNITIALISED@{UNITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e} 
+UNITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8} 
+INVALID\+\_\+\+NODE\+\_\+\+PTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}!Tree@{Tree}}\index{Tree@{Tree}!POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068} 
+POISON\+\_\+\+VAL\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_SIZE@{INVALID\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_SIZE@{INVALID\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd} 
+INVALID\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATIVE\_SIZE@{NEGATIVE\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!NEGATIVE\_SIZE@{NEGATIVE\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438} 
+NEGATIVE\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DAMAGED\_PATH@{DAMAGED\_PATH}!Tree@{Tree}}\index{Tree@{Tree}!DAMAGED\_PATH@{DAMAGED\_PATH}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71} 
+DAMAGED\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_ERROR@{ACTION\_ERROR}!Tree@{Tree}}\index{Tree@{Tree}!ACTION\_ERROR@{ACTION\_ERROR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4} 
+ACTION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6} 
+NODE\+\_\+\+ALREADY\+\_\+\+EXISTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CANNOT\_DELETE@{CANNOT\_DELETE}!Tree@{Tree}}\index{Tree@{Tree}!CANNOT\_DELETE@{CANNOT\_DELETE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3} 
+CANNOT\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f} 
+INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa} 
+NODE\+\_\+\+VERIFY\+\_\+\+FAIL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!Tree@{Tree}}\index{Tree@{Tree}!OK@{OK}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALLOC\_ERR@{ALLOC\_ERR}!Tree@{Tree}}\index{Tree@{Tree}!ALLOC\_ERR@{ALLOC\_ERR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4} 
+ALLOC\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALREADY\_INITIALISED@{ALREADY\_INITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!ALREADY\_INITIALISED@{ALREADY\_INITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9} 
+ALREADY\+\_\+\+INITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNITIALISED@{UNITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!UNITIALISED@{UNITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e} 
+UNITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8} 
+INVALID\+\_\+\+NODE\+\_\+\+PTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}!Tree@{Tree}}\index{Tree@{Tree}!POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068} 
+POISON\+\_\+\+VAL\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_SIZE@{INVALID\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_SIZE@{INVALID\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd} 
+INVALID\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATIVE\_SIZE@{NEGATIVE\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!NEGATIVE\_SIZE@{NEGATIVE\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438} 
+NEGATIVE\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DAMAGED\_PATH@{DAMAGED\_PATH}!Tree@{Tree}}\index{Tree@{Tree}!DAMAGED\_PATH@{DAMAGED\_PATH}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71} 
+DAMAGED\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_ERROR@{ACTION\_ERROR}!Tree@{Tree}}\index{Tree@{Tree}!ACTION\_ERROR@{ACTION\_ERROR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4} 
+ACTION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6} 
+NODE\+\_\+\+ALREADY\+\_\+\+EXISTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CANNOT\_DELETE@{CANNOT\_DELETE}!Tree@{Tree}}\index{Tree@{Tree}!CANNOT\_DELETE@{CANNOT\_DELETE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3} 
+CANNOT\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f} 
+INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa} 
+NODE\+\_\+\+VERIFY\+\_\+\+FAIL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_tree__debug_8h_source_l00065}{65}} of file \mbox{\hyperlink{_tree__debug_8h_source}{Tree\+\_\+debug.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x000000,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\_ERR}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x000002,}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\_INITIALISED}}\ =\ 0x000004,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}}\ \ \ \ \ \ \ \ \ =\ 0x000008,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\_NODE\_PTR}}\ \ \ \ =\ 0x000010,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\_VAL\_FOUND}}\ \ \ \ =\ 0x000020,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\_SIZE}}\ \ \ \ \ \ \ \ =\ 0x000800,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\_SIZE}}\ \ \ \ \ \ \ =\ 0x001000,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\_PATH}}\ \ \ \ \ \ \ \ =\ 0x040000,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\_ERROR}}\ \ \ \ \ \ \ \ =\ 0x080000,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\_ALREADY\_EXISTS}}\ =\ 0x100000,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\_DELETE}}\ \ \ \ \ \ \ =\ 0x200000,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\_ELEM\_T\_SIZE}}\ =\ 0x400000,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\_VERIFY\_FAIL}}\ \ \ \ =\ 0x800000,}
+\DoxyCodeLine{00081\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06d}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06d} 
+\index{Tree@{Tree}!Results@{Results}}
+\index{Results@{Results}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{Results}{Results}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06d}{Tree\+::\+Results}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!Tree@{Tree}}\index{Tree@{Tree}!OK@{OK}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALLOC\_ERR@{ALLOC\_ERR}!Tree@{Tree}}\index{Tree@{Tree}!ALLOC\_ERR@{ALLOC\_ERR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4} 
+ALLOC\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALREADY\_INITIALISED@{ALREADY\_INITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!ALREADY\_INITIALISED@{ALREADY\_INITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9} 
+ALREADY\+\_\+\+INITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNITIALISED@{UNITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!UNITIALISED@{UNITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e} 
+UNITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8} 
+INVALID\+\_\+\+NODE\+\_\+\+PTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}!Tree@{Tree}}\index{Tree@{Tree}!POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068} 
+POISON\+\_\+\+VAL\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_SIZE@{INVALID\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_SIZE@{INVALID\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd} 
+INVALID\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATIVE\_SIZE@{NEGATIVE\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!NEGATIVE\_SIZE@{NEGATIVE\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438} 
+NEGATIVE\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DAMAGED\_PATH@{DAMAGED\_PATH}!Tree@{Tree}}\index{Tree@{Tree}!DAMAGED\_PATH@{DAMAGED\_PATH}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71} 
+DAMAGED\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_ERROR@{ACTION\_ERROR}!Tree@{Tree}}\index{Tree@{Tree}!ACTION\_ERROR@{ACTION\_ERROR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4} 
+ACTION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6} 
+NODE\+\_\+\+ALREADY\+\_\+\+EXISTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CANNOT\_DELETE@{CANNOT\_DELETE}!Tree@{Tree}}\index{Tree@{Tree}!CANNOT\_DELETE@{CANNOT\_DELETE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3} 
+CANNOT\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f} 
+INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa} 
+NODE\+\_\+\+VERIFY\+\_\+\+FAIL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!Tree@{Tree}}\index{Tree@{Tree}!OK@{OK}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALLOC\_ERR@{ALLOC\_ERR}!Tree@{Tree}}\index{Tree@{Tree}!ALLOC\_ERR@{ALLOC\_ERR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4} 
+ALLOC\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALREADY\_INITIALISED@{ALREADY\_INITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!ALREADY\_INITIALISED@{ALREADY\_INITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9} 
+ALREADY\+\_\+\+INITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNITIALISED@{UNITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!UNITIALISED@{UNITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e} 
+UNITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8} 
+INVALID\+\_\+\+NODE\+\_\+\+PTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}!Tree@{Tree}}\index{Tree@{Tree}!POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068} 
+POISON\+\_\+\+VAL\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_SIZE@{INVALID\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_SIZE@{INVALID\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd} 
+INVALID\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATIVE\_SIZE@{NEGATIVE\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!NEGATIVE\_SIZE@{NEGATIVE\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438} 
+NEGATIVE\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DAMAGED\_PATH@{DAMAGED\_PATH}!Tree@{Tree}}\index{Tree@{Tree}!DAMAGED\_PATH@{DAMAGED\_PATH}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71} 
+DAMAGED\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_ERROR@{ACTION\_ERROR}!Tree@{Tree}}\index{Tree@{Tree}!ACTION\_ERROR@{ACTION\_ERROR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4} 
+ACTION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6} 
+NODE\+\_\+\+ALREADY\+\_\+\+EXISTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CANNOT\_DELETE@{CANNOT\_DELETE}!Tree@{Tree}}\index{Tree@{Tree}!CANNOT\_DELETE@{CANNOT\_DELETE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3} 
+CANNOT\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f} 
+INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa} 
+NODE\+\_\+\+VERIFY\+\_\+\+FAIL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!Tree@{Tree}}\index{Tree@{Tree}!OK@{OK}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALLOC\_ERR@{ALLOC\_ERR}!Tree@{Tree}}\index{Tree@{Tree}!ALLOC\_ERR@{ALLOC\_ERR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4} 
+ALLOC\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALREADY\_INITIALISED@{ALREADY\_INITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!ALREADY\_INITIALISED@{ALREADY\_INITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9} 
+ALREADY\+\_\+\+INITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNITIALISED@{UNITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!UNITIALISED@{UNITIALISED}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e} 
+UNITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8} 
+INVALID\+\_\+\+NODE\+\_\+\+PTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}!Tree@{Tree}}\index{Tree@{Tree}!POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068} 
+POISON\+\_\+\+VAL\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_SIZE@{INVALID\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_SIZE@{INVALID\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd} 
+INVALID\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATIVE\_SIZE@{NEGATIVE\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!NEGATIVE\_SIZE@{NEGATIVE\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438} 
+NEGATIVE\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DAMAGED\_PATH@{DAMAGED\_PATH}!Tree@{Tree}}\index{Tree@{Tree}!DAMAGED\_PATH@{DAMAGED\_PATH}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71} 
+DAMAGED\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_ERROR@{ACTION\_ERROR}!Tree@{Tree}}\index{Tree@{Tree}!ACTION\_ERROR@{ACTION\_ERROR}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4} 
+ACTION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6} 
+NODE\+\_\+\+ALREADY\+\_\+\+EXISTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CANNOT\_DELETE@{CANNOT\_DELETE}!Tree@{Tree}}\index{Tree@{Tree}!CANNOT\_DELETE@{CANNOT\_DELETE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3} 
+CANNOT\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f} 
+INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}}}\Hypertarget{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}\label{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa} 
+NODE\+\_\+\+VERIFY\+\_\+\+FAIL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{src_2tree_8h_source_l00065}{65}} of file \mbox{\hyperlink{src_2tree_8h_source}{tree.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x000000,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\_ERR}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x000002,}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\_INITIALISED}}\ =\ 0x000004,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}}\ \ \ \ \ \ \ \ \ =\ 0x000008,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\_NODE\_PTR}}\ \ \ \ =\ 0x000010,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\_VAL\_FOUND}}\ \ \ \ =\ 0x000020,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\_SIZE}}\ \ \ \ \ \ \ \ =\ 0x000800,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\_SIZE}}\ \ \ \ \ \ \ =\ 0x001000,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\_PATH}}\ \ \ \ \ \ \ \ =\ 0x040000,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\_ERROR}}\ \ \ \ \ \ \ \ =\ 0x080000,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\_ALREADY\_EXISTS}}\ =\ 0x100000,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\_DELETE}}\ \ \ \ \ \ \ =\ 0x200000,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\_ELEM\_T\_SIZE}}\ =\ 0x400000,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\_VERIFY\_FAIL}}\ \ \ \ =\ 0x800000,}
+\DoxyCodeLine{00081\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_tree_a89756c94ede1566589695e9d2274933b}\label{struct_tree_a89756c94ede1566589695e9d2274933b} 
+\index{Tree@{Tree}!elem\_size@{elem\_size}}
+\index{elem\_size@{elem\_size}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{elem\_size}{elem\_size}}
+{\footnotesize\ttfamily ssize\+\_\+t Tree\+::elem\+\_\+size = \mbox{\hyperlink{struct_tree_ae05e207c9782d93e767bf318c833dc46}{UNITIALISED\+\_\+\+VAL}}}
+
+
+
+Definition at line \mbox{\hyperlink{releases_2_tree_2tree_8h_source_l00084}{84}} of file \mbox{\hyperlink{releases_2_tree_2tree_8h_source}{Tree.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00050}{tree\+\_\+ctor()}}, \mbox{\hyperlink{tree_8cpp_source_l00071}{tree\+\_\+dtor()}}, and \mbox{\hyperlink{tree_8cpp_source_l00145}{tree\+\_\+insert()}}.
+
+\Hypertarget{struct_tree_a50de21bd338de0aee6355686b0690fe1}\label{struct_tree_a50de21bd338de0aee6355686b0690fe1} 
+\index{Tree@{Tree}!node\_elem\_t\_dtor@{node\_elem\_t\_dtor}}
+\index{node\_elem\_t\_dtor@{node\_elem\_t\_dtor}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{node\_elem\_t\_dtor}{node\_elem\_t\_dtor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{src_2tree_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\+\_\+t\+\_\+func}} \texorpdfstring{$\ast$}{*} Tree\+::node\+\_\+elem\+\_\+t\+\_\+dtor = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{releases_2_tree_2tree_8h_source_l00087}{87}} of file \mbox{\hyperlink{releases_2_tree_2tree_8h_source}{Tree.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00050}{tree\+\_\+ctor()}}, and \mbox{\hyperlink{_tree__debug_8h_source_l00221}{tree\+\_\+is\+\_\+initialised()}}.
+
+\Hypertarget{struct_tree_aac492462a75d560e10d46ca48baf07e7}\label{struct_tree_aac492462a75d560e10d46ca48baf07e7} 
+\index{Tree@{Tree}!node\_elem\_t\_val\_str@{node\_elem\_t\_val\_str}}
+\index{node\_elem\_t\_val\_str@{node\_elem\_t\_val\_str}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{node\_elem\_t\_val\_str}{node\_elem\_t\_val\_str}}
+{\footnotesize\ttfamily \mbox{\hyperlink{src_2tree_8h_ae4b34cec7b2a895b95fbb884ef2fb6f5}{Elem\+\_\+t\+\_\+val\+\_\+str}}\texorpdfstring{$\ast$}{*} Tree\+::node\+\_\+elem\+\_\+t\+\_\+val\+\_\+str = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{_tree__debug_8h_source_l00093}{93}} of file \mbox{\hyperlink{_tree__debug_8h_source}{Tree\+\_\+debug.\+h}}.
+
+\Hypertarget{struct_tree_a14559dbf39cc57a78748434c525be95d}\label{struct_tree_a14559dbf39cc57a78748434c525be95d} 
+\index{Tree@{Tree}!node\_elem\_t\_verify@{node\_elem\_t\_verify}}
+\index{node\_elem\_t\_verify@{node\_elem\_t\_verify}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{node\_elem\_t\_verify}{node\_elem\_t\_verify}}
+{\footnotesize\ttfamily \mbox{\hyperlink{src_2tree_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\+\_\+t\+\_\+func}}\texorpdfstring{$\ast$}{*} Tree\+::node\+\_\+elem\+\_\+t\+\_\+verify = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{_tree__debug_8h_source_l00092}{92}} of file \mbox{\hyperlink{_tree__debug_8h_source}{Tree\+\_\+debug.\+h}}.
+
+\Hypertarget{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}\label{struct_tree_a6476a2d8d5ce40b66d725a99af143f65} 
+\index{Tree@{Tree}!root@{root}}
+\index{root@{root}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*} Tree\+::root = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{releases_2_tree_2tree_8h_source_l00085}{85}} of file \mbox{\hyperlink{releases_2_tree_2tree_8h_source}{Tree.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00038}{main()}}, \mbox{\hyperlink{tree_8cpp_source_l00071}{tree\+\_\+dtor()}}, \mbox{\hyperlink{_tree__debug_8h_source_l00155}{tree\+\_\+insert\+\_\+root()}}, and \mbox{\hyperlink{_tree__debug_8h_source_l00221}{tree\+\_\+is\+\_\+initialised()}}.
+
+\Hypertarget{struct_tree_af4e7a6220b7940f6ddc831ec5354e491}\label{struct_tree_af4e7a6220b7940f6ddc831ec5354e491} 
+\index{Tree@{Tree}!size@{size}}
+\index{size@{size}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily ssize\+\_\+t Tree\+::size = \mbox{\hyperlink{struct_tree_ae05e207c9782d93e767bf318c833dc46}{UNITIALISED\+\_\+\+VAL}}}
+
+
+
+Definition at line \mbox{\hyperlink{releases_2_tree_2tree_8h_source_l00083}{83}} of file \mbox{\hyperlink{releases_2_tree_2tree_8h_source}{Tree.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00050}{tree\+\_\+ctor()}}, \mbox{\hyperlink{tree_8cpp_source_l00179}{tree\+\_\+delete()}}, \mbox{\hyperlink{tree_8cpp_source_l00071}{tree\+\_\+dtor()}}, \mbox{\hyperlink{tree_8cpp_source_l00145}{tree\+\_\+insert()}}, and \mbox{\hyperlink{_tree__debug_8h_source_l00221}{tree\+\_\+is\+\_\+initialised()}}.
+
+\Hypertarget{struct_tree_ae05e207c9782d93e767bf318c833dc46}\label{struct_tree_ae05e207c9782d93e767bf318c833dc46} 
+\index{Tree@{Tree}!UNITIALISED\_VAL@{UNITIALISED\_VAL}}
+\index{UNITIALISED\_VAL@{UNITIALISED\_VAL}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{UNITIALISED\_VAL}{UNITIALISED\_VAL}}
+{\footnotesize\ttfamily static const ssize\+\_\+t Tree\+::\+UNITIALISED\+\_\+\+VAL = -\/1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{releases_2_tree_2tree_8h_source_l00062}{62}} of file \mbox{\hyperlink{releases_2_tree_2tree_8h_source}{Tree.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00071}{tree\+\_\+dtor()}}, and \mbox{\hyperlink{_tree__debug_8h_source_l00221}{tree\+\_\+is\+\_\+initialised()}}.
+
+\Hypertarget{struct_tree_ad7c76730c28c19500ec415650ddbb472}\label{struct_tree_ad7c76730c28c19500ec415650ddbb472} 
+\index{Tree@{Tree}!var\_data@{var\_data}}
+\index{var\_data@{var\_data}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{var\_data}{var\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_var_code_data}{Var\+Code\+Data}} Tree\+::var\+\_\+data = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{_tree__debug_8h_source_l00090}{90}} of file \mbox{\hyperlink{_tree__debug_8h_source}{Tree\+\_\+debug.\+h}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+releases/\+Tree/\mbox{\hyperlink{releases_2_tree_2tree_8h}{Tree.\+h}}\item 
+releases/\+Tree\+\_\+debug/\mbox{\hyperlink{_tree__debug_8h}{Tree\+\_\+debug.\+h}}\item 
+src/\mbox{\hyperlink{src_2tree_8h}{tree.\+h}}\end{DoxyCompactItemize}

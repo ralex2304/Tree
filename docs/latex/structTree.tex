@@ -1,0 +1,280 @@
+\doxysection{Tree Struct Reference}
+\hypertarget{structTree}{}\label{structTree}\index{Tree@{Tree}}
+
+
+Specifies tree data.  
+
+
+
+
+{\ttfamily \#include $<$tree.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06d}{Results}} \{ \newline
+\mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06dadec45fbbc8dc5478e95b62868a1df518}{OK}} = 0x000000
+, \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da230c1b7dac014107f47a13b23b44a400}{ALLOC\+\_\+\+ERR}} = 0x000002
+, \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da40df8d3756e6f65a209e0e2c3e88da6b}{ALREADY\+\_\+\+INITIALISED}} = 0x000004
+, \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da211c6e7b121e396e9f317b75f61cd7c8}{UNITIALISED}} = 0x000008
+, \newline
+\mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06dabf395749cd36fc4a8768b6c6521e1aac}{INVALID\+\_\+\+NODE\+\_\+\+PTR}} = 0x000010
+, \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06dab12cd63119e06330d8d56f54d7439174}{POISON\+\_\+\+VAL\+\_\+\+FOUND}} = 0x000020
+, \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da76e7c56197ef582b72485cc856c99e7c}{INVALID\+\_\+\+SIZE}} = 0x000800
+, \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da4297341b72b05aabd0fbde46656c2371}{NEGATIVE\+\_\+\+SIZE}} = 0x001000
+, \newline
+\mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da6dd732c1923e6e7f2f01bc1568b3f290}{DAMAGED\+\_\+\+PATH}} = 0x040000
+, \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06daf7cb35a85a1a5111764270e42c490564}{ACTION\+\_\+\+ERROR}} = 0x080000
+, \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da2524dacda622d42725b2190a4e3ea50f}{NODE\+\_\+\+ALREADY\+\_\+\+EXISTS}} = 0x100000
+, \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da18d6f3bcf402ccdb929d61ce2458fa7e}{CANNOT\+\_\+\+DELETE}} = 0x200000
+, \newline
+\mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06dafca0f3eb325d452100747b8a3052edaf}{INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE}} = 0x400000
+, \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06dac323082c2927eb3608efdb679880070f}{NODE\+\_\+\+VERIFY\+\_\+\+FAIL}} = 0x800000
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ssize\+\_\+t \mbox{\hyperlink{structTree_af4e7a6220b7940f6ddc831ec5354e491}{size}} = \mbox{\hyperlink{structTree_a72db84d03e5ed6efaf0b4ae04011ada3}{UNITIALISED\+\_\+\+VAL}}
+\item 
+ssize\+\_\+t \mbox{\hyperlink{structTree_a89756c94ede1566589695e9d2274933b}{elem\+\_\+size}} = \mbox{\hyperlink{structTree_a72db84d03e5ed6efaf0b4ae04011ada3}{UNITIALISED\+\_\+\+VAL}}
+\item 
+\mbox{\hyperlink{structTreeNode}{Tree\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structTree_ad920a273e774ac5b77296fc0d4aa2aef}{root}} = nullptr
+\item 
+\mbox{\hyperlink{tree_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\+\_\+t\+\_\+func}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structTree_a23def1b5dee11cfa29ffd96ffabf85cd}{node\+\_\+elem\+\_\+t\+\_\+dtor}} = nullptr
+\item 
+\mbox{\hyperlink{structVarCodeData}{Var\+Code\+Data}} \mbox{\hyperlink{structTree_ad7c76730c28c19500ec415650ddbb472}{var\+\_\+data}} = \{\}
+\item 
+\mbox{\hyperlink{tree_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\+\_\+t\+\_\+func}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structTree_a14559dbf39cc57a78748434c525be95d}{node\+\_\+elem\+\_\+t\+\_\+verify}} = nullptr
+\item 
+\mbox{\hyperlink{tree_8h_ae4b34cec7b2a895b95fbb884ef2fb6f5}{Elem\+\_\+t\+\_\+val\+\_\+str}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structTree_aac492462a75d560e10d46ca48baf07e7}{node\+\_\+elem\+\_\+t\+\_\+val\+\_\+str}} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const ssize\+\_\+t \mbox{\hyperlink{structTree_a72db84d03e5ed6efaf0b4ae04011ada3}{UNITIALISED\+\_\+\+VAL}} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specifies tree data. 
+
+Definition at line \mbox{\hyperlink{tree_8h_source_l00061}{61}} of file \mbox{\hyperlink{tree_8h_source}{tree.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06d}\label{structTree_a817c3cb647deac6a6be0155631f2e06d} 
+\index{Tree@{Tree}!Results@{Results}}
+\index{Results@{Results}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{Results}{Results}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06d}{Tree\+::\+Results}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!Tree@{Tree}}\index{Tree@{Tree}!OK@{OK}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06dadec45fbbc8dc5478e95b62868a1df518}\label{structTree_a817c3cb647deac6a6be0155631f2e06dadec45fbbc8dc5478e95b62868a1df518} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALLOC\_ERR@{ALLOC\_ERR}!Tree@{Tree}}\index{Tree@{Tree}!ALLOC\_ERR@{ALLOC\_ERR}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06da230c1b7dac014107f47a13b23b44a400}\label{structTree_a817c3cb647deac6a6be0155631f2e06da230c1b7dac014107f47a13b23b44a400} 
+ALLOC\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALREADY\_INITIALISED@{ALREADY\_INITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!ALREADY\_INITIALISED@{ALREADY\_INITIALISED}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06da40df8d3756e6f65a209e0e2c3e88da6b}\label{structTree_a817c3cb647deac6a6be0155631f2e06da40df8d3756e6f65a209e0e2c3e88da6b} 
+ALREADY\+\_\+\+INITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNITIALISED@{UNITIALISED}!Tree@{Tree}}\index{Tree@{Tree}!UNITIALISED@{UNITIALISED}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06da211c6e7b121e396e9f317b75f61cd7c8}\label{structTree_a817c3cb647deac6a6be0155631f2e06da211c6e7b121e396e9f317b75f61cd7c8} 
+UNITIALISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_NODE\_PTR@{INVALID\_NODE\_PTR}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06dabf395749cd36fc4a8768b6c6521e1aac}\label{structTree_a817c3cb647deac6a6be0155631f2e06dabf395749cd36fc4a8768b6c6521e1aac} 
+INVALID\+\_\+\+NODE\+\_\+\+PTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}!Tree@{Tree}}\index{Tree@{Tree}!POISON\_VAL\_FOUND@{POISON\_VAL\_FOUND}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06dab12cd63119e06330d8d56f54d7439174}\label{structTree_a817c3cb647deac6a6be0155631f2e06dab12cd63119e06330d8d56f54d7439174} 
+POISON\+\_\+\+VAL\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_SIZE@{INVALID\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_SIZE@{INVALID\_SIZE}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06da76e7c56197ef582b72485cc856c99e7c}\label{structTree_a817c3cb647deac6a6be0155631f2e06da76e7c56197ef582b72485cc856c99e7c} 
+INVALID\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATIVE\_SIZE@{NEGATIVE\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!NEGATIVE\_SIZE@{NEGATIVE\_SIZE}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06da4297341b72b05aabd0fbde46656c2371}\label{structTree_a817c3cb647deac6a6be0155631f2e06da4297341b72b05aabd0fbde46656c2371} 
+NEGATIVE\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DAMAGED\_PATH@{DAMAGED\_PATH}!Tree@{Tree}}\index{Tree@{Tree}!DAMAGED\_PATH@{DAMAGED\_PATH}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06da6dd732c1923e6e7f2f01bc1568b3f290}\label{structTree_a817c3cb647deac6a6be0155631f2e06da6dd732c1923e6e7f2f01bc1568b3f290} 
+DAMAGED\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_ERROR@{ACTION\_ERROR}!Tree@{Tree}}\index{Tree@{Tree}!ACTION\_ERROR@{ACTION\_ERROR}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06daf7cb35a85a1a5111764270e42c490564}\label{structTree_a817c3cb647deac6a6be0155631f2e06daf7cb35a85a1a5111764270e42c490564} 
+ACTION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_ALREADY\_EXISTS@{NODE\_ALREADY\_EXISTS}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06da2524dacda622d42725b2190a4e3ea50f}\label{structTree_a817c3cb647deac6a6be0155631f2e06da2524dacda622d42725b2190a4e3ea50f} 
+NODE\+\_\+\+ALREADY\+\_\+\+EXISTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CANNOT\_DELETE@{CANNOT\_DELETE}!Tree@{Tree}}\index{Tree@{Tree}!CANNOT\_DELETE@{CANNOT\_DELETE}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06da18d6f3bcf402ccdb929d61ce2458fa7e}\label{structTree_a817c3cb647deac6a6be0155631f2e06da18d6f3bcf402ccdb929d61ce2458fa7e} 
+CANNOT\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}!Tree@{Tree}}\index{Tree@{Tree}!INVALID\_ELEM\_T\_SIZE@{INVALID\_ELEM\_T\_SIZE}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06dafca0f3eb325d452100747b8a3052edaf}\label{structTree_a817c3cb647deac6a6be0155631f2e06dafca0f3eb325d452100747b8a3052edaf} 
+INVALID\+\_\+\+ELEM\+\_\+\+T\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}!Tree@{Tree}}\index{Tree@{Tree}!NODE\_VERIFY\_FAIL@{NODE\_VERIFY\_FAIL}}}\Hypertarget{structTree_a817c3cb647deac6a6be0155631f2e06dac323082c2927eb3608efdb679880070f}\label{structTree_a817c3cb647deac6a6be0155631f2e06dac323082c2927eb3608efdb679880070f} 
+NODE\+\_\+\+VERIFY\+\_\+\+FAIL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{tree_8h_source_l00065}{65}} of file \mbox{\hyperlink{tree_8h_source}{tree.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06dadec45fbbc8dc5478e95b62868a1df518}{OK}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x000000,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da230c1b7dac014107f47a13b23b44a400}{ALLOC\_ERR}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x000002,}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da40df8d3756e6f65a209e0e2c3e88da6b}{ALREADY\_INITIALISED}}\ =\ 0x000004,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da211c6e7b121e396e9f317b75f61cd7c8}{UNITIALISED}}\ \ \ \ \ \ \ \ \ =\ 0x000008,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06dabf395749cd36fc4a8768b6c6521e1aac}{INVALID\_NODE\_PTR}}\ \ \ \ =\ 0x000010,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06dab12cd63119e06330d8d56f54d7439174}{POISON\_VAL\_FOUND}}\ \ \ \ =\ 0x000020,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da76e7c56197ef582b72485cc856c99e7c}{INVALID\_SIZE}}\ \ \ \ \ \ \ \ =\ 0x000800,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da4297341b72b05aabd0fbde46656c2371}{NEGATIVE\_SIZE}}\ \ \ \ \ \ \ =\ 0x001000,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da6dd732c1923e6e7f2f01bc1568b3f290}{DAMAGED\_PATH}}\ \ \ \ \ \ \ \ =\ 0x040000,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06daf7cb35a85a1a5111764270e42c490564}{ACTION\_ERROR}}\ \ \ \ \ \ \ \ =\ 0x080000,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da2524dacda622d42725b2190a4e3ea50f}{NODE\_ALREADY\_EXISTS}}\ =\ 0x100000,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06da18d6f3bcf402ccdb929d61ce2458fa7e}{CANNOT\_DELETE}}\ \ \ \ \ \ \ =\ 0x200000,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06dafca0f3eb325d452100747b8a3052edaf}{INVALID\_ELEM\_T\_SIZE}}\ =\ 0x400000,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06dac323082c2927eb3608efdb679880070f}{NODE\_VERIFY\_FAIL}}\ \ \ \ =\ 0x800000,}
+\DoxyCodeLine{00081\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structTree_a89756c94ede1566589695e9d2274933b}\label{structTree_a89756c94ede1566589695e9d2274933b} 
+\index{Tree@{Tree}!elem\_size@{elem\_size}}
+\index{elem\_size@{elem\_size}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{elem\_size}{elem\_size}}
+{\footnotesize\ttfamily ssize\+\_\+t Tree\+::elem\+\_\+size = \mbox{\hyperlink{structTree_a72db84d03e5ed6efaf0b4ae04011ada3}{UNITIALISED\+\_\+\+VAL}}}
+
+
+
+Definition at line \mbox{\hyperlink{tree_8h_source_l00084}{84}} of file \mbox{\hyperlink{tree_8h_source}{tree.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00050}{tree\+\_\+ctor()}}, \mbox{\hyperlink{tree_8cpp_source_l00071}{tree\+\_\+dtor()}}, \mbox{\hyperlink{tree_8cpp_source_l00145}{tree\+\_\+insert()}}, and \mbox{\hyperlink{tree_8cpp_source_l00364}{tree\+\_\+verify()}}.
+
+\Hypertarget{structTree_a23def1b5dee11cfa29ffd96ffabf85cd}\label{structTree_a23def1b5dee11cfa29ffd96ffabf85cd} 
+\index{Tree@{Tree}!node\_elem\_t\_dtor@{node\_elem\_t\_dtor}}
+\index{node\_elem\_t\_dtor@{node\_elem\_t\_dtor}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{node\_elem\_t\_dtor}{node\_elem\_t\_dtor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tree_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\+\_\+t\+\_\+func}}\texorpdfstring{$\ast$}{*} Tree\+::node\+\_\+elem\+\_\+t\+\_\+dtor = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{tree_8h_source_l00087}{87}} of file \mbox{\hyperlink{tree_8h_source}{tree.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00050}{tree\+\_\+ctor()}}, and \mbox{\hyperlink{tree_8h_source_l00221}{tree\+\_\+is\+\_\+initialised()}}.
+
+\Hypertarget{structTree_aac492462a75d560e10d46ca48baf07e7}\label{structTree_aac492462a75d560e10d46ca48baf07e7} 
+\index{Tree@{Tree}!node\_elem\_t\_val\_str@{node\_elem\_t\_val\_str}}
+\index{node\_elem\_t\_val\_str@{node\_elem\_t\_val\_str}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{node\_elem\_t\_val\_str}{node\_elem\_t\_val\_str}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tree_8h_ae4b34cec7b2a895b95fbb884ef2fb6f5}{Elem\+\_\+t\+\_\+val\+\_\+str}}\texorpdfstring{$\ast$}{*} Tree\+::node\+\_\+elem\+\_\+t\+\_\+val\+\_\+str = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{tree_8h_source_l00093}{93}} of file \mbox{\hyperlink{tree_8h_source}{tree.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00409}{tree\+\_\+ctor\+\_\+debug()}}.
+
+\Hypertarget{structTree_a14559dbf39cc57a78748434c525be95d}\label{structTree_a14559dbf39cc57a78748434c525be95d} 
+\index{Tree@{Tree}!node\_elem\_t\_verify@{node\_elem\_t\_verify}}
+\index{node\_elem\_t\_verify@{node\_elem\_t\_verify}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{node\_elem\_t\_verify}{node\_elem\_t\_verify}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tree_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\+\_\+t\+\_\+func}}\texorpdfstring{$\ast$}{*} Tree\+::node\+\_\+elem\+\_\+t\+\_\+verify = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{tree_8h_source_l00092}{92}} of file \mbox{\hyperlink{tree_8h_source}{tree.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00409}{tree\+\_\+ctor\+\_\+debug()}}, and \mbox{\hyperlink{tree_8cpp_source_l00386}{tree\+\_\+node\+\_\+verify()}}.
+
+\Hypertarget{structTree_ad920a273e774ac5b77296fc0d4aa2aef}\label{structTree_ad920a273e774ac5b77296fc0d4aa2aef} 
+\index{Tree@{Tree}!root@{root}}
+\index{root@{root}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTreeNode}{Tree\+Node}}\texorpdfstring{$\ast$}{*} Tree\+::root = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{tree_8h_source_l00085}{85}} of file \mbox{\hyperlink{tree_8h_source}{tree.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00038}{main()}}, \mbox{\hyperlink{tree_8cpp_source_l00071}{tree\+\_\+dtor()}}, \mbox{\hyperlink{dump_8cpp_source_l00162}{tree\+\_\+dump()}}, \mbox{\hyperlink{dump_8cpp_source_l00285}{tree\+\_\+dump\+\_\+dot()}}, \mbox{\hyperlink{tree_8h_source_l00155}{tree\+\_\+insert\+\_\+root()}}, \mbox{\hyperlink{tree_8h_source_l00221}{tree\+\_\+is\+\_\+initialised()}}, \mbox{\hyperlink{tree_8cpp_source_l00386}{tree\+\_\+node\+\_\+verify()}}, and \mbox{\hyperlink{tree_8cpp_source_l00364}{tree\+\_\+verify()}}.
+
+\Hypertarget{structTree_af4e7a6220b7940f6ddc831ec5354e491}\label{structTree_af4e7a6220b7940f6ddc831ec5354e491} 
+\index{Tree@{Tree}!size@{size}}
+\index{size@{size}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily ssize\+\_\+t Tree\+::size = \mbox{\hyperlink{structTree_a72db84d03e5ed6efaf0b4ae04011ada3}{UNITIALISED\+\_\+\+VAL}}}
+
+
+
+Definition at line \mbox{\hyperlink{tree_8h_source_l00083}{83}} of file \mbox{\hyperlink{tree_8h_source}{tree.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00050}{tree\+\_\+ctor()}}, \mbox{\hyperlink{tree_8cpp_source_l00179}{tree\+\_\+delete()}}, \mbox{\hyperlink{tree_8cpp_source_l00071}{tree\+\_\+dtor()}}, \mbox{\hyperlink{dump_8cpp_source_l00162}{tree\+\_\+dump()}}, \mbox{\hyperlink{tree_8cpp_source_l00145}{tree\+\_\+insert()}}, \mbox{\hyperlink{tree_8h_source_l00221}{tree\+\_\+is\+\_\+initialised()}}, \mbox{\hyperlink{tree_8cpp_source_l00386}{tree\+\_\+node\+\_\+verify()}}, and \mbox{\hyperlink{tree_8cpp_source_l00364}{tree\+\_\+verify()}}.
+
+\Hypertarget{structTree_a72db84d03e5ed6efaf0b4ae04011ada3}\label{structTree_a72db84d03e5ed6efaf0b4ae04011ada3} 
+\index{Tree@{Tree}!UNITIALISED\_VAL@{UNITIALISED\_VAL}}
+\index{UNITIALISED\_VAL@{UNITIALISED\_VAL}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{UNITIALISED\_VAL}{UNITIALISED\_VAL}}
+{\footnotesize\ttfamily const ssize\+\_\+t Tree\+::\+UNITIALISED\+\_\+\+VAL = -\/1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{tree_8h_source_l00062}{62}} of file \mbox{\hyperlink{tree_8h_source}{tree.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00071}{tree\+\_\+dtor()}}, and \mbox{\hyperlink{tree_8h_source_l00221}{tree\+\_\+is\+\_\+initialised()}}.
+
+\Hypertarget{structTree_ad7c76730c28c19500ec415650ddbb472}\label{structTree_ad7c76730c28c19500ec415650ddbb472} 
+\index{Tree@{Tree}!var\_data@{var\_data}}
+\index{var\_data@{var\_data}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{var\_data}{var\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVarCodeData}{Var\+Code\+Data}} Tree\+::var\+\_\+data = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{tree_8h_source_l00090}{90}} of file \mbox{\hyperlink{tree_8h_source}{tree.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \{\};}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00409}{tree\+\_\+ctor\+\_\+debug()}}, and \mbox{\hyperlink{dump_8cpp_source_l00162}{tree\+\_\+dump()}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{tree_8h}{tree.\+h}}\end{DoxyCompactItemize}

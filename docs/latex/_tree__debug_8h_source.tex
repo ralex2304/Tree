@@ -1,0 +1,182 @@
+\doxysection{Tree\+\_\+debug.\+h}
+\hypertarget{_tree__debug_8h_source}{}\label{_tree__debug_8h_source}\index{releases/Tree\_debug/Tree\_debug.h@{releases/Tree\_debug/Tree\_debug.h}}
+\mbox{\hyperlink{_tree__debug_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ TREE\_H\_}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ TREE\_H\_}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{macros_8h}{utils/macros.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00010}\mbox{\hyperlink{_tree__debug_8h_a31fca4bb0bd5b88a6f52bb12d95a57ee}{00010}}\ \textcolor{preprocessor}{\#define\ TREE\_DEBUG\ }\textcolor{comment}{//<\ enables\ TREE\_DEBUG\ mode}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00015}\mbox{\hyperlink{_tree__debug_8h_afd68fcfce0df22ea3adc45677b85efd2}{00015}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{releases_2_tree_2tree_8h_afd68fcfce0df22ea3adc45677b85efd2}{TreeChildSide}}\ \{}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{_tree__debug_8h_afd68fcfce0df22ea3adc45677b85efd2a684d325a7303f52e64011467ff5c5758}{LEFT}}\ \ =\ -\/1,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{_tree__debug_8h_afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32}{ROOT}}\ \ =\ \ 0,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{_tree__debug_8h_afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403}{RIGHT}}\ =\ \ 1,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00019}00019\ \};}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00024}\mbox{\hyperlink{_tree__debug_8h_a852e727421a8b2b124ed021e50d4ae4e}{00024}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{releases_2_tree_2tree_8h_a852e727421a8b2b124ed021e50d4ae4e}{TreeNodeActionRes}}\ \{}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{_tree__debug_8h_a852e727421a8b2b124ed021e50d4ae4eaa42b2fb0e720a080e79a92f4ca97d927}{EXIT}}\ \ =\ -\/1,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{_tree__debug_8h_a852e727421a8b2b124ed021e50d4ae4eabb1ca97ec761fc37101737ba0aa2e7c5}{ERROR}}\ =\ \ 0,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{_tree__debug_8h_a852e727421a8b2b124ed021e50d4ae4eae0aa021e21dddbd6d8cecec71e9cf564}{OK}}\ \ \ \ =\ \ 1,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00028}00028\ \};}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00036}\mbox{\hyperlink{_tree__debug_8h_af01c1ce54eb2cf336d3b7304449f4274}{00036}}\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_tree__debug_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\_t\_func}}(\textcolor{keywordtype}{void}*\ elem);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00044}\mbox{\hyperlink{_tree__debug_8h_ae4b34cec7b2a895b95fbb884ef2fb6f5}{00044}}\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{_tree__debug_8h_ae4b34cec7b2a895b95fbb884ef2fb6f5}{Elem\_t\_val\_str}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ elem);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00049}00049\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_tree_node}{TreeNode}}\ \{}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_tree_node_a14ea348c560d4337f867c5625c054b8d}{elem}}\ =\ \textcolor{keyword}{nullptr};\ \ \ \textcolor{comment}{//<\ value}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{struct_tree_node}{TreeNode}}*\ \mbox{\hyperlink{struct_tree_node_a183c21a4e9a721b282323e1ef3485265}{parent}}\ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//<\ node\ parent\ pointer}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{struct_tree_node}{TreeNode}}*\ \mbox{\hyperlink{struct_tree_node_ac7149d04837ba5f53bf9485d0797e269}{left}}\ \ =\ \textcolor{keyword}{nullptr};\ \ \textcolor{comment}{//<\ left\ child}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{struct_tree_node}{TreeNode}}*\ \mbox{\hyperlink{struct_tree_node_a4ee04f4c92e653bced3aca6723df1c08}{right}}\ =\ \textcolor{keyword}{nullptr};\ \ \textcolor{comment}{//<\ right\ child}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00056}00056\ \};}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00061}00061\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_tree}{Tree}}\ \{}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ ssize\_t\ \mbox{\hyperlink{struct_tree_ae05e207c9782d93e767bf318c833dc46}{UNITIALISED\_VAL}}\ =\ -\/1;\ \ \textcolor{comment}{//<\ Default\ poison\ value}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//\ Error\ codes}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00065}\mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06d}{00065}}\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06d}{Results}}\ \{}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{OK}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x000000,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4}{ALLOC\_ERR}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x000002,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9}{ALREADY\_INITIALISED}}\ =\ 0x000004,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e}{UNITIALISED}}\ \ \ \ \ \ \ \ \ =\ 0x000008,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8}{INVALID\_NODE\_PTR}}\ \ \ \ =\ 0x000010,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068}{POISON\_VAL\_FOUND}}\ \ \ \ =\ 0x000020,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd}{INVALID\_SIZE}}\ \ \ \ \ \ \ \ =\ 0x000800,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438}{NEGATIVE\_SIZE}}\ \ \ \ \ \ \ =\ 0x001000,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71}{DAMAGED\_PATH}}\ \ \ \ \ \ \ \ =\ 0x040000,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4}{ACTION\_ERROR}}\ \ \ \ \ \ \ \ =\ 0x080000,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6}{NODE\_ALREADY\_EXISTS}}\ =\ 0x100000,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3}{CANNOT\_DELETE}}\ \ \ \ \ \ \ =\ 0x200000,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f}{INVALID\_ELEM\_T\_SIZE}}\ =\ 0x400000,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa}{NODE\_VERIFY\_FAIL}}\ \ \ \ =\ 0x800000,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00081}00081\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00083}00083\ \ \ \ \ ssize\_t\ \mbox{\hyperlink{struct_tree_af4e7a6220b7940f6ddc831ec5354e491}{size}}\ \ \ \ \ \ =\ \mbox{\hyperlink{struct_tree_ae05e207c9782d93e767bf318c833dc46}{UNITIALISED\_VAL}};\ \ \ \ \textcolor{comment}{//<\ number\ of\ nodes\ in\ tree}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00084}00084\ \ \ \ \ ssize\_t\ \mbox{\hyperlink{struct_tree_a89756c94ede1566589695e9d2274933b}{elem\_size}}\ =\ \mbox{\hyperlink{struct_tree_ae05e207c9782d93e767bf318c833dc46}{UNITIALISED\_VAL}};\ \ \ \ \textcolor{comment}{//<\ one\ element\ size\ in\ bytes}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{struct_tree_node}{TreeNode}}*\ \mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}}\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ tree\ root\ pointer}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00087}00087\ \ \ \ \ \mbox{\hyperlink{src_2tree_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\_t\_func}}*\ \mbox{\hyperlink{struct_tree_a50de21bd338de0aee6355686b0690fe1}{node\_elem\_t\_dtor}}\ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//<\ Elem\_t\ dtor.\ nullptr\ if\ not\ needed}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00089}00089\ \textcolor{preprocessor}{\#ifdef\ TREE\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00090}\mbox{\hyperlink{struct_tree_ad7c76730c28c19500ec415650ddbb472}{00090}}\ \ \ \ \ \mbox{\hyperlink{struct_var_code_data}{VarCodeData}}\ \mbox{\hyperlink{struct_tree_ad7c76730c28c19500ec415650ddbb472}{var\_data}}\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00092}\mbox{\hyperlink{struct_tree_a14559dbf39cc57a78748434c525be95d}{00092}}\ \ \ \ \ \mbox{\hyperlink{src_2tree_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\_t\_func}}*\ \mbox{\hyperlink{struct_tree_a14559dbf39cc57a78748434c525be95d}{node\_elem\_t\_verify}}\ \ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \textcolor{comment}{//<\ Elem\_t\ verificator.\ nullptr\ if\ not\ needed}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00093}\mbox{\hyperlink{struct_tree_aac492462a75d560e10d46ca48baf07e7}{00093}}\ \ \ \ \ \mbox{\hyperlink{src_2tree_8h_ae4b34cec7b2a895b95fbb884ef2fb6f5}{Elem\_t\_val\_str}}*\ \mbox{\hyperlink{struct_tree_aac492462a75d560e10d46ca48baf07e7}{node\_elem\_t\_val\_str}}\ =\ \textcolor{keyword}{nullptr};\ \ \textcolor{comment}{//<\ Must\ return\ Elem\_t\ value\ in\ string.\ nullptr\ if\ not\ needed}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00094}00094\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifdef\ TREE\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00095}00095\ \};}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00106}\mbox{\hyperlink{_tree__debug_8h_a0f56a17b194f57e1dfcd91cd33f98c38}{00106}}\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{_tree__debug_8h_a852e727421a8b2b124ed021e50d4ae4e}{TreeNodeActionRes}}\ (\mbox{\hyperlink{_tree__debug_8h_a0f56a17b194f57e1dfcd91cd33f98c38}{TreeNodeAction}})(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \mbox{\hyperlink{struct_tree_node}{TreeNode}}**\ node,\ va\_list*\ args,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ depth,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{releases_2_tree_2tree_8h_afd68fcfce0df22ea3adc45677b85efd2}{TreeChildSide}}\ side);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00117}00117\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_tree__debug_8h_abea594b38c4aa501efcaef8476970696}{tree\_ctor}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ elem\_size,\ \mbox{\hyperlink{_tree__debug_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\_t\_func}}*\ elem\_t\_dtor);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00125}00125\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_tree__debug_8h_aeec2ee9e0a19cd7490733f737a45ff50}{tree\_dtor}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00136}00136\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_tree__debug_8h_ad58cb030ca24ed2a77d646d1c32e5254}{tree\_insert}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \mbox{\hyperlink{struct_tree_node}{TreeNode}}**\ node,\ \mbox{\hyperlink{struct_tree_node}{TreeNode}}*\ parent,\ \textcolor{keywordtype}{void}*\ elem);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00146}00146\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_tree__debug_8h_ae9e0b777b031fe54efeb1b5155b8df4e}{tree\_delete}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \mbox{\hyperlink{struct_tree_node}{TreeNode}}**\ node,\ \textcolor{keywordtype}{bool}\ recursive\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00155}\mbox{\hyperlink{_tree__debug_8h_a939419ad7f924bf12c14f9d03499d95e}{00155}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_tree__debug_8h_a939419ad7f924bf12c14f9d03499d95e}{tree\_insert\_root}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \textcolor{keywordtype}{void}*\ elem)\ \{}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_tree__debug_8h_ad58cb030ca24ed2a77d646d1c32e5254}{tree\_insert}}(tree,\ \&tree-\/>\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ \textcolor{keyword}{nullptr},\ elem);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00157}00157\ \}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00168}00168\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_tree__debug_8h_a75e7ad4be8361db4261586d1d0244da0}{tree\_traversal}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \mbox{\hyperlink{struct_tree_node}{TreeNode}}**\ root,\ \mbox{\hyperlink{_tree__debug_8h_a0f56a17b194f57e1dfcd91cd33f98c38}{TreeNodeAction}}*\ actions[4],\ ...);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00179}00179\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_tree__debug_8h_a47cb5d8934a3dade4562789eb2ef91ba}{tree\_preorder}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \mbox{\hyperlink{struct_tree_node}{TreeNode}}**\ root,\ \mbox{\hyperlink{_tree__debug_8h_a0f56a17b194f57e1dfcd91cd33f98c38}{TreeNodeAction}}*\ action,\ ...);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00190}00190\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_tree__debug_8h_ae196d42f88e87cf228f5964eba4ae226}{tree\_inorder}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \mbox{\hyperlink{struct_tree_node}{TreeNode}}**\ root,\ \mbox{\hyperlink{_tree__debug_8h_a0f56a17b194f57e1dfcd91cd33f98c38}{TreeNodeAction}}*\ action,\ ...);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00201}00201\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_tree__debug_8h_aa0035e8642848c3c9305e43b5701129c}{tree\_postorder}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \mbox{\hyperlink{struct_tree_node}{TreeNode}}**\ root,\ \mbox{\hyperlink{_tree__debug_8h_a0f56a17b194f57e1dfcd91cd33f98c38}{TreeNodeAction}}*\ action,\ ...);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00210}\mbox{\hyperlink{_tree__debug_8h_a8ad22288d300cf3680dfc4899ef54ee8}{00210}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_tree__debug_8h_a8ad22288d300cf3680dfc4899ef54ee8}{tree\_node\_is\_initialised}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tree_node}{TreeNode}}*\ node)\ \{}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00211}00211\ \ \ \ \ \textcolor{keywordflow}{return}\ !(node-\/>\mbox{\hyperlink{struct_tree_node_a14ea348c560d4337f867c5625c054b8d}{elem}}\ ==\ \textcolor{keyword}{nullptr}\ \&\&\ node-\/>\mbox{\hyperlink{struct_tree_node_ac7149d04837ba5f53bf9485d0797e269}{left}}\ ==\ \textcolor{keyword}{nullptr}\ \&\&\ node-\/>\mbox{\hyperlink{struct_tree_node_a4ee04f4c92e653bced3aca6723df1c08}{right}}\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00212}00212\ \}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00221}\mbox{\hyperlink{_tree__debug_8h_a6d4c1adfbea0f30e6f72eb4db145257c}{00221}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_tree__debug_8h_a6d4c1adfbea0f30e6f72eb4db145257c}{tree\_is\_initialised}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tree}{Tree}}*\ tree)\ \{}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00222}00222\ \ \ \ \ \textcolor{keywordflow}{return}\ !(tree-\/>\mbox{\hyperlink{struct_tree_af4e7a6220b7940f6ddc831ec5354e491}{size}}\ ==\ tree-\/>\mbox{\hyperlink{struct_tree_ae05e207c9782d93e767bf318c833dc46}{UNITIALISED\_VAL}}\ \&\&\ tree-\/>\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}}\ ==\ \textcolor{keyword}{nullptr}\ \&\&}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ tree-\/>\mbox{\hyperlink{struct_tree_a50de21bd338de0aee6355686b0690fe1}{node\_elem\_t\_dtor}}\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00224}00224\ \}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00226}00226\ \textcolor{preprocessor}{\#ifdef\ TREE\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00232}\mbox{\hyperlink{_tree__debug_8h_a2c034e10dd598a8b95a1fd38ef206d6f}{00232}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_tree__debug_8h_a2c034e10dd598a8b95a1fd38ef206d6f}{tree\_print\_error}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ err\_code);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00241}\mbox{\hyperlink{_tree__debug_8h_aae38a1f8f6aeece7dc90a22943b51427}{00241}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_tree__debug_8h_aae38a1f8f6aeece7dc90a22943b51427}{tree\_verify}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \textcolor{keywordtype}{bool}\ do\_traversal\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00251}\mbox{\hyperlink{_tree__debug_8h_ae3234ad84b7fc823871eff23d841b311}{00251}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_tree__debug_8h_ae3234ad84b7fc823871eff23d841b311}{tree\_node\_verify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tree_node}{TreeNode}}*\ node,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ depth);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00264}\mbox{\hyperlink{_tree__debug_8h_a1c4e61b7cc1848b59e70467149923da6}{00264}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_tree__debug_8h_a1c4e61b7cc1848b59e70467149923da6}{tree\_ctor\_debug}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ elem\_size,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_tree__debug_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\_t\_func}}*\ elem\_t\_dtor,\ \mbox{\hyperlink{_tree__debug_8h_af01c1ce54eb2cf336d3b7304449f4274}{Elem\_t\_func}}*\ elem\_t\_verify,}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_tree__debug_8h_ae4b34cec7b2a895b95fbb884ef2fb6f5}{Elem\_t\_val\_str}}*\ elem\_t\_val\_str,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_var_code_data}{VarCodeData}}\ var\_data);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00274}\mbox{\hyperlink{_tree__debug_8h_a09317a8d2288d938f8193106bb8c6bc0}{00274}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_tree__debug_8h_a09317a8d2288d938f8193106bb8c6bc0}{tree\_dump}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_var_code_data}{VarCodeData}}\ var\_data);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00284}\mbox{\hyperlink{_tree__debug_8h_a34a004d95122c89e43a5cc5cb23a7300}{00284}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_tree__debug_8h_a34a004d95122c89e43a5cc5cb23a7300}{tree\_dump\_dot}}(\mbox{\hyperlink{struct_tree}{Tree}}*\ tree,\ \textcolor{keywordtype}{char}*\ img\_filename);}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00297}\mbox{\hyperlink{_tree__debug_8h_acf2fe97de02af9ac9b7942a6704be634}{00297}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_CTOR(tree,\ elem\_size,\ dtor,\ verify,\ val\_str)\ tree\_ctor\_debug(tree,\ elem\_size,\ dtor,\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00298}00298\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ verify,\ val\_str,\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00299}00299\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VAR\_CODE\_DATA\_PTR(tree))}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00305}\mbox{\hyperlink{_tree__debug_8h_a5845364299d9da46aa8484ef293827f6}{00305}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_DUMP(tree)\ tree\_dump(tree,\ VAR\_CODE\_DATA(tree))}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00306}00306\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00313}\mbox{\hyperlink{_tree__debug_8h_af9f1b3649786e27ecccc1ea553e9b4d8}{00313}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_OK(tree,\ res)\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00314}00314\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (res\ !=\ tree-\/>OK)\ \{\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00315}00315\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tree\_print\_error(res);\ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00316}00316\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TREE\_DUMP(tree);\ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00317}00317\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00318}00318\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while\ (0)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00327}\mbox{\hyperlink{_tree__debug_8h_aa3043bd396aaa42c207cdd4dacab0e7e}{00327}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_VERIFY(tree)\ \ \ tree\_verify(tree)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00336}\mbox{\hyperlink{_tree__debug_8h_a3f7b97a1833f63f4c8a7f7690ea134dd}{00336}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_VERIFY\_NO\_TRAVERSAL(tree)\ \ \ tree\_verify(tree,\ false)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00343}\mbox{\hyperlink{_tree__debug_8h_a560f1202cf06f352496c7821fc71848c}{00343}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_ASSERT(tree)\ \ \ TREE\_VERIFY(tree);\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00344}00344\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TREE\_OK(tree,\ res);\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00345}00345\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (res\ !=\ Tree::OK)\ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00346}00346\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ res}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00353}\mbox{\hyperlink{_tree__debug_8h_a234a20335da9ea31781fd5deae27964c}{00353}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_ASSERT\_NO\_TRAVERSAL(tree)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00354}00354\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TREE\_VERIFY\_NO\_TRAVERSAL(tree);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00355}00355\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TREE\_OK(tree,\ res);\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00356}00356\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (res\ !=\ Tree::OK)\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00357}00357\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ res}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00368}\mbox{\hyperlink{_tree__debug_8h_a5f2ae652577a32ac7670d2e3e15b602f}{00368}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_NODE\_VERIFY(tree,\ node,\ depth)\ tree\_node\_verify(tree,\ node,\ depth)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00369}00369\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00377}\mbox{\hyperlink{_tree__debug_8h_ad4d55b8fccbebac05f1476379b9473de}{00377}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_NODE\_ASSERT(tree,\ node,\ depth)\ TREE\_NODE\_VERIFY(tree,\ node,\ depth);\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00378}00378\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TREE\_OK(tree,\ res);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00379}00379\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (res\ !=\ Tree::OK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00380}00380\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ res}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00381}00381\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00382}00382\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//<\ \#ifndef\ TREE\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00383}00383\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00395}00395\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_CTOR(tree,\ elem\_size,\ dtor,\ verify,\ cstr)\ tree\_ctor(tree,\ elem\_size,\ dtor)}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00402}00402\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_DUMP(tree)\ (void)\ 0}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00403}00403\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00411}00411\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_VERIFY(tree)\ \ \ Tree::OK}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00412}00412\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00420}00420\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_VERIFY\_NO\_TRAVERSAL(tree)\ Tree::OK}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00421}00421\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00427}00427\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_ASSERT(tree)\ \ \ Tree::OK}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00428}00428\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00434}00434\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_ASSERT\_NO\_TRAVERSAL(tree)\ Tree::OK}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00435}00435\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00445}00445\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_NODE\_VERIFY(tree,\ node,\ depth)\ Tree::OK}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00446}00446\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00454}00454\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_NODE\_ASSERT(tree,\ node,\ depth)\ Tree::OK}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00455}00455\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00462}00462\ \textcolor{preprocessor}{\ \ \ \ \#define\ TREE\_OK(tree,\ res)\ (void)\ 0}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00463}00463\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00464}00464\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifdef\ TREE\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00465}00465\ }
+\DoxyCodeLine{\Hypertarget{_tree__debug_8h_source_l00466}00466\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifndef\ TREE\_H\_}}
+
+\end{DoxyCode}

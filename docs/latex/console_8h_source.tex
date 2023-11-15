@@ -1,0 +1,42 @@
+\doxysection{console.\+h}
+\hypertarget{console_8h_source}{}\label{console_8h_source}\index{src/utils/console.h@{src/utils/console.h}}
+\mbox{\hyperlink{console_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ CONSOLE\_H\_}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ CONSOLE\_H\_}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00004}00004\ \textcolor{comment}{//\ Reset\ style:}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00005}\mbox{\hyperlink{console_8h_a0afe503629a0074b6d24bbce318f85f2}{00005}}\ \textcolor{preprocessor}{\#define\ STYLE\_RESET\ \ \ \ \ \ \ "{}\(\backslash\)033[0m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00007}00007\ \textcolor{comment}{//\ Text\ styles:}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00008}\mbox{\hyperlink{console_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{00008}}\ \textcolor{preprocessor}{\#define\ STYLE\_BOLD\ \ \ \ \ \ \ \ "{}\(\backslash\)033[1m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00009}\mbox{\hyperlink{console_8h_a52bc634953ffb7fb8a57e58aa51f88cd}{00009}}\ \textcolor{preprocessor}{\#define\ STYLE\_FAINT\ \ \ \ \ \ \ "{}\(\backslash\)033[2m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00010}\mbox{\hyperlink{console_8h_aab0b220352da214508a3426e00700d5d}{00010}}\ \textcolor{preprocessor}{\#define\ STYLE\_ITALIC\ \ \ \ \ \ "{}\(\backslash\)033[3m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00011}\mbox{\hyperlink{console_8h_a921c029ea8b2b3b621ba2b5d36380489}{00011}}\ \textcolor{preprocessor}{\#define\ STYLE\_UNDERLINED\ \ "{}\(\backslash\)033[4m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00012}\mbox{\hyperlink{console_8h_a53711348a801f028fe80a96a5401b923}{00012}}\ \textcolor{preprocessor}{\#define\ STYLE\_SLOW\_BLINK\ \ "{}\(\backslash\)033[5m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00013}\mbox{\hyperlink{console_8h_aafd75a8728fea5c6148ccf6e4d9a4e4e}{00013}}\ \textcolor{preprocessor}{\#define\ STYLE\_FAST\_BLINK\ \ "{}\(\backslash\)033[6m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00014}\mbox{\hyperlink{console_8h_a90d5198d0e1fdba8fc116dcafc4a3f55}{00014}}\ \textcolor{preprocessor}{\#define\ STYLE\_BLINK\_OFF\ \ \ "{}\(\backslash\)033[25m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00016}00016\ \textcolor{comment}{//\ Text\ colors:}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00017}\mbox{\hyperlink{console_8h_aba2a7fe77a7501e5844370eec0185207}{00017}}\ \textcolor{preprocessor}{\#define\ COLOR\_BLACK\ \ \ \ \ \ \ "{}\(\backslash\)033[30m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00018}\mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{00018}}\ \textcolor{preprocessor}{\#define\ COLOR\_RED\ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[31m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00019}\mbox{\hyperlink{console_8h_afc9149f5de51bd9ac4f5ebbfa153f018}{00019}}\ \textcolor{preprocessor}{\#define\ COLOR\_GREEN\ \ \ \ \ \ \ "{}\(\backslash\)033[32m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00020}\mbox{\hyperlink{console_8h_a4534b577b74a58b0f4b7be027af664e0}{00020}}\ \textcolor{preprocessor}{\#define\ COLOR\_YELLOW\ \ \ \ \ \ "{}\(\backslash\)033[93m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00021}\mbox{\hyperlink{console_8h_a23c70d699a5a775bc2e1ebeb8603f630}{00021}}\ \textcolor{preprocessor}{\#define\ COLOR\_BLUE\ \ \ \ \ \ \ \ "{}\(\backslash\)033[94m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00022}\mbox{\hyperlink{console_8h_a9b44987ffdc2af19b635206b94334b69}{00022}}\ \textcolor{preprocessor}{\#define\ COLOR\_WHITE\ \ \ \ \ \ \ "{}\(\backslash\)033[97m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00024}00024\ \textcolor{comment}{//\ Background\ colors:}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00025}\mbox{\hyperlink{console_8h_a4a4890b94c4627eb51a3b82cb3138203}{00025}}\ \textcolor{preprocessor}{\#define\ BACK\_COLOR\_BLACK\ \ "{}\(\backslash\)033[40m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00026}\mbox{\hyperlink{console_8h_a0162bca1cd5aa86347d936ab7b5f6e4e}{00026}}\ \textcolor{preprocessor}{\#define\ BACK\_COLOR\_RED\ \ \ \ "{}\(\backslash\)033[41m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00027}\mbox{\hyperlink{console_8h_a40365adf0b534eaad84b2eabaaab9525}{00027}}\ \textcolor{preprocessor}{\#define\ BACK\_COLOR\_GREEN\ \ "{}\(\backslash\)033[42m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00028}\mbox{\hyperlink{console_8h_a4b7dd4f774b1503f3cef732ee3bfa76f}{00028}}\ \textcolor{preprocessor}{\#define\ BACK\_COLOR\_YELLOW\ "{}\(\backslash\)033[103m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00029}\mbox{\hyperlink{console_8h_abbe80bec2f0ecc0d76bd8be9ff9e5585}{00029}}\ \textcolor{preprocessor}{\#define\ BACK\_COLOR\_BLUE\ \ \ "{}\(\backslash\)033[104m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00030}\mbox{\hyperlink{console_8h_adcfd786c497276c69d962d2a90b531a2}{00030}}\ \textcolor{preprocessor}{\#define\ BACK\_COLOR\_WHITE\ \ "{}\(\backslash\)033[107m"{}}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00032}00032\ \textcolor{comment}{//\ Macros:}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00033}\mbox{\hyperlink{console_8h_ad220b7c98ce4bd06bf25860ca62d7aba}{00033}}\ \textcolor{preprocessor}{\#define\ CONSOLE\_RED(str)\ \ \ COLOR\_RED\ str\ STYLE\_RESET}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00034}\mbox{\hyperlink{console_8h_a3d65c0a458538bfc412e586e89dbf130}{00034}}\ \textcolor{preprocessor}{\#define\ CONSOLE\_GREEN(str)\ COLOR\_GREEN\ str\ STYLE\_RESET}}
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{console_8h_source_l00036}00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ COSOLE\_H\_}}
+
+\end{DoxyCode}

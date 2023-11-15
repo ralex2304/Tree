@@ -1,0 +1,195 @@
+\doxysection{src/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+{\ttfamily \#include "{}log/log.\+h"{}}\newline
+{\ttfamily \#include "{}tree.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{main_8cpp_a468262eb5368d09c2dddc4e5ed3d1c63}{int\+\_\+dtor}} (void \texorpdfstring{$\ast$}{*}elem)
+\item 
+bool \mbox{\hyperlink{main_8cpp_a91a85896133196cfa1d5e3161eef4c63}{int\+\_\+verify}} (void \texorpdfstring{$\ast$}{*}elem)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_a590c0827253a6f7a392ba9bd6c2b39aa}{int\+\_\+str}} (const void \texorpdfstring{$\ast$}{*}elem)
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structLogFileData}{Log\+File\+Data}} \mbox{\hyperlink{main_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\+\_\+file}} = \{"{}log"{}\}
+\item 
+const int \mbox{\hyperlink{main_8cpp_a72cb9d9634ba1c64bca895929d3c9edc}{INT\+\_\+\+POISON\+\_\+\+VAL}} = \+\_\+\+\_\+\+INT\+\_\+\+MAX\+\_\+\+\_\+ -\/ 13
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a468262eb5368d09c2dddc4e5ed3d1c63}\label{main_8cpp_a468262eb5368d09c2dddc4e5ed3d1c63} 
+\index{main.cpp@{main.cpp}!int\_dtor@{int\_dtor}}
+\index{int\_dtor@{int\_dtor}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{int\_dtor()}{int\_dtor()}}
+{\footnotesize\ttfamily bool int\+\_\+dtor (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ assert(elem);}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ *((\textcolor{keywordtype}{int}*)elem)\ =\ \mbox{\hyperlink{main_8cpp_a72cb9d9634ba1c64bca895929d3c9edc}{INT\_POISON\_VAL}};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{main_8cpp_source_l00006}{INT\+\_\+\+POISON\+\_\+\+VAL}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00038}{main()}}.
+
+\Hypertarget{main_8cpp_a590c0827253a6f7a392ba9bd6c2b39aa}\label{main_8cpp_a590c0827253a6f7a392ba9bd6c2b39aa} 
+\index{main.cpp@{main.cpp}!int\_str@{int\_str}}
+\index{int\_str@{int\_str}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{int\_str()}{int\_str()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} int\+\_\+str (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ MAX\_INT\_STR\_LEN\ =\ 15;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{char}*\ str\ =\ (\textcolor{keywordtype}{char}*)calloc(MAX\_INT\_STR\_LEN,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ snprintf(str,\ MAX\_INT\_STR\_LEN\ -\/\ 1,\ \textcolor{stringliteral}{"{}\%d"{}},\ *((\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*)elem));}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00038}{main()}}.
+
+\Hypertarget{main_8cpp_a91a85896133196cfa1d5e3161eef4c63}\label{main_8cpp_a91a85896133196cfa1d5e3161eef4c63} 
+\index{main.cpp@{main.cpp}!int\_verify@{int\_verify}}
+\index{int\_verify@{int\_verify}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{int\_verify()}{int\_verify()}}
+{\footnotesize\ttfamily bool int\+\_\+verify (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (elem\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (*((\textcolor{keywordtype}{int}*)elem)\ ==\ \mbox{\hyperlink{main_8cpp_a72cb9d9634ba1c64bca895929d3c9edc}{INT\_POISON\_VAL}})}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{main_8cpp_source_l00006}{INT\+\_\+\+POISON\+\_\+\+VAL}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00038}{main()}}.
+
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{log_8cpp_a14e1237e4072873a2976b48d52b10429}{log\_open\_file}}(\&\mbox{\hyperlink{main_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}},\ \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{structTree}{Tree}}\ tree\ =\ \{\};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{tree_8h_acf2fe97de02af9ac9b7942a6704be634}{TREE\_CTOR}}(\&tree,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ \&\mbox{\hyperlink{main_8cpp_a468262eb5368d09c2dddc4e5ed3d1c63}{int\_dtor}},\ \&\mbox{\hyperlink{main_8cpp_a91a85896133196cfa1d5e3161eef4c63}{int\_verify}},\ \&\mbox{\hyperlink{main_8cpp_a590c0827253a6f7a392ba9bd6c2b39aa}{int\_str}});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ push\_val\ =\ 10;}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{tree_8h_a939419ad7f924bf12c14f9d03499d95e}{tree\_insert\_root}}(\&tree,\ \&push\_val);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\_DUMP}}(\&tree);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ push\_val\ =\ 30;}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{tree_8cpp_ad58cb030ca24ed2a77d646d1c32e5254}{tree\_insert}}(\&tree,\ \&tree.\mbox{\hyperlink{structTree_ad920a273e774ac5b77296fc0d4aa2aef}{root}}-\/>\mbox{\hyperlink{structTreeNode_a71b4faa364404d671943562b352b1b74}{right}},\ tree.\mbox{\hyperlink{structTree_ad920a273e774ac5b77296fc0d4aa2aef}{root}},\ \&push\_val);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\_DUMP}}(\&tree);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ push\_val\ =\ 20;}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{tree_8cpp_ad58cb030ca24ed2a77d646d1c32e5254}{tree\_insert}}(\&tree,\ \&tree.\mbox{\hyperlink{structTree_ad920a273e774ac5b77296fc0d4aa2aef}{root}}-\/>\mbox{\hyperlink{structTreeNode_a5335e7d975822e87088ec2afdefb1736}{left}},\ tree.\mbox{\hyperlink{structTree_ad920a273e774ac5b77296fc0d4aa2aef}{root}},\ \&push\_val);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\_DUMP}}(\&tree);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{tree_8cpp_a9c53593019cf9c1278b2618c886bfc23}{tree\_delete}}(\&tree,\ \&tree.\mbox{\hyperlink{structTree_ad920a273e774ac5b77296fc0d4aa2aef}{root}}-\/>\mbox{\hyperlink{structTreeNode_a71b4faa364404d671943562b352b1b74}{right}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\_DUMP}}(\&tree);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{tree_8cpp_aeec2ee9e0a19cd7490733f737a45ff50}{tree\_dtor}}(\&tree);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{log_8cpp_a4294d549b20fd1af99c3fbee5cf4dc99}{log\_close\_file}}(\&\mbox{\hyperlink{main_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}});}
+\DoxyCodeLine{00066\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{main_8cpp_source_l00008}{int\+\_\+dtor()}}, \mbox{\hyperlink{main_8cpp_source_l00024}{int\+\_\+str()}}, \mbox{\hyperlink{main_8cpp_source_l00015}{int\+\_\+verify()}}, \mbox{\hyperlink{tree_8h_source_l00054}{Tree\+Node\+::left}}, \mbox{\hyperlink{log_8cpp_source_l00072}{log\+\_\+close\+\_\+file()}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, \mbox{\hyperlink{log_8cpp_source_l00026}{log\+\_\+open\+\_\+file()}}, \mbox{\hyperlink{tree_8h_source_l00055}{Tree\+Node\+::right}}, \mbox{\hyperlink{tree_8h_source_l00085}{Tree\+::root}}, \mbox{\hyperlink{tree_8h_source_l00297}{TREE\+\_\+\+CTOR}}, \mbox{\hyperlink{tree_8cpp_source_l00179}{tree\+\_\+delete()}}, \mbox{\hyperlink{tree_8cpp_source_l00071}{tree\+\_\+dtor()}}, \mbox{\hyperlink{tree_8h_source_l00305}{TREE\+\_\+\+DUMP}}, \mbox{\hyperlink{tree_8cpp_source_l00145}{tree\+\_\+insert()}}, and \mbox{\hyperlink{tree_8h_source_l00155}{tree\+\_\+insert\+\_\+root()}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8cpp_a72cb9d9634ba1c64bca895929d3c9edc}\label{main_8cpp_a72cb9d9634ba1c64bca895929d3c9edc} 
+\index{main.cpp@{main.cpp}!INT\_POISON\_VAL@{INT\_POISON\_VAL}}
+\index{INT\_POISON\_VAL@{INT\_POISON\_VAL}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{INT\_POISON\_VAL}{INT\_POISON\_VAL}}
+{\footnotesize\ttfamily const int INT\+\_\+\+POISON\+\_\+\+VAL = \+\_\+\+\_\+\+INT\+\_\+\+MAX\+\_\+\+\_\+ -\/ 13}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00008}{int\+\_\+dtor()}}, and \mbox{\hyperlink{main_8cpp_source_l00015}{int\+\_\+verify()}}.
+
+\Hypertarget{main_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}\label{main_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3} 
+\index{main.cpp@{main.cpp}!log\_file@{log\_file}}
+\index{log\_file@{log\_file}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{log\_file}{log\_file}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLogFileData}{Log\+File\+Data}} log\+\_\+file = \{"{}log"{}\}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \{\textcolor{stringliteral}{"{}log"{}}\};}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{log_8cpp_source_l00072}{log\+\_\+close\+\_\+file()}}, \mbox{\hyperlink{log_8cpp_source_l00050}{log\+\_\+create\+\_\+timestamp\+\_\+dir()}}, \mbox{\hyperlink{log_8cpp_source_l00026}{log\+\_\+open\+\_\+file()}}, \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}, \mbox{\hyperlink{main_8cpp_source_l00038}{main()}}, \mbox{\hyperlink{dump_8cpp_source_l00162}{tree\+\_\+dump()}}, \mbox{\hyperlink{dump_8cpp_source_l00285}{tree\+\_\+dump\+\_\+dot()}}, and \mbox{\hyperlink{dump_8cpp_source_l00332}{tree\+\_\+print\+\_\+error()}}.
+
