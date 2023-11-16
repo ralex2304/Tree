@@ -104,7 +104,7 @@ static int tree_node_ctor_(TreeNode** node, void* elem, size_t elem_size, TreeNo
         return res;
     }
 
-    (*node)->elem = *node + sizeof(TreeNode);
+    (*node)->elem = (char*)(*node) + sizeof(TreeNode);
     memcpy((*node)->elem, elem, elem_size);
 
     (*node)->parent = parent;

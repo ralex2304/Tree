@@ -39,30 +39,30 @@ false failure
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{log_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{log_8cpp_source}{log.\+cpp}}.
+Definition at line \mbox{\hyperlink{log_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{log_8cpp_source}{log.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ assert(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}});}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6cee51f74b20002956d076717f2a416c}{file}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ fclose(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6cee51f74b20002956d076717f2a416c}{file}})\ !=\ 0)\ \{}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Error\ closing\ log\_file\ file"{}});}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00078\ \ \ \ \ \}}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6cee51f74b20002956d076717f2a416c}{file}}\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ assert(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6cee51f74b20002956d076717f2a416c}{file}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ fclose(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6cee51f74b20002956d076717f2a416c}{file}})\ !=\ 0)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Error\ closing\ log\_file\ file"{}});}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6cee51f74b20002956d076717f2a416c}{file}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00086\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{log_8h_source_l00028}{Log\+File\+Data\+::file}}, and \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}.
+References \mbox{\hyperlink{log_8h_source_l00031}{Log\+File\+Data\+::file}}, and \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}.
 
 
 
-Referenced by \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}, and \mbox{\hyperlink{main_8cpp_source_l00038}{main()}}.
+Referenced by \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}.
 
 \Hypertarget{log_8cpp_a609dd627e34437a8d567e736d52d2f66}\label{log_8cpp_a609dd627e34437a8d567e736d52d2f66} 
 \index{log.cpp@{log.cpp}!log\_create\_dir@{log\_create\_dir}}
@@ -86,32 +86,35 @@ false
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{log_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{log_8cpp_source}{log.\+cpp}}.
+Definition at line \mbox{\hyperlink{log_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{log_8cpp_source}{log.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00085\ \ \ \ \ DIR*\ dir\ =\ opendir(dir\_name);}
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (dir)\ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ closedir(dir);}
-\DoxyCodeLine{00088\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ENOENT\ ==\ errno)\ \{}
-\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CreateDirectory(dir\_name,\ NULL)\ !=\ 0)\ \{}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Error\ creating\ dir"{}});}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//<\ \#ifndef\ \_WIN32}}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mkdir(dir\_name,\ 0744)\ !=\ 0)\ \{}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Error\ creating\ dir"{}});}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifdef\ \_WIN32}}
-\DoxyCodeLine{00100\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Error\ detecting\ directory"{}});}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00103\ \ \ \ \ \}}
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00105\ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ assert(dir\_name);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ DIR*\ dir\ =\ opendir(dir\_name);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{if}\ (dir)\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ closedir(dir);}
+\DoxyCodeLine{00095\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ENOENT\ ==\ errno)\ \{}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CreateDirectory(dir\_name,\ NULL)\ !=\ 0)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Error\ creating\ dir"{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//<\ \#ifndef\ \_WIN32}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mkdir(dir\_name,\ 0744)\ !=\ 0)\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Error\ creating\ dir"{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifdef\ \_WIN32}}
+\DoxyCodeLine{00107\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}Error\ detecting\ directory"{}});}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00112\ \}}
 
 \end{DoxyCode}
 
@@ -147,29 +150,33 @@ Definition at line \mbox{\hyperlink{log_8cpp_source_l00050}{50}} of file \mbox{\
 \DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00051\ \ \ \ \ assert(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}});}
 \DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}}[0]\ ==\ \textcolor{charliteral}{'\(\backslash\)0'})\ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ time\_t\ ltime\ =\ time(NULL);}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ tm*\ tm\ =\ localtime(\&ltime);}
+\DoxyCodeLine{00053\ \ \ \ \ time\_t\ ltime\ =\ time(NULL);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}}[0]\ ==\ \textcolor{charliteral}{'\(\backslash\)0'}\ ||\ ltime\ -\/\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a204a1bf7afd30702698b5a9732a7d1f6}{last\_write}}\ >\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_ae8da3a5dca4294186725f72fe5dad5b9}{LIFETIME}})\ \{}
 \DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a08317b020a10b14f4a31d35d4c2237fb}{dir}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}},\ \textcolor{stringliteral}{"{}/"{}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ snprintf(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}}\ +\ str\_len,\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}}\ -\/\ str\_len,}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\%02d-\/\%02d-\/\%04d\_\%02d-\/\%02d-\/\%02d"{}},\ tm-\/>tm\_mday,\ tm-\/>tm\_mon\ +\ 1,\ tm-\/>tm\_year\ +\ 1900,}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tm-\/>tm\_hour,\ tm-\/>tm\_min,\ tm-\/>tm\_sec);}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}},\ \textcolor{stringliteral}{"{}/"{}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
-\DoxyCodeLine{00064\ \ \ \ \ \}}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{log_8cpp_a609dd627e34437a8d567e736d52d2f66}{log\_create\_dir}}(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}}))}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ tm*\ tm\ =\ localtime(\&ltime);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a08317b020a10b14f4a31d35d4c2237fb}{dir}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}},\ \textcolor{stringliteral}{"{}/"{}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ snprintf(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}}\ +\ str\_len,\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}}\ -\/\ str\_len,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\%02d-\/\%02d-\/\%04d\_\%02d-\/\%02d-\/\%02d"{}},\ tm-\/>tm\_mday,\ tm-\/>tm\_mon\ +\ 1,\ tm-\/>tm\_year\ +\ 1900,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tm-\/>tm\_hour,\ tm-\/>tm\_min,\ tm-\/>tm\_sec);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}},\ \textcolor{stringliteral}{"{}/"{}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a204a1bf7afd30702698b5a9732a7d1f6}{last\_write}}\ =\ ltime;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{log_8cpp_a609dd627e34437a8d567e736d52d2f66}{log\_create\_dir}}(\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}-\/>\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}}))}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00074\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{log_8h_source_l00027}{Log\+File\+Data\+::dir}}, \mbox{\hyperlink{log_8cpp_source_l00084}{log\+\_\+create\+\_\+dir()}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, \mbox{\hyperlink{log_8h_source_l00030}{Log\+File\+Data\+::\+MAX\+\_\+\+FILENAME\+\_\+\+LEN}}, \mbox{\hyperlink{text__lib_8cpp_source_l00003}{strncat\+\_\+len()}}, and \mbox{\hyperlink{log_8h_source_l00031}{Log\+File\+Data\+::timestamp\+\_\+dir}}.
+References \mbox{\hyperlink{log_8h_source_l00030}{Log\+File\+Data\+::dir}}, \mbox{\hyperlink{log_8h_source_l00036}{Log\+File\+Data\+::last\+\_\+write}}, \mbox{\hyperlink{log_8h_source_l00028}{Log\+File\+Data\+::\+LIFETIME}}, \mbox{\hyperlink{log_8cpp_source_l00088}{log\+\_\+create\+\_\+dir()}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, \mbox{\hyperlink{log_8h_source_l00033}{Log\+File\+Data\+::\+MAX\+\_\+\+FILENAME\+\_\+\+LEN}}, \mbox{\hyperlink{text__lib_8cpp_source_l00003}{strncat\+\_\+len()}}, and \mbox{\hyperlink{log_8h_source_l00035}{Log\+File\+Data\+::timestamp\+\_\+dir}}.
 
 
 
@@ -230,11 +237,11 @@ Definition at line \mbox{\hyperlink{log_8cpp_source_l00026}{26}} of file \mbox{\
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{log_8h_source_l00027}{Log\+File\+Data\+::dir}}, \mbox{\hyperlink{log_8h_source_l00028}{Log\+File\+Data\+::file}}, \mbox{\hyperlink{log_8cpp_source_l00084}{log\+\_\+create\+\_\+dir()}}, \mbox{\hyperlink{log_8cpp_source_l00050}{log\+\_\+create\+\_\+timestamp\+\_\+dir()}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, \mbox{\hyperlink{log_8h_source_l00030}{Log\+File\+Data\+::\+MAX\+\_\+\+FILENAME\+\_\+\+LEN}}, \mbox{\hyperlink{text__lib_8cpp_source_l00003}{strncat\+\_\+len()}}, and \mbox{\hyperlink{log_8h_source_l00031}{Log\+File\+Data\+::timestamp\+\_\+dir}}.
+References \mbox{\hyperlink{log_8h_source_l00030}{Log\+File\+Data\+::dir}}, \mbox{\hyperlink{log_8h_source_l00031}{Log\+File\+Data\+::file}}, \mbox{\hyperlink{log_8cpp_source_l00088}{log\+\_\+create\+\_\+dir()}}, \mbox{\hyperlink{log_8cpp_source_l00050}{log\+\_\+create\+\_\+timestamp\+\_\+dir()}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, \mbox{\hyperlink{log_8h_source_l00033}{Log\+File\+Data\+::\+MAX\+\_\+\+FILENAME\+\_\+\+LEN}}, \mbox{\hyperlink{text__lib_8cpp_source_l00003}{strncat\+\_\+len()}}, and \mbox{\hyperlink{log_8h_source_l00035}{Log\+File\+Data\+::timestamp\+\_\+dir}}.
 
 
 
-Referenced by \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}, and \mbox{\hyperlink{main_8cpp_source_l00038}{main()}}.
+Referenced by \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}.
 
 \Hypertarget{log_8cpp_adab5e89ed01fa9fb9c55544d3a21629b}\label{log_8cpp_adab5e89ed01fa9fb9c55544d3a21629b} 
 \index{log.cpp@{log.cpp}!log\_printf@{log\_printf}}
@@ -290,7 +297,7 @@ Definition at line \mbox{\hyperlink{log_8cpp_source_l00003}{3}} of file \mbox{\h
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{log_8h_source_l00028}{Log\+File\+Data\+::file}}, \mbox{\hyperlink{log_8cpp_source_l00072}{log\+\_\+close\+\_\+file()}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, and \mbox{\hyperlink{log_8cpp_source_l00026}{log\+\_\+open\+\_\+file()}}.
+References \mbox{\hyperlink{log_8h_source_l00031}{Log\+File\+Data\+::file}}, \mbox{\hyperlink{log_8cpp_source_l00076}{log\+\_\+close\+\_\+file()}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, and \mbox{\hyperlink{log_8cpp_source_l00026}{log\+\_\+open\+\_\+file()}}.
 
 
 

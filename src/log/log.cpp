@@ -50,8 +50,10 @@ bool log_open_file(LogFileData* log_file, const char* mode) {
 bool log_create_timestamp_dir(LogFileData* log_file) {
     assert(log_file);
 
-    if (log_file->timestamp_dir[0] == '\0') {
-        time_t ltime = time(NULL);
+    time_t ltime = time(NULL);
+
+    if (log_file->timestamp_dir[0] == '\0' || ltime - log_file->last_write > log_file->LIFETIME) {
+
         tm* tm = localtime(&ltime);
 
         size_t str_len = strncat_len(log_file->timestamp_dir, log_file->dir, log_file->MAX_FILENAME_LEN);
@@ -62,6 +64,8 @@ bool log_create_timestamp_dir(LogFileData* log_file) {
                                                  tm->tm_hour, tm->tm_min, tm->tm_sec);
         str_len = strncat_len(log_file->timestamp_dir, "/", log_file->MAX_FILENAME_LEN);
     }
+
+    log_file->last_write = ltime;
 
     if (!log_create_dir(log_file->timestamp_dir))
         return false;
@@ -82,7 +86,10 @@ bool log_close_file(LogFileData* log_file) {
 }
 
 bool log_create_dir(const char* dir_name) {
+    assert(dir_name);
+
     DIR* dir = opendir(dir_name);
+
     if (dir) {
         closedir(dir);
     } else if (ENOENT == errno) {

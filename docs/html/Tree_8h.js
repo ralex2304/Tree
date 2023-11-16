@@ -4,7 +4,7 @@ var Tree_8h =
     [ "Tree", "structTree.html", "structTree" ],
     [ "TREE_ASSERT", "Tree_8h.html#a560f1202cf06f352496c7821fc71848c", null ],
     [ "TREE_ASSERT_NO_TRAVERSAL", "Tree_8h.html#a234a20335da9ea31781fd5deae27964c", null ],
-    [ "TREE_CTOR", "Tree_8h.html#aa937b012b2882532e66b1a5b1bdf666d", null ],
+    [ "TREE_CTOR", "Tree_8h.html#acf2fe97de02af9ac9b7942a6704be634", null ],
     [ "TREE_DUMP", "Tree_8h.html#a5845364299d9da46aa8484ef293827f6", null ],
     [ "TREE_NODE_ASSERT", "Tree_8h.html#ad4d55b8fccbebac05f1476379b9473de", null ],
     [ "TREE_NODE_VERIFY", "Tree_8h.html#a5f2ae652577a32ac7670d2e3e15b602f", null ],

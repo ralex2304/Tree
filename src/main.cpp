@@ -36,8 +36,6 @@ inline char* int_str(const void* elem) {
 
 
 int main() {
-    log_open_file(&log_file, "wb");
-
     Tree tree = {};
     TREE_CTOR(&tree, sizeof(int), &int_dtor, &int_verify, &int_str);
 
@@ -61,6 +59,4 @@ int main() {
     TREE_DUMP(&tree);
 
     tree_dtor(&tree);
-
-    log_close_file(&log_file);
 }

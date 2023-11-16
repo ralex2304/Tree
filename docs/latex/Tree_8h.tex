@@ -14,7 +14,7 @@ struct \mbox{\hyperlink{structTree}{Tree}}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{Tree_8h_aa937b012b2882532e66b1a5b1bdf666d}{TREE\+\_\+\+CTOR}}(tree,  elem\+\_\+size,  dtor,  verify,  cstr)~\mbox{\hyperlink{Tree_8h_abea594b38c4aa501efcaef8476970696}{tree\+\_\+ctor}}(tree, elem\+\_\+size, dtor)
+\#define \mbox{\hyperlink{Tree_8h_acf2fe97de02af9ac9b7942a6704be634}{TREE\+\_\+\+CTOR}}(tree,  elem\+\_\+size,  dtor,  verify,  val\+\_\+str)~\mbox{\hyperlink{Tree_8h_abea594b38c4aa501efcaef8476970696}{tree\+\_\+ctor}}(tree, elem\+\_\+size, dtor)
 \begin{DoxyCompactList}\small\item\em \doxylink{structTree}{Tree} constructor. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{Tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\+\_\+\+DUMP}}(tree)~(void) 0
 \begin{DoxyCompactList}\small\item\em (Disabled) \doxylink{structTree}{Tree} dump \end{DoxyCompactList}\item 
@@ -138,11 +138,11 @@ Definition at line \mbox{\hyperlink{Tree_8h_source_l00427}{427}} of file \mbox{\
 
 Definition at line \mbox{\hyperlink{Tree_8h_source_l00434}{434}} of file \mbox{\hyperlink{Tree_8h_source}{Tree.\+h}}.
 
-\Hypertarget{Tree_8h_aa937b012b2882532e66b1a5b1bdf666d}\label{Tree_8h_aa937b012b2882532e66b1a5b1bdf666d} 
+\Hypertarget{Tree_8h_acf2fe97de02af9ac9b7942a6704be634}\label{Tree_8h_acf2fe97de02af9ac9b7942a6704be634} 
 \index{Tree.h@{Tree.h}!TREE\_CTOR@{TREE\_CTOR}}
 \index{TREE\_CTOR@{TREE\_CTOR}!Tree.h@{Tree.h}}
 \doxysubsubsection{\texorpdfstring{TREE\_CTOR}{TREE\_CTOR}}
-{\footnotesize\ttfamily \#define TREE\+\_\+\+CTOR(\begin{DoxyParamCaption}\item[{}]{tree,  }\item[{}]{elem\+\_\+size,  }\item[{}]{dtor,  }\item[{}]{verify,  }\item[{}]{cstr }\end{DoxyParamCaption})~\mbox{\hyperlink{Tree_8h_abea594b38c4aa501efcaef8476970696}{tree\+\_\+ctor}}(tree, elem\+\_\+size, dtor)}
+{\footnotesize\ttfamily \#define TREE\+\_\+\+CTOR(\begin{DoxyParamCaption}\item[{}]{tree,  }\item[{}]{elem\+\_\+size,  }\item[{}]{dtor,  }\item[{}]{verify,  }\item[{}]{val\+\_\+str }\end{DoxyParamCaption})~\mbox{\hyperlink{Tree_8h_abea594b38c4aa501efcaef8476970696}{tree\+\_\+ctor}}(tree, elem\+\_\+size, dtor)}
 
 
 
@@ -682,7 +682,7 @@ Referenced by \mbox{\hyperlink{main_8cpp_source_l00038}{main()}}.
 \begin{DoxyParams}{Parameters}
 {\em tree} & \\
 \hline
-{\em node} & start point \\
+{\em root} & start point \\
 \hline
 {\em action} & infix action \\
 \hline
@@ -861,7 +861,7 @@ References \mbox{\hyperlink{Tree_8h_source_l00087}{Tree\+::node\+\_\+elem\+\_\+t
 
 
 
-Referenced by \mbox{\hyperlink{tree_8cpp_source_l00050}{tree\+\_\+ctor()}}.
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00050}{tree\+\_\+ctor()}}, \mbox{\hyperlink{dump_8cpp_source_l00162}{tree\+\_\+dump()}}, and \mbox{\hyperlink{tree_8cpp_source_l00364}{tree\+\_\+verify()}}.
 
 \Hypertarget{Tree_8h_a8ad22288d300cf3680dfc4899ef54ee8}\label{Tree_8h_a8ad22288d300cf3680dfc4899ef54ee8} 
 \index{Tree.h@{Tree.h}!tree\_node\_is\_initialised@{tree\_node\_is\_initialised}}
@@ -898,6 +898,10 @@ Definition at line \mbox{\hyperlink{Tree_8h_source_l00210}{210}} of file \mbox{\
 
 References \mbox{\hyperlink{Tree_8h_source_l00050}{Tree\+Node\+::elem}}, \mbox{\hyperlink{Tree_8h_source_l00054}{Tree\+Node\+::left}}, and \mbox{\hyperlink{Tree_8h_source_l00055}{Tree\+Node\+::right}}.
 
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00386}{tree\+\_\+node\+\_\+verify()}}.
+
 \Hypertarget{Tree_8h_aa0035e8642848c3c9305e43b5701129c}\label{Tree_8h_aa0035e8642848c3c9305e43b5701129c} 
 \index{Tree.h@{Tree.h}!tree\_postorder@{tree\_postorder}}
 \index{tree\_postorder@{tree\_postorder}!Tree.h@{Tree.h}}
@@ -912,7 +916,7 @@ References \mbox{\hyperlink{Tree_8h_source_l00050}{Tree\+Node\+::elem}}, \mbox{\
 \begin{DoxyParams}{Parameters}
 {\em tree} & \\
 \hline
-{\em node} & start point \\
+{\em root} & start point \\
 \hline
 {\em action} & postfix action \\
 \hline
@@ -970,7 +974,7 @@ References \mbox{\hyperlink{Tree_8h_source_l00066}{Tree\+::\+OK}}, \mbox{\hyperl
 \begin{DoxyParams}{Parameters}
 {\em tree} & \\
 \hline
-{\em node} & start point \\
+{\em root} & start point \\
 \hline
 {\em action} & prefix action \\
 \hline
@@ -1013,6 +1017,10 @@ Definition at line \mbox{\hyperlink{tree_8cpp_source_l00273}{273}} of file \mbox
 
 
 References \mbox{\hyperlink{Tree_8h_source_l00066}{Tree\+::\+OK}}, \mbox{\hyperlink{Tree_8h_afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32}{ROOT}}, and \mbox{\hyperlink{Tree_8h_source_l00434}{TREE\+\_\+\+ASSERT\+\_\+\+NO\+\_\+\+TRAVERSAL}}.
+
+
+
+Referenced by \mbox{\hyperlink{dump_8cpp_source_l00285}{tree\+\_\+dump\+\_\+dot()}}.
 
 \Hypertarget{Tree_8h_a75e7ad4be8361db4261586d1d0244da0}\label{Tree_8h_a75e7ad4be8361db4261586d1d0244da0} 
 \index{Tree.h@{Tree.h}!tree\_traversal@{tree\_traversal}}
@@ -1069,4 +1077,8 @@ Definition at line \mbox{\hyperlink{tree_8cpp_source_l00252}{252}} of file \mbox
 
 
 References \mbox{\hyperlink{Tree_8h_source_l00066}{Tree\+::\+OK}}, \mbox{\hyperlink{Tree_8h_afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32}{ROOT}}, and \mbox{\hyperlink{Tree_8h_source_l00434}{TREE\+\_\+\+ASSERT\+\_\+\+NO\+\_\+\+TRAVERSAL}}.
+
+
+
+Referenced by \mbox{\hyperlink{dump_8cpp_source_l00162}{tree\+\_\+dump()}}.
 

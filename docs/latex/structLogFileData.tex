@@ -17,9 +17,13 @@ const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structLogFileData_a08317b
 FILE \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structLogFileData_a6cee51f74b20002956d076717f2a416c}{file}} = nullptr
 \item 
 char \mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\+\_\+dir}} \mbox{[}\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\+\_\+\+FILENAME\+\_\+\+LEN}}\mbox{]} = \{\}
+\item 
+time\+\_\+t \mbox{\hyperlink{structLogFileData_a204a1bf7afd30702698b5a9732a7d1f6}{last\+\_\+write}} = 0
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
+\item 
+static const long \mbox{\hyperlink{structLogFileData_ae8da3a5dca4294186725f72fe5dad5b9}{LIFETIME}} = 1
 \item 
 static const size\+\_\+t \mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\+\_\+\+FILENAME\+\_\+\+LEN}} = 256
 \end{DoxyCompactItemize}
@@ -46,7 +50,7 @@ Definition at line \mbox{\hyperlink{log_8h_source_l00026}{26}} of file \mbox{\hy
 
 
 
-Definition at line \mbox{\hyperlink{log_8h_source_l00027}{27}} of file \mbox{\hyperlink{log_8h_source}{log.\+h}}.
+Definition at line \mbox{\hyperlink{log_8h_source_l00030}{30}} of file \mbox{\hyperlink{log_8h_source}{log.\+h}}.
 
 
 
@@ -60,11 +64,39 @@ Referenced by \mbox{\hyperlink{log_8cpp_source_l00050}{log\+\_\+create\+\_\+time
 
 
 
+Definition at line \mbox{\hyperlink{log_8h_source_l00031}{31}} of file \mbox{\hyperlink{log_8h_source}{log.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{log_8cpp_source_l00076}{log\+\_\+close\+\_\+file()}}, \mbox{\hyperlink{log_8cpp_source_l00026}{log\+\_\+open\+\_\+file()}}, and \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}.
+
+\Hypertarget{structLogFileData_a204a1bf7afd30702698b5a9732a7d1f6}\label{structLogFileData_a204a1bf7afd30702698b5a9732a7d1f6} 
+\index{LogFileData@{LogFileData}!last\_write@{last\_write}}
+\index{last\_write@{last\_write}!LogFileData@{LogFileData}}
+\doxysubsubsection{\texorpdfstring{last\_write}{last\_write}}
+{\footnotesize\ttfamily time\+\_\+t Log\+File\+Data\+::last\+\_\+write = 0}
+
+
+
+Definition at line \mbox{\hyperlink{log_8h_source_l00036}{36}} of file \mbox{\hyperlink{log_8h_source}{log.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{log_8cpp_source_l00050}{log\+\_\+create\+\_\+timestamp\+\_\+dir()}}.
+
+\Hypertarget{structLogFileData_ae8da3a5dca4294186725f72fe5dad5b9}\label{structLogFileData_ae8da3a5dca4294186725f72fe5dad5b9} 
+\index{LogFileData@{LogFileData}!LIFETIME@{LIFETIME}}
+\index{LIFETIME@{LIFETIME}!LogFileData@{LogFileData}}
+\doxysubsubsection{\texorpdfstring{LIFETIME}{LIFETIME}}
+{\footnotesize\ttfamily const long Log\+File\+Data\+::\+LIFETIME = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
 Definition at line \mbox{\hyperlink{log_8h_source_l00028}{28}} of file \mbox{\hyperlink{log_8h_source}{log.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{log_8cpp_source_l00072}{log\+\_\+close\+\_\+file()}}, \mbox{\hyperlink{log_8cpp_source_l00026}{log\+\_\+open\+\_\+file()}}, and \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}.
+Referenced by \mbox{\hyperlink{log_8cpp_source_l00050}{log\+\_\+create\+\_\+timestamp\+\_\+dir()}}.
 
 \Hypertarget{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}\label{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5} 
 \index{LogFileData@{LogFileData}!MAX\_FILENAME\_LEN@{MAX\_FILENAME\_LEN}}
@@ -74,7 +106,7 @@ Referenced by \mbox{\hyperlink{log_8cpp_source_l00072}{log\+\_\+close\+\_\+file(
 
 
 
-Definition at line \mbox{\hyperlink{log_8h_source_l00030}{30}} of file \mbox{\hyperlink{log_8h_source}{log.\+h}}.
+Definition at line \mbox{\hyperlink{log_8h_source_l00033}{33}} of file \mbox{\hyperlink{log_8h_source}{log.\+h}}.
 
 
 
@@ -88,11 +120,11 @@ Referenced by \mbox{\hyperlink{log_8cpp_source_l00050}{log\+\_\+create\+\_\+time
 
 
 
-Definition at line \mbox{\hyperlink{log_8h_source_l00031}{31}} of file \mbox{\hyperlink{log_8h_source}{log.\+h}}.
+Definition at line \mbox{\hyperlink{log_8h_source_l00035}{35}} of file \mbox{\hyperlink{log_8h_source}{log.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00031\ \{\};}
+\DoxyCodeLine{00035\ \{\};}
 
 \end{DoxyCode}
 

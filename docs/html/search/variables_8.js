@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['right_0',['right',['../structTreeNode.html#a71b4faa364404d671943562b352b1b74',1,'TreeNode']]],
-  ['root_1',['root',['../structTree.html#ad920a273e774ac5b77296fc0d4aa2aef',1,'Tree']]]
+  ['right_0',['right',['../structTreeNode.html#a4ee04f4c92e653bced3aca6723df1c08',1,'TreeNode']]],
+  ['root_1',['root',['../structTree.html#a6476a2d8d5ce40b66d725a99af143f65',1,'Tree']]]
 ];

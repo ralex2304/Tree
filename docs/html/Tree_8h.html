@@ -116,9 +116,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aa937b012b2882532e66b1a5b1bdf666d" id="r_aa937b012b2882532e66b1a5b1bdf666d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tree_8h.html#aa937b012b2882532e66b1a5b1bdf666d">TREE_CTOR</a>(tree,  elem_size,  dtor,  verify,  cstr)&#160;&#160;&#160;<a class="el" href="Tree_8h.html#abea594b38c4aa501efcaef8476970696">tree_ctor</a>(tree, elem_size, dtor)</td></tr>
-<tr class="memdesc:aa937b012b2882532e66b1a5b1bdf666d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structTree.html" title="Specifies tree data.">Tree</a> constructor.  <br /></td></tr>
-<tr class="separator:aa937b012b2882532e66b1a5b1bdf666d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf2fe97de02af9ac9b7942a6704be634" id="r_acf2fe97de02af9ac9b7942a6704be634"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tree_8h.html#acf2fe97de02af9ac9b7942a6704be634">TREE_CTOR</a>(tree,  elem_size,  dtor,  verify,  val_str)&#160;&#160;&#160;<a class="el" href="Tree_8h.html#abea594b38c4aa501efcaef8476970696">tree_ctor</a>(tree, elem_size, dtor)</td></tr>
+<tr class="memdesc:acf2fe97de02af9ac9b7942a6704be634"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structTree.html" title="Specifies tree data.">Tree</a> constructor.  <br /></td></tr>
+<tr class="separator:acf2fe97de02af9ac9b7942a6704be634"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5845364299d9da46aa8484ef293827f6" id="r_a5845364299d9da46aa8484ef293827f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tree_8h.html#a5845364299d9da46aa8484ef293827f6">TREE_DUMP</a>(tree)&#160;&#160;&#160;(void) 0</td></tr>
 <tr class="memdesc:a5845364299d9da46aa8484ef293827f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Disabled) <a class="el" href="structTree.html" title="Specifies tree data.">Tree</a> dump  <br /></td></tr>
 <tr class="separator:a5845364299d9da46aa8484ef293827f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -284,8 +284,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa937b012b2882532e66b1a5b1bdf666d" name="aa937b012b2882532e66b1a5b1bdf666d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa937b012b2882532e66b1a5b1bdf666d">&#9670;&#160;</a></span>TREE_CTOR</h2>
+<a id="acf2fe97de02af9ac9b7942a6704be634" name="acf2fe97de02af9ac9b7942a6704be634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf2fe97de02af9ac9b7942a6704be634">&#9670;&#160;</a></span>TREE_CTOR</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -318,7 +318,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">cstr&#160;</td>
+          <td class="paramname">val_str&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -981,7 +981,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tree</td><td></td></tr>
-    <tr><td class="paramname">node</td><td>start point </td></tr>
+    <tr><td class="paramname">root</td><td>start point </td></tr>
     <tr><td class="paramname">action</td><td>infix action </td></tr>
     <tr><td class="paramname">...</td><td></td></tr>
   </table>
@@ -1194,7 +1194,7 @@ false </dd></dl>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Tree_8h_source.html#l00087">Tree::node_elem_t_dtor</a>, <a class="el" href="Tree_8h_source.html#l00085">Tree::root</a>, <a class="el" href="Tree_8h_source.html#l00083">Tree::size</a>, and <a class="el" href="Tree_8h_source.html#l00062">Tree::UNITIALISED_VAL</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00050">tree_ctor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00050">tree_ctor()</a>, <a class="el" href="dump_8cpp_source.html#l00162">tree_dump()</a>, and <a class="el" href="tree_8cpp_source.html#l00364">tree_verify()</a>.</p>
 
 </div>
 </div>
@@ -1243,6 +1243,8 @@ false </dd></dl>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Tree_8h_source.html#l00050">TreeNode::elem</a>, <a class="el" href="Tree_8h_source.html#l00054">TreeNode::left</a>, and <a class="el" href="Tree_8h_source.html#l00055">TreeNode::right</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00386">tree_node_verify()</a>.</p>
+
 </div>
 </div>
 <a id="aa0035e8642848c3c9305e43b5701129c" name="aa0035e8642848c3c9305e43b5701129c"></a>
@@ -1287,7 +1289,7 @@ false </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tree</td><td></td></tr>
-    <tr><td class="paramname">node</td><td>start point </td></tr>
+    <tr><td class="paramname">root</td><td>start point </td></tr>
     <tr><td class="paramname">action</td><td>postfix action </td></tr>
     <tr><td class="paramname">...</td><td></td></tr>
   </table>
@@ -1365,7 +1367,7 @@ false </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tree</td><td></td></tr>
-    <tr><td class="paramname">node</td><td>start point </td></tr>
+    <tr><td class="paramname">root</td><td>start point </td></tr>
     <tr><td class="paramname">action</td><td>prefix action </td></tr>
     <tr><td class="paramname">...</td><td></td></tr>
   </table>
@@ -1398,6 +1400,8 @@ false </dd></dl>
 <div class="line"><span class="lineno">  294</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Tree_8h_source.html#l00066">Tree::OK</a>, <a class="el" href="Tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32">ROOT</a>, and <a class="el" href="Tree_8h_source.html#l00434">TREE_ASSERT_NO_TRAVERSAL</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="dump_8cpp_source.html#l00285">tree_dump_dot()</a>.</p>
 
 </div>
 </div>
@@ -1474,6 +1478,8 @@ false </dd></dl>
 <div class="line"><span class="lineno">  271</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Tree_8h_source.html#l00066">Tree::OK</a>, <a class="el" href="Tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32">ROOT</a>, and <a class="el" href="Tree_8h_source.html#l00434">TREE_ASSERT_NO_TRAVERSAL</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="dump_8cpp_source.html#l00162">tree_dump()</a>.</p>
 
 </div>
 </div>

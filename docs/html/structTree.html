@@ -101,61 +101,208 @@ $(document).ready(function(){initNavTree('structTree.html',''); initResizable();
 <p>Specifies tree data.  
  <a href="structTree.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="tree_8h_source.html">tree.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Tree_8h_source.html">Tree.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a817c3cb647deac6a6be0155631f2e06d" id="r_a817c3cb647deac6a6be0155631f2e06d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06d">Results</a> { <br />
-&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dadec45fbbc8dc5478e95b62868a1df518">OK</a> = 0x000000
-, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da230c1b7dac014107f47a13b23b44a400">ALLOC_ERR</a> = 0x000002
-, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da40df8d3756e6f65a209e0e2c3e88da6b">ALREADY_INITIALISED</a> = 0x000004
-, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da211c6e7b121e396e9f317b75f61cd7c8">UNITIALISED</a> = 0x000008
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">OK</a> = 0x000000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">ALLOC_ERR</a> = 0x000002
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">ALREADY_INITIALISED</a> = 0x000004
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">UNITIALISED</a> = 0x000008
 , <br />
-&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dabf395749cd36fc4a8768b6c6521e1aac">INVALID_NODE_PTR</a> = 0x000010
-, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab12cd63119e06330d8d56f54d7439174">POISON_VAL_FOUND</a> = 0x000020
-, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da76e7c56197ef582b72485cc856c99e7c">INVALID_SIZE</a> = 0x000800
-, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da4297341b72b05aabd0fbde46656c2371">NEGATIVE_SIZE</a> = 0x001000
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">INVALID_NODE_PTR</a> = 0x000010
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">POISON_VAL_FOUND</a> = 0x000020
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">INVALID_SIZE</a> = 0x000800
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">NEGATIVE_SIZE</a> = 0x001000
 , <br />
-&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6dd732c1923e6e7f2f01bc1568b3f290">DAMAGED_PATH</a> = 0x040000
-, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daf7cb35a85a1a5111764270e42c490564">ACTION_ERROR</a> = 0x080000
-, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2524dacda622d42725b2190a4e3ea50f">NODE_ALREADY_EXISTS</a> = 0x100000
-, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da18d6f3bcf402ccdb929d61ce2458fa7e">CANNOT_DELETE</a> = 0x200000
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">DAMAGED_PATH</a> = 0x040000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">ACTION_ERROR</a> = 0x080000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">NODE_ALREADY_EXISTS</a> = 0x100000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">CANNOT_DELETE</a> = 0x200000
 , <br />
-&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dafca0f3eb325d452100747b8a3052edaf">INVALID_ELEM_T_SIZE</a> = 0x400000
-, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac323082c2927eb3608efdb679880070f">NODE_VERIFY_FAIL</a> = 0x800000
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">INVALID_ELEM_T_SIZE</a> = 0x400000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">NODE_VERIFY_FAIL</a> = 0x800000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">OK</a> = 0x000000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">ALLOC_ERR</a> = 0x000002
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">ALREADY_INITIALISED</a> = 0x000004
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">UNITIALISED</a> = 0x000008
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">INVALID_NODE_PTR</a> = 0x000010
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">POISON_VAL_FOUND</a> = 0x000020
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">INVALID_SIZE</a> = 0x000800
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">NEGATIVE_SIZE</a> = 0x001000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">DAMAGED_PATH</a> = 0x040000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">ACTION_ERROR</a> = 0x080000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">NODE_ALREADY_EXISTS</a> = 0x100000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">CANNOT_DELETE</a> = 0x200000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">INVALID_ELEM_T_SIZE</a> = 0x400000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">NODE_VERIFY_FAIL</a> = 0x800000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">OK</a> = 0x000000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">ALLOC_ERR</a> = 0x000002
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">ALREADY_INITIALISED</a> = 0x000004
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">UNITIALISED</a> = 0x000008
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">INVALID_NODE_PTR</a> = 0x000010
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">POISON_VAL_FOUND</a> = 0x000020
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">INVALID_SIZE</a> = 0x000800
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">NEGATIVE_SIZE</a> = 0x001000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">DAMAGED_PATH</a> = 0x040000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">ACTION_ERROR</a> = 0x080000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">NODE_ALREADY_EXISTS</a> = 0x100000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">CANNOT_DELETE</a> = 0x200000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">INVALID_ELEM_T_SIZE</a> = 0x400000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">NODE_VERIFY_FAIL</a> = 0x800000
+<br />
+ }</td></tr>
+<tr class="separator:a817c3cb647deac6a6be0155631f2e06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a817c3cb647deac6a6be0155631f2e06d" id="r_a817c3cb647deac6a6be0155631f2e06d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06d">Results</a> { <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">OK</a> = 0x000000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">ALLOC_ERR</a> = 0x000002
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">ALREADY_INITIALISED</a> = 0x000004
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">UNITIALISED</a> = 0x000008
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">INVALID_NODE_PTR</a> = 0x000010
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">POISON_VAL_FOUND</a> = 0x000020
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">INVALID_SIZE</a> = 0x000800
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">NEGATIVE_SIZE</a> = 0x001000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">DAMAGED_PATH</a> = 0x040000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">ACTION_ERROR</a> = 0x080000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">NODE_ALREADY_EXISTS</a> = 0x100000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">CANNOT_DELETE</a> = 0x200000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">INVALID_ELEM_T_SIZE</a> = 0x400000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">NODE_VERIFY_FAIL</a> = 0x800000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">OK</a> = 0x000000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">ALLOC_ERR</a> = 0x000002
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">ALREADY_INITIALISED</a> = 0x000004
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">UNITIALISED</a> = 0x000008
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">INVALID_NODE_PTR</a> = 0x000010
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">POISON_VAL_FOUND</a> = 0x000020
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">INVALID_SIZE</a> = 0x000800
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">NEGATIVE_SIZE</a> = 0x001000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">DAMAGED_PATH</a> = 0x040000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">ACTION_ERROR</a> = 0x080000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">NODE_ALREADY_EXISTS</a> = 0x100000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">CANNOT_DELETE</a> = 0x200000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">INVALID_ELEM_T_SIZE</a> = 0x400000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">NODE_VERIFY_FAIL</a> = 0x800000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">OK</a> = 0x000000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">ALLOC_ERR</a> = 0x000002
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">ALREADY_INITIALISED</a> = 0x000004
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">UNITIALISED</a> = 0x000008
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">INVALID_NODE_PTR</a> = 0x000010
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">POISON_VAL_FOUND</a> = 0x000020
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">INVALID_SIZE</a> = 0x000800
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">NEGATIVE_SIZE</a> = 0x001000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">DAMAGED_PATH</a> = 0x040000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">ACTION_ERROR</a> = 0x080000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">NODE_ALREADY_EXISTS</a> = 0x100000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">CANNOT_DELETE</a> = 0x200000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">INVALID_ELEM_T_SIZE</a> = 0x400000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">NODE_VERIFY_FAIL</a> = 0x800000
+<br />
+ }</td></tr>
+<tr class="separator:a817c3cb647deac6a6be0155631f2e06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a817c3cb647deac6a6be0155631f2e06d" id="r_a817c3cb647deac6a6be0155631f2e06d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06d">Results</a> { <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">OK</a> = 0x000000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">ALLOC_ERR</a> = 0x000002
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">ALREADY_INITIALISED</a> = 0x000004
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">UNITIALISED</a> = 0x000008
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">INVALID_NODE_PTR</a> = 0x000010
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">POISON_VAL_FOUND</a> = 0x000020
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">INVALID_SIZE</a> = 0x000800
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">NEGATIVE_SIZE</a> = 0x001000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">DAMAGED_PATH</a> = 0x040000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">ACTION_ERROR</a> = 0x080000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">NODE_ALREADY_EXISTS</a> = 0x100000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">CANNOT_DELETE</a> = 0x200000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">INVALID_ELEM_T_SIZE</a> = 0x400000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">NODE_VERIFY_FAIL</a> = 0x800000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">OK</a> = 0x000000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">ALLOC_ERR</a> = 0x000002
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">ALREADY_INITIALISED</a> = 0x000004
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">UNITIALISED</a> = 0x000008
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">INVALID_NODE_PTR</a> = 0x000010
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">POISON_VAL_FOUND</a> = 0x000020
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">INVALID_SIZE</a> = 0x000800
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">NEGATIVE_SIZE</a> = 0x001000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">DAMAGED_PATH</a> = 0x040000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">ACTION_ERROR</a> = 0x080000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">NODE_ALREADY_EXISTS</a> = 0x100000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">CANNOT_DELETE</a> = 0x200000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">INVALID_ELEM_T_SIZE</a> = 0x400000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">NODE_VERIFY_FAIL</a> = 0x800000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">OK</a> = 0x000000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">ALLOC_ERR</a> = 0x000002
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">ALREADY_INITIALISED</a> = 0x000004
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">UNITIALISED</a> = 0x000008
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">INVALID_NODE_PTR</a> = 0x000010
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">POISON_VAL_FOUND</a> = 0x000020
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">INVALID_SIZE</a> = 0x000800
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">NEGATIVE_SIZE</a> = 0x001000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">DAMAGED_PATH</a> = 0x040000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">ACTION_ERROR</a> = 0x080000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">NODE_ALREADY_EXISTS</a> = 0x100000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">CANNOT_DELETE</a> = 0x200000
+, <br />
+&#160;&#160;<a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">INVALID_ELEM_T_SIZE</a> = 0x400000
+, <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">NODE_VERIFY_FAIL</a> = 0x800000
 <br />
  }</td></tr>
 <tr class="separator:a817c3cb647deac6a6be0155631f2e06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af4e7a6220b7940f6ddc831ec5354e491" id="r_af4e7a6220b7940f6ddc831ec5354e491"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#af4e7a6220b7940f6ddc831ec5354e491">size</a> = <a class="el" href="structTree.html#a72db84d03e5ed6efaf0b4ae04011ada3">UNITIALISED_VAL</a></td></tr>
+<tr class="memitem:af4e7a6220b7940f6ddc831ec5354e491" id="r_af4e7a6220b7940f6ddc831ec5354e491"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#af4e7a6220b7940f6ddc831ec5354e491">size</a> = <a class="el" href="structTree.html#ae05e207c9782d93e767bf318c833dc46">UNITIALISED_VAL</a></td></tr>
 <tr class="separator:af4e7a6220b7940f6ddc831ec5354e491"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89756c94ede1566589695e9d2274933b" id="r_a89756c94ede1566589695e9d2274933b"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#a89756c94ede1566589695e9d2274933b">elem_size</a> = <a class="el" href="structTree.html#a72db84d03e5ed6efaf0b4ae04011ada3">UNITIALISED_VAL</a></td></tr>
+<tr class="memitem:a89756c94ede1566589695e9d2274933b" id="r_a89756c94ede1566589695e9d2274933b"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#a89756c94ede1566589695e9d2274933b">elem_size</a> = <a class="el" href="structTree.html#ae05e207c9782d93e767bf318c833dc46">UNITIALISED_VAL</a></td></tr>
 <tr class="separator:a89756c94ede1566589695e9d2274933b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad920a273e774ac5b77296fc0d4aa2aef" id="r_ad920a273e774ac5b77296fc0d4aa2aef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTreeNode.html">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#ad920a273e774ac5b77296fc0d4aa2aef">root</a> = nullptr</td></tr>
-<tr class="separator:ad920a273e774ac5b77296fc0d4aa2aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23def1b5dee11cfa29ffd96ffabf85cd" id="r_a23def1b5dee11cfa29ffd96ffabf85cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="tree_8h.html#af01c1ce54eb2cf336d3b7304449f4274">Elem_t_func</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#a23def1b5dee11cfa29ffd96ffabf85cd">node_elem_t_dtor</a> = nullptr</td></tr>
-<tr class="separator:a23def1b5dee11cfa29ffd96ffabf85cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6476a2d8d5ce40b66d725a99af143f65" id="r_a6476a2d8d5ce40b66d725a99af143f65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTreeNode.html">TreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#a6476a2d8d5ce40b66d725a99af143f65">root</a> = nullptr</td></tr>
+<tr class="separator:a6476a2d8d5ce40b66d725a99af143f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50de21bd338de0aee6355686b0690fe1" id="r_a50de21bd338de0aee6355686b0690fe1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="tree_8h.html#af01c1ce54eb2cf336d3b7304449f4274">Elem_t_func</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#a50de21bd338de0aee6355686b0690fe1">node_elem_t_dtor</a> = nullptr</td></tr>
+<tr class="separator:a50de21bd338de0aee6355686b0690fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7c76730c28c19500ec415650ddbb472" id="r_ad7c76730c28c19500ec415650ddbb472"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVarCodeData.html">VarCodeData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#ad7c76730c28c19500ec415650ddbb472">var_data</a> = {}</td></tr>
 <tr class="separator:ad7c76730c28c19500ec415650ddbb472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14559dbf39cc57a78748434c525be95d" id="r_a14559dbf39cc57a78748434c525be95d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="tree_8h.html#af01c1ce54eb2cf336d3b7304449f4274">Elem_t_func</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#a14559dbf39cc57a78748434c525be95d">node_elem_t_verify</a> = nullptr</td></tr>
-<tr class="separator:a14559dbf39cc57a78748434c525be95d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac492462a75d560e10d46ca48baf07e7" id="r_aac492462a75d560e10d46ca48baf07e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="tree_8h.html#ae4b34cec7b2a895b95fbb884ef2fb6f5">Elem_t_val_str</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#aac492462a75d560e10d46ca48baf07e7">node_elem_t_val_str</a> = nullptr</td></tr>
-<tr class="separator:aac492462a75d560e10d46ca48baf07e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89540614032db714299260c16d8133cd" id="r_a89540614032db714299260c16d8133cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="tree_8h.html#af01c1ce54eb2cf336d3b7304449f4274">Elem_t_func</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#a89540614032db714299260c16d8133cd">node_elem_t_verify</a> = nullptr</td></tr>
+<tr class="separator:a89540614032db714299260c16d8133cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dad8a1aefc6b7f5198d756bd524f933" id="r_a3dad8a1aefc6b7f5198d756bd524f933"><td class="memItemLeft" align="right" valign="top"><a class="el" href="tree_8h.html#ae4b34cec7b2a895b95fbb884ef2fb6f5">Elem_t_val_str</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#a3dad8a1aefc6b7f5198d756bd524f933">node_elem_t_val_str</a> = nullptr</td></tr>
+<tr class="separator:a3dad8a1aefc6b7f5198d756bd524f933"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a72db84d03e5ed6efaf0b4ae04011ada3" id="r_a72db84d03e5ed6efaf0b4ae04011ada3"><td class="memItemLeft" align="right" valign="top">static const ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#a72db84d03e5ed6efaf0b4ae04011ada3">UNITIALISED_VAL</a> = -1</td></tr>
-<tr class="separator:a72db84d03e5ed6efaf0b4ae04011ada3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae05e207c9782d93e767bf318c833dc46" id="r_ae05e207c9782d93e767bf318c833dc46"><td class="memItemLeft" align="right" valign="top">static const ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTree.html#ae05e207c9782d93e767bf318c833dc46">UNITIALISED_VAL</a> = -1</td></tr>
+<tr class="separator:ae05e207c9782d93e767bf318c833dc46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Specifies tree data. </p>
 
-<p class="definition">Definition at line <a class="el" href="tree_8h_source.html#l00061">61</a> of file <a class="el" href="tree_8h_source.html">tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Tree_8h_source.html#l00061">61</a> of file <a class="el" href="Tree_8h_source.html">Tree.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a817c3cb647deac6a6be0155631f2e06d" name="a817c3cb647deac6a6be0155631f2e06d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a817c3cb647deac6a6be0155631f2e06d">&#9670;&#160;</a></span>Results</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a817c3cb647deac6a6be0155631f2e06d">&#9670;&#160;</a></span>Results <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,54 +313,236 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dadec45fbbc8dc5478e95b62868a1df518" name="a817c3cb647deac6a6be0155631f2e06dadec45fbbc8dc5478e95b62868a1df518"></a>OK&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da230c1b7dac014107f47a13b23b44a400" name="a817c3cb647deac6a6be0155631f2e06da230c1b7dac014107f47a13b23b44a400"></a>ALLOC_ERR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da40df8d3756e6f65a209e0e2c3e88da6b" name="a817c3cb647deac6a6be0155631f2e06da40df8d3756e6f65a209e0e2c3e88da6b"></a>ALREADY_INITIALISED&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da211c6e7b121e396e9f317b75f61cd7c8" name="a817c3cb647deac6a6be0155631f2e06da211c6e7b121e396e9f317b75f61cd7c8"></a>UNITIALISED&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dabf395749cd36fc4a8768b6c6521e1aac" name="a817c3cb647deac6a6be0155631f2e06dabf395749cd36fc4a8768b6c6521e1aac"></a>INVALID_NODE_PTR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dab12cd63119e06330d8d56f54d7439174" name="a817c3cb647deac6a6be0155631f2e06dab12cd63119e06330d8d56f54d7439174"></a>POISON_VAL_FOUND&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da76e7c56197ef582b72485cc856c99e7c" name="a817c3cb647deac6a6be0155631f2e06da76e7c56197ef582b72485cc856c99e7c"></a>INVALID_SIZE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da4297341b72b05aabd0fbde46656c2371" name="a817c3cb647deac6a6be0155631f2e06da4297341b72b05aabd0fbde46656c2371"></a>NEGATIVE_SIZE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da6dd732c1923e6e7f2f01bc1568b3f290" name="a817c3cb647deac6a6be0155631f2e06da6dd732c1923e6e7f2f01bc1568b3f290"></a>DAMAGED_PATH&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daf7cb35a85a1a5111764270e42c490564" name="a817c3cb647deac6a6be0155631f2e06daf7cb35a85a1a5111764270e42c490564"></a>ACTION_ERROR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da2524dacda622d42725b2190a4e3ea50f" name="a817c3cb647deac6a6be0155631f2e06da2524dacda622d42725b2190a4e3ea50f"></a>NODE_ALREADY_EXISTS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da18d6f3bcf402ccdb929d61ce2458fa7e" name="a817c3cb647deac6a6be0155631f2e06da18d6f3bcf402ccdb929d61ce2458fa7e"></a>CANNOT_DELETE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dafca0f3eb325d452100747b8a3052edaf" name="a817c3cb647deac6a6be0155631f2e06dafca0f3eb325d452100747b8a3052edaf"></a>INVALID_ELEM_T_SIZE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dac323082c2927eb3608efdb679880070f" name="a817c3cb647deac6a6be0155631f2e06dac323082c2927eb3608efdb679880070f"></a>NODE_VERIFY_FAIL&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3" name="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3"></a>OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4" name="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4"></a>ALLOC_ERR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9" name="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9"></a>ALREADY_INITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e" name="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e"></a>UNITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8" name="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8"></a>INVALID_NODE_PTR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068" name="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068"></a>POISON_VAL_FOUND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd" name="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd"></a>INVALID_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438" name="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438"></a>NEGATIVE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71" name="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71"></a>DAMAGED_PATH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4" name="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4"></a>ACTION_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6" name="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6"></a>NODE_ALREADY_EXISTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3" name="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3"></a>CANNOT_DELETE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f" name="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f"></a>INVALID_ELEM_T_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa" name="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa"></a>NODE_VERIFY_FAIL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3" name="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3"></a>OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4" name="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4"></a>ALLOC_ERR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9" name="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9"></a>ALREADY_INITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e" name="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e"></a>UNITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8" name="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8"></a>INVALID_NODE_PTR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068" name="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068"></a>POISON_VAL_FOUND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd" name="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd"></a>INVALID_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438" name="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438"></a>NEGATIVE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71" name="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71"></a>DAMAGED_PATH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4" name="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4"></a>ACTION_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6" name="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6"></a>NODE_ALREADY_EXISTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3" name="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3"></a>CANNOT_DELETE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f" name="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f"></a>INVALID_ELEM_T_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa" name="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa"></a>NODE_VERIFY_FAIL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3" name="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3"></a>OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4" name="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4"></a>ALLOC_ERR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9" name="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9"></a>ALREADY_INITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e" name="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e"></a>UNITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8" name="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8"></a>INVALID_NODE_PTR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068" name="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068"></a>POISON_VAL_FOUND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd" name="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd"></a>INVALID_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438" name="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438"></a>NEGATIVE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71" name="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71"></a>DAMAGED_PATH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4" name="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4"></a>ACTION_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6" name="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6"></a>NODE_ALREADY_EXISTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3" name="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3"></a>CANNOT_DELETE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f" name="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f"></a>INVALID_ELEM_T_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa" name="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa"></a>NODE_VERIFY_FAIL&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="Tree_8h_source.html#l00065">65</a> of file <a class="el" href="Tree_8h_source.html">Tree.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>                 {</div>
+<div class="line"><span class="lineno">   66</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">OK</a>                  = 0x000000,</div>
+<div class="line"><span class="lineno">   67</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">ALLOC_ERR</a>           = 0x000002,</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">ALREADY_INITIALISED</a> = 0x000004,</div>
+<div class="line"><span class="lineno">   70</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">UNITIALISED</a>         = 0x000008,</div>
+<div class="line"><span class="lineno">   71</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">INVALID_NODE_PTR</a>    = 0x000010,</div>
+<div class="line"><span class="lineno">   72</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">POISON_VAL_FOUND</a>    = 0x000020,</div>
+<div class="line"><span class="lineno">   73</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">INVALID_SIZE</a>        = 0x000800,</div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">NEGATIVE_SIZE</a>       = 0x001000,</div>
+<div class="line"><span class="lineno">   75</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">DAMAGED_PATH</a>        = 0x040000,</div>
+<div class="line"><span class="lineno">   76</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">ACTION_ERROR</a>        = 0x080000,</div>
+<div class="line"><span class="lineno">   77</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">NODE_ALREADY_EXISTS</a> = 0x100000,</div>
+<div class="line"><span class="lineno">   78</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">CANNOT_DELETE</a>       = 0x200000,</div>
+<div class="line"><span class="lineno">   79</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">INVALID_ELEM_T_SIZE</a> = 0x400000,</div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">NODE_VERIFY_FAIL</a>    = 0x800000,</div>
+<div class="line"><span class="lineno">   81</span>    };</div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">Tree::DAMAGED_PATH</a></div><div class="ttdeci">@ DAMAGED_PATH</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00075">Tree.h:75</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">Tree::ALREADY_INITIALISED</a></div><div class="ttdeci">@ ALREADY_INITIALISED</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00069">Tree.h:69</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">Tree::POISON_VAL_FOUND</a></div><div class="ttdeci">@ POISON_VAL_FOUND</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00072">Tree.h:72</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">Tree::INVALID_ELEM_T_SIZE</a></div><div class="ttdeci">@ INVALID_ELEM_T_SIZE</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00079">Tree.h:79</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">Tree::ACTION_ERROR</a></div><div class="ttdeci">@ ACTION_ERROR</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00076">Tree.h:76</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">Tree::NEGATIVE_SIZE</a></div><div class="ttdeci">@ NEGATIVE_SIZE</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00074">Tree.h:74</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">Tree::ALLOC_ERR</a></div><div class="ttdeci">@ ALLOC_ERR</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00067">Tree.h:67</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">Tree::NODE_VERIFY_FAIL</a></div><div class="ttdeci">@ NODE_VERIFY_FAIL</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00080">Tree.h:80</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">Tree::CANNOT_DELETE</a></div><div class="ttdeci">@ CANNOT_DELETE</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00078">Tree.h:78</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">Tree::NODE_ALREADY_EXISTS</a></div><div class="ttdeci">@ NODE_ALREADY_EXISTS</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00077">Tree.h:77</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">Tree::OK</a></div><div class="ttdeci">@ OK</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00066">Tree.h:66</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">Tree::INVALID_NODE_PTR</a></div><div class="ttdeci">@ INVALID_NODE_PTR</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00071">Tree.h:71</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">Tree::INVALID_SIZE</a></div><div class="ttdeci">@ INVALID_SIZE</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00073">Tree.h:73</a></div></div>
+<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">Tree::UNITIALISED</a></div><div class="ttdeci">@ UNITIALISED</div><div class="ttdef"><b>Definition</b> <a href="Tree_8h_source.html#l00070">Tree.h:70</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a817c3cb647deac6a6be0155631f2e06d" name="a817c3cb647deac6a6be0155631f2e06d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a817c3cb647deac6a6be0155631f2e06d">&#9670;&#160;</a></span>Results <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06d">Tree::Results</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3" name="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3"></a>OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4" name="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4"></a>ALLOC_ERR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9" name="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9"></a>ALREADY_INITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e" name="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e"></a>UNITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8" name="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8"></a>INVALID_NODE_PTR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068" name="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068"></a>POISON_VAL_FOUND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd" name="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd"></a>INVALID_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438" name="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438"></a>NEGATIVE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71" name="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71"></a>DAMAGED_PATH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4" name="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4"></a>ACTION_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6" name="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6"></a>NODE_ALREADY_EXISTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3" name="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3"></a>CANNOT_DELETE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f" name="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f"></a>INVALID_ELEM_T_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa" name="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa"></a>NODE_VERIFY_FAIL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3" name="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3"></a>OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4" name="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4"></a>ALLOC_ERR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9" name="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9"></a>ALREADY_INITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e" name="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e"></a>UNITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8" name="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8"></a>INVALID_NODE_PTR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068" name="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068"></a>POISON_VAL_FOUND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd" name="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd"></a>INVALID_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438" name="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438"></a>NEGATIVE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71" name="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71"></a>DAMAGED_PATH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4" name="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4"></a>ACTION_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6" name="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6"></a>NODE_ALREADY_EXISTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3" name="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3"></a>CANNOT_DELETE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f" name="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f"></a>INVALID_ELEM_T_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa" name="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa"></a>NODE_VERIFY_FAIL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3" name="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3"></a>OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4" name="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4"></a>ALLOC_ERR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9" name="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9"></a>ALREADY_INITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e" name="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e"></a>UNITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8" name="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8"></a>INVALID_NODE_PTR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068" name="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068"></a>POISON_VAL_FOUND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd" name="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd"></a>INVALID_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438" name="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438"></a>NEGATIVE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71" name="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71"></a>DAMAGED_PATH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4" name="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4"></a>ACTION_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6" name="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6"></a>NODE_ALREADY_EXISTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3" name="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3"></a>CANNOT_DELETE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f" name="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f"></a>INVALID_ELEM_T_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa" name="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa"></a>NODE_VERIFY_FAIL&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="TreeDebug_8h_source.html#l00065">65</a> of file <a class="el" href="TreeDebug_8h_source.html">TreeDebug.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>                 {</div>
+<div class="line"><span class="lineno">   66</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">OK</a>                  = 0x000000,</div>
+<div class="line"><span class="lineno">   67</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">ALLOC_ERR</a>           = 0x000002,</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">ALREADY_INITIALISED</a> = 0x000004,</div>
+<div class="line"><span class="lineno">   70</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">UNITIALISED</a>         = 0x000008,</div>
+<div class="line"><span class="lineno">   71</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">INVALID_NODE_PTR</a>    = 0x000010,</div>
+<div class="line"><span class="lineno">   72</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">POISON_VAL_FOUND</a>    = 0x000020,</div>
+<div class="line"><span class="lineno">   73</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">INVALID_SIZE</a>        = 0x000800,</div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">NEGATIVE_SIZE</a>       = 0x001000,</div>
+<div class="line"><span class="lineno">   75</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">DAMAGED_PATH</a>        = 0x040000,</div>
+<div class="line"><span class="lineno">   76</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">ACTION_ERROR</a>        = 0x080000,</div>
+<div class="line"><span class="lineno">   77</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">NODE_ALREADY_EXISTS</a> = 0x100000,</div>
+<div class="line"><span class="lineno">   78</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">CANNOT_DELETE</a>       = 0x200000,</div>
+<div class="line"><span class="lineno">   79</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">INVALID_ELEM_T_SIZE</a> = 0x400000,</div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">NODE_VERIFY_FAIL</a>    = 0x800000,</div>
+<div class="line"><span class="lineno">   81</span>    };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a817c3cb647deac6a6be0155631f2e06d" name="a817c3cb647deac6a6be0155631f2e06d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a817c3cb647deac6a6be0155631f2e06d">&#9670;&#160;</a></span>Results <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="structTree.html#a817c3cb647deac6a6be0155631f2e06d">Tree::Results</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3" name="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3"></a>OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4" name="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4"></a>ALLOC_ERR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9" name="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9"></a>ALREADY_INITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e" name="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e"></a>UNITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8" name="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8"></a>INVALID_NODE_PTR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068" name="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068"></a>POISON_VAL_FOUND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd" name="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd"></a>INVALID_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438" name="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438"></a>NEGATIVE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71" name="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71"></a>DAMAGED_PATH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4" name="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4"></a>ACTION_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6" name="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6"></a>NODE_ALREADY_EXISTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3" name="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3"></a>CANNOT_DELETE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f" name="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f"></a>INVALID_ELEM_T_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa" name="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa"></a>NODE_VERIFY_FAIL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3" name="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3"></a>OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4" name="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4"></a>ALLOC_ERR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9" name="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9"></a>ALREADY_INITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e" name="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e"></a>UNITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8" name="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8"></a>INVALID_NODE_PTR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068" name="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068"></a>POISON_VAL_FOUND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd" name="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd"></a>INVALID_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438" name="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438"></a>NEGATIVE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71" name="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71"></a>DAMAGED_PATH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4" name="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4"></a>ACTION_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6" name="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6"></a>NODE_ALREADY_EXISTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3" name="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3"></a>CANNOT_DELETE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f" name="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f"></a>INVALID_ELEM_T_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa" name="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa"></a>NODE_VERIFY_FAIL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3" name="a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3"></a>OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4" name="a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4"></a>ALLOC_ERR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9" name="a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9"></a>ALREADY_INITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e" name="a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e"></a>UNITIALISED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8" name="a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8"></a>INVALID_NODE_PTR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068" name="a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068"></a>POISON_VAL_FOUND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd" name="a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd"></a>INVALID_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438" name="a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438"></a>NEGATIVE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71" name="a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71"></a>DAMAGED_PATH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4" name="a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4"></a>ACTION_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6" name="a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6"></a>NODE_ALREADY_EXISTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3" name="a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3"></a>CANNOT_DELETE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f" name="a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f"></a>INVALID_ELEM_T_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa" name="a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa"></a>NODE_VERIFY_FAIL&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="tree_8h_source.html#l00065">65</a> of file <a class="el" href="tree_8h_source.html">tree.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   65</span>                 {</div>
-<div class="line"><span class="lineno">   66</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dadec45fbbc8dc5478e95b62868a1df518">OK</a>                  = 0x000000,</div>
-<div class="line"><span class="lineno">   67</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da230c1b7dac014107f47a13b23b44a400">ALLOC_ERR</a>           = 0x000002,</div>
+<div class="line"><span class="lineno">   66</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3">OK</a>                  = 0x000000,</div>
+<div class="line"><span class="lineno">   67</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da96452d3c31bd00ddbb9b7ccb854251c4">ALLOC_ERR</a>           = 0x000002,</div>
 <div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da40df8d3756e6f65a209e0e2c3e88da6b">ALREADY_INITIALISED</a> = 0x000004,</div>
-<div class="line"><span class="lineno">   70</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da211c6e7b121e396e9f317b75f61cd7c8">UNITIALISED</a>         = 0x000008,</div>
-<div class="line"><span class="lineno">   71</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dabf395749cd36fc4a8768b6c6521e1aac">INVALID_NODE_PTR</a>    = 0x000010,</div>
-<div class="line"><span class="lineno">   72</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab12cd63119e06330d8d56f54d7439174">POISON_VAL_FOUND</a>    = 0x000020,</div>
-<div class="line"><span class="lineno">   73</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da76e7c56197ef582b72485cc856c99e7c">INVALID_SIZE</a>        = 0x000800,</div>
-<div class="line"><span class="lineno">   74</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da4297341b72b05aabd0fbde46656c2371">NEGATIVE_SIZE</a>       = 0x001000,</div>
-<div class="line"><span class="lineno">   75</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6dd732c1923e6e7f2f01bc1568b3f290">DAMAGED_PATH</a>        = 0x040000,</div>
-<div class="line"><span class="lineno">   76</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daf7cb35a85a1a5111764270e42c490564">ACTION_ERROR</a>        = 0x080000,</div>
-<div class="line"><span class="lineno">   77</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2524dacda622d42725b2190a4e3ea50f">NODE_ALREADY_EXISTS</a> = 0x100000,</div>
-<div class="line"><span class="lineno">   78</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da18d6f3bcf402ccdb929d61ce2458fa7e">CANNOT_DELETE</a>       = 0x200000,</div>
-<div class="line"><span class="lineno">   79</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dafca0f3eb325d452100747b8a3052edaf">INVALID_ELEM_T_SIZE</a> = 0x400000,</div>
-<div class="line"><span class="lineno">   80</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac323082c2927eb3608efdb679880070f">NODE_VERIFY_FAIL</a>    = 0x800000,</div>
+<div class="line"><span class="lineno">   69</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da17487bdfbeeb51940eb7d50cf1f982a9">ALREADY_INITIALISED</a> = 0x000004,</div>
+<div class="line"><span class="lineno">   70</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e">UNITIALISED</a>         = 0x000008,</div>
+<div class="line"><span class="lineno">   71</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8">INVALID_NODE_PTR</a>    = 0x000010,</div>
+<div class="line"><span class="lineno">   72</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da1f0f18f301e977d4d8671e6e490ce068">POISON_VAL_FOUND</a>    = 0x000020,</div>
+<div class="line"><span class="lineno">   73</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd">INVALID_SIZE</a>        = 0x000800,</div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da887c38ccc5f382759f390430a92e5438">NEGATIVE_SIZE</a>       = 0x001000,</div>
+<div class="line"><span class="lineno">   75</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71">DAMAGED_PATH</a>        = 0x040000,</div>
+<div class="line"><span class="lineno">   76</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6515f786d5a9d5c0b166868ca46a42d4">ACTION_ERROR</a>        = 0x080000,</div>
+<div class="line"><span class="lineno">   77</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daad709db922fc003a49f229f803930ae6">NODE_ALREADY_EXISTS</a> = 0x100000,</div>
+<div class="line"><span class="lineno">   78</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3">CANNOT_DELETE</a>       = 0x200000,</div>
+<div class="line"><span class="lineno">   79</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f">INVALID_ELEM_T_SIZE</a> = 0x400000,</div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_enumvalue" href="structTree.html#a817c3cb647deac6a6be0155631f2e06daa31eddc5bfbbc75938a3d4c7b79bf6aa">NODE_VERIFY_FAIL</a>    = 0x800000,</div>
 <div class="line"><span class="lineno">   81</span>    };</div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da18d6f3bcf402ccdb929d61ce2458fa7e"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da18d6f3bcf402ccdb929d61ce2458fa7e">Tree::CANNOT_DELETE</a></div><div class="ttdeci">@ CANNOT_DELETE</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00078">tree.h:78</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da211c6e7b121e396e9f317b75f61cd7c8"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da211c6e7b121e396e9f317b75f61cd7c8">Tree::UNITIALISED</a></div><div class="ttdeci">@ UNITIALISED</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00070">tree.h:70</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da230c1b7dac014107f47a13b23b44a400"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da230c1b7dac014107f47a13b23b44a400">Tree::ALLOC_ERR</a></div><div class="ttdeci">@ ALLOC_ERR</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00067">tree.h:67</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da2524dacda622d42725b2190a4e3ea50f"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da2524dacda622d42725b2190a4e3ea50f">Tree::NODE_ALREADY_EXISTS</a></div><div class="ttdeci">@ NODE_ALREADY_EXISTS</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00077">tree.h:77</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da40df8d3756e6f65a209e0e2c3e88da6b"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da40df8d3756e6f65a209e0e2c3e88da6b">Tree::ALREADY_INITIALISED</a></div><div class="ttdeci">@ ALREADY_INITIALISED</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00069">tree.h:69</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da4297341b72b05aabd0fbde46656c2371"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da4297341b72b05aabd0fbde46656c2371">Tree::NEGATIVE_SIZE</a></div><div class="ttdeci">@ NEGATIVE_SIZE</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00074">tree.h:74</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da6dd732c1923e6e7f2f01bc1568b3f290"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da6dd732c1923e6e7f2f01bc1568b3f290">Tree::DAMAGED_PATH</a></div><div class="ttdeci">@ DAMAGED_PATH</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00075">tree.h:75</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06da76e7c56197ef582b72485cc856c99e7c"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06da76e7c56197ef582b72485cc856c99e7c">Tree::INVALID_SIZE</a></div><div class="ttdeci">@ INVALID_SIZE</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00073">tree.h:73</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06dab12cd63119e06330d8d56f54d7439174"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06dab12cd63119e06330d8d56f54d7439174">Tree::POISON_VAL_FOUND</a></div><div class="ttdeci">@ POISON_VAL_FOUND</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00072">tree.h:72</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06dabf395749cd36fc4a8768b6c6521e1aac"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06dabf395749cd36fc4a8768b6c6521e1aac">Tree::INVALID_NODE_PTR</a></div><div class="ttdeci">@ INVALID_NODE_PTR</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00071">tree.h:71</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06dac323082c2927eb3608efdb679880070f"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06dac323082c2927eb3608efdb679880070f">Tree::NODE_VERIFY_FAIL</a></div><div class="ttdeci">@ NODE_VERIFY_FAIL</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00080">tree.h:80</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06dadec45fbbc8dc5478e95b62868a1df518"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06dadec45fbbc8dc5478e95b62868a1df518">Tree::OK</a></div><div class="ttdeci">@ OK</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00066">tree.h:66</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06daf7cb35a85a1a5111764270e42c490564"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06daf7cb35a85a1a5111764270e42c490564">Tree::ACTION_ERROR</a></div><div class="ttdeci">@ ACTION_ERROR</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00076">tree.h:76</a></div></div>
-<div class="ttc" id="astructTree_html_a817c3cb647deac6a6be0155631f2e06dafca0f3eb325d452100747b8a3052edaf"><div class="ttname"><a href="structTree.html#a817c3cb647deac6a6be0155631f2e06dafca0f3eb325d452100747b8a3052edaf">Tree::INVALID_ELEM_T_SIZE</a></div><div class="ttdeci">@ INVALID_ELEM_T_SIZE</div><div class="ttdef"><b>Definition</b> <a href="tree_8h_source.html#l00079">tree.h:79</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -225,86 +554,86 @@ Static Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ssize_t Tree::elem_size = <a class="el" href="structTree.html#a72db84d03e5ed6efaf0b4ae04011ada3">UNITIALISED_VAL</a></td>
+          <td class="memname">ssize_t Tree::elem_size = <a class="el" href="structTree.html#ae05e207c9782d93e767bf318c833dc46">UNITIALISED_VAL</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tree_8h_source.html#l00084">84</a> of file <a class="el" href="tree_8h_source.html">tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Tree_8h_source.html#l00084">84</a> of file <a class="el" href="Tree_8h_source.html">Tree.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00050">tree_ctor()</a>, <a class="el" href="tree_8cpp_source.html#l00071">tree_dtor()</a>, <a class="el" href="tree_8cpp_source.html#l00145">tree_insert()</a>, and <a class="el" href="tree_8cpp_source.html#l00364">tree_verify()</a>.</p>
 
 </div>
 </div>
-<a id="a23def1b5dee11cfa29ffd96ffabf85cd" name="a23def1b5dee11cfa29ffd96ffabf85cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23def1b5dee11cfa29ffd96ffabf85cd">&#9670;&#160;</a></span>node_elem_t_dtor</h2>
+<a id="a50de21bd338de0aee6355686b0690fe1" name="a50de21bd338de0aee6355686b0690fe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50de21bd338de0aee6355686b0690fe1">&#9670;&#160;</a></span>node_elem_t_dtor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="tree_8h.html#af01c1ce54eb2cf336d3b7304449f4274">Elem_t_func</a>* Tree::node_elem_t_dtor = nullptr</td>
+          <td class="memname"><a class="el" href="tree_8h.html#af01c1ce54eb2cf336d3b7304449f4274">Elem_t_func</a> * Tree::node_elem_t_dtor = nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tree_8h_source.html#l00087">87</a> of file <a class="el" href="tree_8h_source.html">tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Tree_8h_source.html#l00087">87</a> of file <a class="el" href="Tree_8h_source.html">Tree.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00050">tree_ctor()</a>, and <a class="el" href="tree_8h_source.html#l00221">tree_is_initialised()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00050">tree_ctor()</a>, and <a class="el" href="Tree_8h_source.html#l00221">tree_is_initialised()</a>.</p>
 
 </div>
 </div>
-<a id="aac492462a75d560e10d46ca48baf07e7" name="aac492462a75d560e10d46ca48baf07e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac492462a75d560e10d46ca48baf07e7">&#9670;&#160;</a></span>node_elem_t_val_str</h2>
+<a id="a3dad8a1aefc6b7f5198d756bd524f933" name="a3dad8a1aefc6b7f5198d756bd524f933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dad8a1aefc6b7f5198d756bd524f933">&#9670;&#160;</a></span>node_elem_t_val_str</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="tree_8h.html#ae4b34cec7b2a895b95fbb884ef2fb6f5">Elem_t_val_str</a>* Tree::node_elem_t_val_str = nullptr</td>
+          <td class="memname"><a class="el" href="tree_8h.html#ae4b34cec7b2a895b95fbb884ef2fb6f5">Elem_t_val_str</a> * Tree::node_elem_t_val_str = nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tree_8h_source.html#l00093">93</a> of file <a class="el" href="tree_8h_source.html">tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TreeDebug_8h_source.html#l00093">93</a> of file <a class="el" href="TreeDebug_8h_source.html">TreeDebug.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00409">tree_ctor_debug()</a>.</p>
 
 </div>
 </div>
-<a id="a14559dbf39cc57a78748434c525be95d" name="a14559dbf39cc57a78748434c525be95d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14559dbf39cc57a78748434c525be95d">&#9670;&#160;</a></span>node_elem_t_verify</h2>
+<a id="a89540614032db714299260c16d8133cd" name="a89540614032db714299260c16d8133cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89540614032db714299260c16d8133cd">&#9670;&#160;</a></span>node_elem_t_verify</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="tree_8h.html#af01c1ce54eb2cf336d3b7304449f4274">Elem_t_func</a>* Tree::node_elem_t_verify = nullptr</td>
+          <td class="memname"><a class="el" href="tree_8h.html#af01c1ce54eb2cf336d3b7304449f4274">Elem_t_func</a> * Tree::node_elem_t_verify = nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tree_8h_source.html#l00092">92</a> of file <a class="el" href="tree_8h_source.html">tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TreeDebug_8h_source.html#l00092">92</a> of file <a class="el" href="TreeDebug_8h_source.html">TreeDebug.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00409">tree_ctor_debug()</a>, and <a class="el" href="tree_8cpp_source.html#l00386">tree_node_verify()</a>.</p>
 
 </div>
 </div>
-<a id="ad920a273e774ac5b77296fc0d4aa2aef" name="ad920a273e774ac5b77296fc0d4aa2aef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad920a273e774ac5b77296fc0d4aa2aef">&#9670;&#160;</a></span>root</h2>
+<a id="a6476a2d8d5ce40b66d725a99af143f65" name="a6476a2d8d5ce40b66d725a99af143f65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6476a2d8d5ce40b66d725a99af143f65">&#9670;&#160;</a></span>root</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structTreeNode.html">TreeNode</a>* Tree::root = nullptr</td>
+          <td class="memname"><a class="el" href="structTreeNode.html">TreeNode</a> * Tree::root = nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tree_8h_source.html#l00085">85</a> of file <a class="el" href="tree_8h_source.html">tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Tree_8h_source.html#l00085">85</a> of file <a class="el" href="Tree_8h_source.html">Tree.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00038">main()</a>, <a class="el" href="tree_8cpp_source.html#l00071">tree_dtor()</a>, <a class="el" href="dump_8cpp_source.html#l00162">tree_dump()</a>, <a class="el" href="dump_8cpp_source.html#l00285">tree_dump_dot()</a>, <a class="el" href="tree_8h_source.html#l00155">tree_insert_root()</a>, <a class="el" href="tree_8h_source.html#l00221">tree_is_initialised()</a>, <a class="el" href="tree_8cpp_source.html#l00386">tree_node_verify()</a>, and <a class="el" href="tree_8cpp_source.html#l00364">tree_verify()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00038">main()</a>, <a class="el" href="tree_8cpp_source.html#l00071">tree_dtor()</a>, <a class="el" href="dump_8cpp_source.html#l00162">tree_dump()</a>, <a class="el" href="dump_8cpp_source.html#l00285">tree_dump_dot()</a>, <a class="el" href="Tree_8h_source.html#l00155">tree_insert_root()</a>, <a class="el" href="Tree_8h_source.html#l00221">tree_is_initialised()</a>, <a class="el" href="tree_8cpp_source.html#l00386">tree_node_verify()</a>, and <a class="el" href="tree_8cpp_source.html#l00364">tree_verify()</a>.</p>
 
 </div>
 </div>
@@ -315,19 +644,19 @@ Static Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ssize_t Tree::size = <a class="el" href="structTree.html#a72db84d03e5ed6efaf0b4ae04011ada3">UNITIALISED_VAL</a></td>
+          <td class="memname">ssize_t Tree::size = <a class="el" href="structTree.html#ae05e207c9782d93e767bf318c833dc46">UNITIALISED_VAL</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tree_8h_source.html#l00083">83</a> of file <a class="el" href="tree_8h_source.html">tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Tree_8h_source.html#l00083">83</a> of file <a class="el" href="Tree_8h_source.html">Tree.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00050">tree_ctor()</a>, <a class="el" href="tree_8cpp_source.html#l00179">tree_delete()</a>, <a class="el" href="tree_8cpp_source.html#l00071">tree_dtor()</a>, <a class="el" href="dump_8cpp_source.html#l00162">tree_dump()</a>, <a class="el" href="tree_8cpp_source.html#l00145">tree_insert()</a>, <a class="el" href="tree_8h_source.html#l00221">tree_is_initialised()</a>, <a class="el" href="tree_8cpp_source.html#l00386">tree_node_verify()</a>, and <a class="el" href="tree_8cpp_source.html#l00364">tree_verify()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00050">tree_ctor()</a>, <a class="el" href="tree_8cpp_source.html#l00179">tree_delete()</a>, <a class="el" href="tree_8cpp_source.html#l00071">tree_dtor()</a>, <a class="el" href="dump_8cpp_source.html#l00162">tree_dump()</a>, <a class="el" href="tree_8cpp_source.html#l00145">tree_insert()</a>, <a class="el" href="Tree_8h_source.html#l00221">tree_is_initialised()</a>, <a class="el" href="tree_8cpp_source.html#l00386">tree_node_verify()</a>, and <a class="el" href="tree_8cpp_source.html#l00364">tree_verify()</a>.</p>
 
 </div>
 </div>
-<a id="a72db84d03e5ed6efaf0b4ae04011ada3" name="a72db84d03e5ed6efaf0b4ae04011ada3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72db84d03e5ed6efaf0b4ae04011ada3">&#9670;&#160;</a></span>UNITIALISED_VAL</h2>
+<a id="ae05e207c9782d93e767bf318c833dc46" name="ae05e207c9782d93e767bf318c833dc46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05e207c9782d93e767bf318c833dc46">&#9670;&#160;</a></span>UNITIALISED_VAL</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -336,7 +665,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const ssize_t Tree::UNITIALISED_VAL = -1</td>
+          <td class="memname">static const ssize_t Tree::UNITIALISED_VAL = -1</td>
         </tr>
       </table>
   </td>
@@ -346,9 +675,9 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tree_8h_source.html#l00062">62</a> of file <a class="el" href="tree_8h_source.html">tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Tree_8h_source.html#l00062">62</a> of file <a class="el" href="Tree_8h_source.html">Tree.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00071">tree_dtor()</a>, and <a class="el" href="tree_8h_source.html#l00221">tree_is_initialised()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00071">tree_dtor()</a>, and <a class="el" href="Tree_8h_source.html#l00221">tree_is_initialised()</a>.</p>
 
 </div>
 </div>
@@ -364,14 +693,16 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tree_8h_source.html#l00090">90</a> of file <a class="el" href="tree_8h_source.html">tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TreeDebug_8h_source.html#l00090">90</a> of file <a class="el" href="TreeDebug_8h_source.html">TreeDebug.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   90</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="tree_8cpp_source.html#l00409">tree_ctor_debug()</a>, and <a class="el" href="dump_8cpp_source.html#l00162">tree_dump()</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>releases/Tree/<a class="el" href="Tree_8h_source.html">Tree.h</a></li>
+<li>releases/TreeDebug/<a class="el" href="TreeDebug_8h_source.html">TreeDebug.h</a></li>
 <li>src/<a class="el" href="tree_8h_source.html">tree.h</a></li>
 </ul>
 </div><!-- contents -->

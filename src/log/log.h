@@ -24,11 +24,16 @@
  * @attention You may use LogFileData as global var
  */
 struct LogFileData {
+    // if more than LIFETIME seconds have passed since the last write, a new file will be created
+    static const long LIFETIME = 1;
+
     const char* dir = nullptr;
     FILE* file = nullptr;
 
     static const size_t MAX_FILENAME_LEN = 256;
+
     char timestamp_dir[MAX_FILENAME_LEN] = {};
+    time_t last_write = 0;
 };
 
 /**

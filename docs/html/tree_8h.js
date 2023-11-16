@@ -18,9 +18,21 @@ var tree_8h =
     [ "TreeChildSide", "tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2", [
       [ "LEFT", "tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2a684d325a7303f52e64011467ff5c5758", null ],
       [ "ROOT", "tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32", null ],
+      [ "RIGHT", "tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403", null ],
+      [ "LEFT", "tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2a684d325a7303f52e64011467ff5c5758", null ],
+      [ "ROOT", "tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32", null ],
+      [ "RIGHT", "tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403", null ],
+      [ "LEFT", "tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2a684d325a7303f52e64011467ff5c5758", null ],
+      [ "ROOT", "tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32", null ],
       [ "RIGHT", "tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403", null ]
     ] ],
     [ "TreeNodeActionRes", "tree_8h.html#a852e727421a8b2b124ed021e50d4ae4e", [
+      [ "EXIT", "tree_8h.html#a852e727421a8b2b124ed021e50d4ae4eaa42b2fb0e720a080e79a92f4ca97d927", null ],
+      [ "ERROR", "tree_8h.html#a852e727421a8b2b124ed021e50d4ae4eabb1ca97ec761fc37101737ba0aa2e7c5", null ],
+      [ "OK", "tree_8h.html#a852e727421a8b2b124ed021e50d4ae4eae0aa021e21dddbd6d8cecec71e9cf564", null ],
+      [ "EXIT", "tree_8h.html#a852e727421a8b2b124ed021e50d4ae4eaa42b2fb0e720a080e79a92f4ca97d927", null ],
+      [ "ERROR", "tree_8h.html#a852e727421a8b2b124ed021e50d4ae4eabb1ca97ec761fc37101737ba0aa2e7c5", null ],
+      [ "OK", "tree_8h.html#a852e727421a8b2b124ed021e50d4ae4eae0aa021e21dddbd6d8cecec71e9cf564", null ],
       [ "EXIT", "tree_8h.html#a852e727421a8b2b124ed021e50d4ae4eaa42b2fb0e720a080e79a92f4ca97d927", null ],
       [ "ERROR", "tree_8h.html#a852e727421a8b2b124ed021e50d4ae4eabb1ca97ec761fc37101737ba0aa2e7c5", null ],
       [ "OK", "tree_8h.html#a852e727421a8b2b124ed021e50d4ae4eae0aa021e21dddbd6d8cecec71e9cf564", null ]
