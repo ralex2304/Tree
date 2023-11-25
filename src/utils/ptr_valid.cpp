@@ -44,14 +44,14 @@ bool is_ptr_valid(const void* p) {
     // Thanks to God-blessed library "TxLib.h"
 
     MEMORY_BASIC_INFORMATION mbi = {};
-    if (!VirtualQuery (p, &mbi, sizeof (mbi))) return true;
+    if (!VirtualQuery (p, &mbi, sizeof (mbi))) return false;
 
-    if (mbi.Protect & (PAGE_GUARD | PAGE_NOACCESS))  return true;  // Guard page -> bad ptr
+    if (mbi.Protect & (PAGE_GUARD | PAGE_NOACCESS))  return false;  // Guard page -> bad ptr
 
     DWORD readRights = PAGE_READONLY | PAGE_READWRITE | PAGE_WRITECOPY | PAGE_EXECUTE_READ
                                      | PAGE_EXECUTE_READWRITE | PAGE_EXECUTE_WRITECOPY;
 
-    return !(mbi.Protect & readRights);
+    return (mbi.Protect & readRights);
 }
 
 #else // #ifndef _WIN32

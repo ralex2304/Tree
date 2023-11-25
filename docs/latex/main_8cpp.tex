@@ -1,7 +1,7 @@
 \doxysection{src/main.cpp File Reference}
 \hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
-{\ttfamily \#include "{}log/log.\+h"{}}\newline
-{\ttfamily \#include "{}tree.\+h"{}}\newline
+{\ttfamily \#include \"{}log/log.\+h\"{}}\newline
+{\ttfamily \#include \"{}tree.\+h\"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,7 +16,7 @@ int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structLogFileData}{Log\+File\+Data}} \mbox{\hyperlink{main_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\+\_\+file}} = \{"{}log"{}\}
+\mbox{\hyperlink{struct_log_file_data}{Log\+File\+Data}} \mbox{\hyperlink{main_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\+\_\+file}} = \{\"{}log\"{}\}
 \item 
 const int \mbox{\hyperlink{main_8cpp_a72cb9d9634ba1c64bca895929d3c9edc}{INT\+\_\+\+POISON\+\_\+\+VAL}} = \+\_\+\+\_\+\+INT\+\_\+\+MAX\+\_\+\+\_\+ -\/ 13
 \end{DoxyCompactItemize}
@@ -123,35 +123,35 @@ Definition at line \mbox{\hyperlink{main_8cpp_source_l00038}{38}} of file \mbox{
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{structTree}{Tree}}\ tree\ =\ \{\};}
-\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{Tree_8h_acf2fe97de02af9ac9b7942a6704be634}{TREE\_CTOR}}(\&tree,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ \&\mbox{\hyperlink{main_8cpp_a468262eb5368d09c2dddc4e5ed3d1c63}{int\_dtor}},\ \&\mbox{\hyperlink{main_8cpp_a91a85896133196cfa1d5e3161eef4c63}{int\_verify}},\ \&\mbox{\hyperlink{main_8cpp_a590c0827253a6f7a392ba9bd6c2b39aa}{int\_str}});}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{struct_tree}{Tree}}\ tree\ =\ \{\};}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_acf2fe97de02af9ac9b7942a6704be634}{TREE\_CTOR}}(\&tree,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ \&\mbox{\hyperlink{main_8cpp_a468262eb5368d09c2dddc4e5ed3d1c63}{int\_dtor}},\ \&\mbox{\hyperlink{main_8cpp_a91a85896133196cfa1d5e3161eef4c63}{int\_verify}},\ \&\mbox{\hyperlink{main_8cpp_a590c0827253a6f7a392ba9bd6c2b39aa}{int\_str}});}
 \DoxyCodeLine{00041\ }
 \DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ push\_val\ =\ 10;}
-\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{Tree_8h_a939419ad7f924bf12c14f9d03499d95e}{tree\_insert\_root}}(\&tree,\ \&push\_val);}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a939419ad7f924bf12c14f9d03499d95e}{tree\_insert\_root}}(\&tree,\ \&push\_val);}
 \DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{Tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\_DUMP}}(\&tree);}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\_DUMP}}(\&tree);}
 \DoxyCodeLine{00046\ }
 \DoxyCodeLine{00047\ \ \ \ \ push\_val\ =\ 30;}
-\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{Tree_8h_ad58cb030ca24ed2a77d646d1c32e5254}{tree\_insert}}(\&tree,\ \&tree.\mbox{\hyperlink{structTree_a6476a2d8d5ce40b66d725a99af143f65}{root}}-\/>\mbox{\hyperlink{structTreeNode_a4ee04f4c92e653bced3aca6723df1c08}{right}},\ tree.\mbox{\hyperlink{structTree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ \&push\_val);}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_ad58cb030ca24ed2a77d646d1c32e5254}{tree\_insert}}(\&tree,\ \&tree.\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}}-\/>\mbox{\hyperlink{struct_tree_node_a4ee04f4c92e653bced3aca6723df1c08}{right}},\ tree.\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ \&push\_val);}
 \DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{Tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\_DUMP}}(\&tree);}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\_DUMP}}(\&tree);}
 \DoxyCodeLine{00051\ }
 \DoxyCodeLine{00052\ \ \ \ \ push\_val\ =\ 20;}
-\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{Tree_8h_ad58cb030ca24ed2a77d646d1c32e5254}{tree\_insert}}(\&tree,\ \&tree.\mbox{\hyperlink{structTree_a6476a2d8d5ce40b66d725a99af143f65}{root}}-\/>\mbox{\hyperlink{structTreeNode_ac7149d04837ba5f53bf9485d0797e269}{left}},\ tree.\mbox{\hyperlink{structTree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ \&push\_val);}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_ad58cb030ca24ed2a77d646d1c32e5254}{tree\_insert}}(\&tree,\ \&tree.\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}}-\/>\mbox{\hyperlink{struct_tree_node_ac7149d04837ba5f53bf9485d0797e269}{left}},\ tree.\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ \&push\_val);}
 \DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{Tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\_DUMP}}(\&tree);}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\_DUMP}}(\&tree);}
 \DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{Tree_8h_ae9e0b777b031fe54efeb1b5155b8df4e}{tree\_delete}}(\&tree,\ \&tree.\mbox{\hyperlink{structTree_a6476a2d8d5ce40b66d725a99af143f65}{root}}-\/>\mbox{\hyperlink{structTreeNode_a4ee04f4c92e653bced3aca6723df1c08}{right}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_ae9e0b777b031fe54efeb1b5155b8df4e}{tree\_delete}}(\&tree,\ \&tree.\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}}-\/>\mbox{\hyperlink{struct_tree_node_a4ee04f4c92e653bced3aca6723df1c08}{right}},\ \textcolor{keyword}{false});}
 \DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{Tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\_DUMP}}(\&tree);}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a5845364299d9da46aa8484ef293827f6}{TREE\_DUMP}}(\&tree);}
 \DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{Tree_8h_aeec2ee9e0a19cd7490733f737a45ff50}{tree\_dtor}}(\&tree);}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_aeec2ee9e0a19cd7490733f737a45ff50}{tree\_dtor}}(\&tree);}
 \DoxyCodeLine{00062\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{main_8cpp_source_l00008}{int\+\_\+dtor()}}, \mbox{\hyperlink{main_8cpp_source_l00024}{int\+\_\+str()}}, \mbox{\hyperlink{main_8cpp_source_l00015}{int\+\_\+verify()}}, \mbox{\hyperlink{Tree_8h_source_l00054}{Tree\+Node\+::left}}, \mbox{\hyperlink{Tree_8h_source_l00055}{Tree\+Node\+::right}}, \mbox{\hyperlink{Tree_8h_source_l00085}{Tree\+::root}}, \mbox{\hyperlink{Tree_8h_source_l00395}{TREE\+\_\+\+CTOR}}, \mbox{\hyperlink{tree_8cpp_source_l00179}{tree\+\_\+delete()}}, \mbox{\hyperlink{tree_8cpp_source_l00071}{tree\+\_\+dtor()}}, \mbox{\hyperlink{Tree_8h_source_l00402}{TREE\+\_\+\+DUMP}}, \mbox{\hyperlink{tree_8cpp_source_l00145}{tree\+\_\+insert()}}, and \mbox{\hyperlink{Tree_8h_source_l00155}{tree\+\_\+insert\+\_\+root()}}.
+References \mbox{\hyperlink{main_8cpp_source_l00008}{int\+\_\+dtor()}}, \mbox{\hyperlink{main_8cpp_source_l00024}{int\+\_\+str()}}, \mbox{\hyperlink{main_8cpp_source_l00015}{int\+\_\+verify()}}, \mbox{\hyperlink{releases_2_tree_2_tree_8h_source_l00055}{Tree\+Node\+::left}}, \mbox{\hyperlink{releases_2_tree_2_tree_8h_source_l00056}{Tree\+Node\+::right}}, \mbox{\hyperlink{releases_2_tree_2_tree_8h_source_l00086}{Tree\+::root}}, \mbox{\hyperlink{releases_2_tree_2_tree_8h_source_l00417}{TREE\+\_\+\+CTOR}}, \mbox{\hyperlink{tree_8cpp_source_l00214}{tree\+\_\+delete()}}, \mbox{\hyperlink{tree_8cpp_source_l00072}{tree\+\_\+dtor()}}, \mbox{\hyperlink{releases_2_tree_2_tree_8h_source_l00424}{TREE\+\_\+\+DUMP}}, \mbox{\hyperlink{tree_8cpp_source_l00180}{tree\+\_\+insert()}}, and \mbox{\hyperlink{releases_2_tree_2_tree_8h_source_l00177}{tree\+\_\+insert\+\_\+root()}}.
 
 
 
@@ -174,18 +174,13 @@ Referenced by \mbox{\hyperlink{main_8cpp_source_l00008}{int\+\_\+dtor()}}, and \
 \index{main.cpp@{main.cpp}!log\_file@{log\_file}}
 \index{log\_file@{log\_file}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{log\_file}{log\_file}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structLogFileData}{Log\+File\+Data}} log\+\_\+file = \{"{}log"{}\}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_log_file_data}{Log\+File\+Data}} log\+\_\+file = \{\"{}log\"{}\}}
 
 
 
 Definition at line \mbox{\hyperlink{main_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00004\ \{\textcolor{stringliteral}{"{}log"{}}\};}
 
-\end{DoxyCode}
-
-
-Referenced by \mbox{\hyperlink{log_8cpp_source_l00076}{log\+\_\+close\+\_\+file()}}, \mbox{\hyperlink{log_8cpp_source_l00050}{log\+\_\+create\+\_\+timestamp\+\_\+dir()}}, \mbox{\hyperlink{log_8cpp_source_l00026}{log\+\_\+open\+\_\+file()}}, \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}, \mbox{\hyperlink{dump_8cpp_source_l00162}{tree\+\_\+dump()}}, \mbox{\hyperlink{dump_8cpp_source_l00285}{tree\+\_\+dump\+\_\+dot()}}, and \mbox{\hyperlink{dump_8cpp_source_l00332}{tree\+\_\+print\+\_\+error()}}.
+Referenced by \mbox{\hyperlink{log_8cpp_source_l00078}{log\+\_\+close\+\_\+file()}}, \mbox{\hyperlink{log_8cpp_source_l00050}{log\+\_\+create\+\_\+timestamp\+\_\+dir()}}, \mbox{\hyperlink{log_8cpp_source_l00026}{log\+\_\+open\+\_\+file()}}, \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}, \mbox{\hyperlink{dump_8cpp_source_l00162}{tree\+\_\+dump()}}, \mbox{\hyperlink{dump_8cpp_source_l00285}{tree\+\_\+dump\+\_\+dot()}}, and \mbox{\hyperlink{dump_8cpp_source_l00332}{tree\+\_\+print\+\_\+error()}}.
 

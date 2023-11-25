@@ -17,27 +17,28 @@
 \DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00013}00013\ }
 \DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00014}00014\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <io.h>}}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <winnt.h>}}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <memoryapi.h>}}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00020}00020\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ \#ifndef\ \_WIN32}}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00022}00022\ \textcolor{preprocessor}{\#if\ defined(unix)\ ||\ defined(\_\_APPLE\_\_)}}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <errno.h>}}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00028}00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifdef\ unix\ ||\ \_\_APPLE\_\_}}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00030}00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifdef\ \_WIN32}}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00032}00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifdef\ LINUX\_MANUAL\_PTR\_VALIDATION}}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <io.h>}}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <winnt.h>}}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <memoryapi.h>}}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00021}00021\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ \#ifndef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00023}00023\ \textcolor{preprocessor}{\#if\ defined(unix)\ ||\ defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00027}00027\ \textcolor{preprocessor}{\#include\ <errno.h>}}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00029}00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifdef\ unix\ ||\ \_\_APPLE\_\_}}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00031}00031\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00033}00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifdef\ LINUX\_MANUAL\_PTR\_VALIDATION}}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00042}\mbox{\hyperlink{ptr__valid_8h_abe64e0238d870af22a8183bd558f893a}{00042}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{ptr__valid_8h_abe64e0238d870af22a8183bd558f893a}{is\_ptr\_valid}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ p);}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00044}00044\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00043}\mbox{\hyperlink{ptr__valid_8h_abe64e0238d870af22a8183bd558f893a}{00043}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{ptr__valid_8h_abe64e0238d870af22a8183bd558f893a}{is\_ptr\_valid}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ p);}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{ptr__valid_8h_source_l00045}00045\ \textcolor{preprocessor}{\#endif\ }}
 
 \end{DoxyCode}

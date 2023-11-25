@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['zero_5fnode_5fparams_0',['ZERO_NODE_PARAMS',['../dump_8cpp.html#aaff2fdf8ba0bd580713a7c161f89529f',1,'dump.cpp']]]
+  ['var_5fcode_5fdata_0',['VAR_CODE_DATA',['../macros_8h.html#a68960fb933bea9b067598ca388e5b6d5',1,'macros.h']]],
+  ['var_5fcode_5fdata_5fptr_1',['VAR_CODE_DATA_PTR',['../macros_8h.html#a8b6dac4dee6062b891084db600caa7ec',1,'macros.h']]]
 ];

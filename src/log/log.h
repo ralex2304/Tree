@@ -15,7 +15,18 @@
 #include "../utils/text/text_lib.h"
 
 #ifdef _WIN32
+
+#define WIN(...) __VA_ARGS__
+
+#define UNIX(...)
+
 #include<windows.h>
+#else
+
+#define WIN(...)
+
+#define UNIX(...) __VA_ARGS__
+
 #endif
 
 /**

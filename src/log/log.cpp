@@ -56,13 +56,15 @@ bool log_create_timestamp_dir(LogFileData* log_file) {
 
         tm* tm = localtime(&ltime);
 
+        log_file->timestamp_dir[0] = '\0';
+
         size_t str_len = strncat_len(log_file->timestamp_dir, log_file->dir, log_file->MAX_FILENAME_LEN);
-        str_len = strncat_len(log_file->timestamp_dir, "/", log_file->MAX_FILENAME_LEN);
+        str_len = strncat_len(log_file->timestamp_dir, UNIX("/") WIN("\\"), log_file->MAX_FILENAME_LEN);
 
         snprintf(log_file->timestamp_dir + str_len, log_file->MAX_FILENAME_LEN - str_len,
                 "%02d-%02d-%04d_%02d-%02d-%02d", tm->tm_mday, tm->tm_mon + 1, tm->tm_year + 1900,
                                                  tm->tm_hour, tm->tm_min, tm->tm_sec);
-        str_len = strncat_len(log_file->timestamp_dir, "/", log_file->MAX_FILENAME_LEN);
+        str_len = strncat_len(log_file->timestamp_dir, UNIX("/") WIN("\\"), log_file->MAX_FILENAME_LEN);
     }
 
     log_file->last_write = ltime;
@@ -94,7 +96,7 @@ bool log_create_dir(const char* dir_name) {
         closedir(dir);
     } else if (ENOENT == errno) {
 #ifdef _WIN32
-        if (CreateDirectory(dir_name, NULL) != 0) {
+        if (CreateDirectoryA(dir_name, NULL) == 0) {
             perror("Error creating dir");
             return false;
         }

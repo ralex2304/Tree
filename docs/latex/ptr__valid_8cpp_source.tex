@@ -48,14 +48,14 @@
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ Thanks\ to\ God-\/blessed\ library\ "{}TxLib.h"{}}}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00045}00045\ }
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00046}00046\ \ \ \ \ MEMORY\_BASIC\_INFORMATION\ mbi\ =\ \{\};}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!VirtualQuery\ (p,\ \&mbi,\ \textcolor{keyword}{sizeof}\ (mbi)))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!VirtualQuery\ (p,\ \&mbi,\ \textcolor{keyword}{sizeof}\ (mbi)))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (mbi.Protect\ \&\ (PAGE\_GUARD\ |\ PAGE\_NOACCESS))\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \ \textcolor{comment}{//\ Guard\ page\ -\/>\ bad\ ptr}}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (mbi.Protect\ \&\ (PAGE\_GUARD\ |\ PAGE\_NOACCESS))\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \ \textcolor{comment}{//\ Guard\ page\ -\/>\ bad\ ptr}}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00050}00050\ }
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00051}00051\ \ \ \ \ DWORD\ readRights\ =\ PAGE\_READONLY\ |\ PAGE\_READWRITE\ |\ PAGE\_WRITECOPY\ |\ PAGE\_EXECUTE\_READ}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ PAGE\_EXECUTE\_READWRITE\ |\ PAGE\_EXECUTE\_WRITECOPY;}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ !(mbi.Protect\ \&\ readRights);}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ (mbi.Protect\ \&\ readRights);}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00055}00055\ \}}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00056}00056\ }
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00057}00057\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ \#ifndef\ \_WIN32}}

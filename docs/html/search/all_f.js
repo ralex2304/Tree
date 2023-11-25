@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['size_0',['size',['../structTree.html#af4e7a6220b7940f6ddc831ec5354e491',1,'Tree']]],
+  ['size_0',['size',['../struct_tree.html#af4e7a6220b7940f6ddc831ec5354e491',1,'Tree']]],
   ['strncat_5flen_1',['strncat_len',['../text__lib_8cpp.html#abe1b59a7bb5e8a59513928094867ca90',1,'strncat_len(char *dest, const char *src, const ssize_t max_len):&#160;text_lib.cpp'],['../text__lib_8h.html#abe1b59a7bb5e8a59513928094867ca90',1,'strncat_len(char *dest, const char *src, const ssize_t max_len):&#160;text_lib.cpp']]],
   ['style_5fblink_5foff_2',['STYLE_BLINK_OFF',['../console_8h.html#a90d5198d0e1fdba8fc116dcafc4a3f55',1,'console.h']]],
   ['style_5fbold_3',['STYLE_BOLD',['../console_8h.html#a7ce3d6fee94f21c9e3d0ffdd90aadc2e',1,'console.h']]],

@@ -1,26 +1,26 @@
 \doxysection{src/dump.cpp File Reference}
 \hypertarget{dump_8cpp}{}\label{dump_8cpp}\index{src/dump.cpp@{src/dump.cpp}}
-{\ttfamily \#include "{}tree.\+h"{}}\newline
-{\ttfamily \#include "{}utils/html.\+h"{}}\newline
-{\ttfamily \#include "{}utils/ptr\+\_\+valid.\+h"{}}\newline
-{\ttfamily \#include "{}log/log.\+h"{}}\newline
-{\ttfamily \#include "{}log/graph\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include \"{}tree.\+h\"{}}\newline
+{\ttfamily \#include \"{}utils/html.\+h\"{}}\newline
+{\ttfamily \#include \"{}utils/ptr\+\_\+valid.\+h\"{}}\newline
+{\ttfamily \#include \"{}log/log.\+h\"{}}\newline
+{\ttfamily \#include \"{}log/graph\+\_\+log.\+h\"{}}\newline
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\+\_\+}}(...)~\mbox{\hyperlink{log_8cpp_adab5e89ed01fa9fb9c55544d3a21629b}{log\+\_\+printf}}(\&\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\+\_\+file}}, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
 \item 
-\#define \mbox{\hyperlink{dump_8cpp_a25dae98ac1b989ae4b73921f69e0b565}{FPRINTF\+\_\+}}(...)~if (fprintf(file, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+) == 0) return \mbox{\hyperlink{Tree_8h_a852e727421a8b2b124ed021e50d4ae4eabb1ca97ec761fc37101737ba0aa2e7c5}{Tree\+Node\+Action\+Res\+::\+ERROR}}
+\#define \mbox{\hyperlink{dump_8cpp_a25dae98ac1b989ae4b73921f69e0b565}{FPRINTF\+\_\+}}(...)~if (fprintf(file, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+) == 0) return \mbox{\hyperlink{releases_2_tree_2_tree_8h_a852e727421a8b2b124ed021e50d4ae4eacd22bad976363fdd1bfbf6759fede482}{Tree\+Node\+Action\+Res\+::\+ERR}}
 \item 
-\#define \mbox{\hyperlink{dump_8cpp_a61ae6f1ae401c962137f2ae1d2a158df}{BACKGROUND\+\_\+\+COLOR}}~"{}\textbackslash{}"{}\#1f1f1f\textbackslash{}"{}"{}
+\#define \mbox{\hyperlink{dump_8cpp_a61ae6f1ae401c962137f2ae1d2a158df}{BACKGROUND\+\_\+\+COLOR}}~\"{}\textbackslash{}\"{}\#1f1f1f\textbackslash{}\"{}\"{}
 \item 
-\#define \mbox{\hyperlink{dump_8cpp_ad59310326ec82ad265f67389cb8f4906}{FONT\+\_\+\+COLOR}}~"{}\textbackslash{}"{}\#000000\textbackslash{}"{}"{}
+\#define \mbox{\hyperlink{dump_8cpp_ad59310326ec82ad265f67389cb8f4906}{FONT\+\_\+\+COLOR}}~\"{}\textbackslash{}\"{}\#000000\textbackslash{}\"{}\"{}
 \item 
-\#define \mbox{\hyperlink{dump_8cpp_a7ed571c41c085c3044796a42569a12cd}{NODE\+\_\+\+PREFIX}}~"{}elem\+\_\+"{}
+\#define \mbox{\hyperlink{dump_8cpp_a7ed571c41c085c3044796a42569a12cd}{NODE\+\_\+\+PREFIX}}~\"{}elem\+\_\+\"{}
 \item 
-\#define \mbox{\hyperlink{dump_8cpp_abb67cd5b7bc2dfc6a1144a5fd1afe5a6}{NODE\+\_\+\+PARAMS}}~"{}shape=\textbackslash{}"{}plaintext\textbackslash{}"{}, style=\textbackslash{}"{}filled\textbackslash{}"{}, fillcolor=\textbackslash{}"{}\#6e7681\textbackslash{}"{}"{}
+\#define \mbox{\hyperlink{dump_8cpp_abb67cd5b7bc2dfc6a1144a5fd1afe5a6}{NODE\+\_\+\+PARAMS}}~\"{}shape=\textbackslash{}\"{}plaintext\textbackslash{}\"{}, style=\textbackslash{}\"{}filled\textbackslash{}\"{}, fillcolor=\textbackslash{}\"{}\#6e7681\textbackslash{}\"{}\"{}
 \item 
-\#define \mbox{\hyperlink{dump_8cpp_aaff2fdf8ba0bd580713a7c161f89529f}{ZERO\+\_\+\+NODE\+\_\+\+PARAMS}}~"{}shape=\textbackslash{}"{}plaintext\textbackslash{}"{}, style=\textbackslash{}"{}filled\textbackslash{}"{}, fillcolor=\textbackslash{}"{}\#6e7681\textbackslash{}"{}, color=yellow"{}
+\#define \mbox{\hyperlink{dump_8cpp_aaff2fdf8ba0bd580713a7c161f89529f}{ZERO\+\_\+\+NODE\+\_\+\+PARAMS}}~\"{}shape=\textbackslash{}\"{}plaintext\textbackslash{}\"{}, style=\textbackslash{}\"{}filled\textbackslash{}\"{}, fillcolor=\textbackslash{}\"{}\#6e7681\textbackslash{}\"{}, color=yellow\"{}
 \item 
 \#define \mbox{\hyperlink{dump_8cpp_a25dae98ac1b989ae4b73921f69e0b565}{FPRINTF\+\_\+}}(...)~if (fprintf(file, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+) == 0) return false
 \item 
@@ -29,16 +29,16 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{dump_8cpp_a013a6943ce00dbf401a939270f615db9}{tree\+\_\+dump}} (\mbox{\hyperlink{structTree}{Tree}} \texorpdfstring{$\ast$}{*}tree, const \mbox{\hyperlink{structVarCodeData}{Var\+Code\+Data}} call\+\_\+data)
+void \mbox{\hyperlink{dump_8cpp_a013a6943ce00dbf401a939270f615db9}{tree\+\_\+dump}} (\mbox{\hyperlink{struct_tree}{Tree}} \texorpdfstring{$\ast$}{*}tree, const \mbox{\hyperlink{struct_var_code_data}{Var\+Code\+Data}} call\+\_\+data)
 \begin{DoxyCompactList}\small\item\em (Use TREE\+\_\+\+DUMP macros) Dumps tree to log file \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{dump_8cpp_a34a004d95122c89e43a5cc5cb23a7300}{tree\+\_\+dump\+\_\+dot}} (\mbox{\hyperlink{structTree}{Tree}} \texorpdfstring{$\ast$}{*}tree, char \texorpdfstring{$\ast$}{*}img\+\_\+filename)
+bool \mbox{\hyperlink{dump_8cpp_a34a004d95122c89e43a5cc5cb23a7300}{tree\+\_\+dump\+\_\+dot}} (\mbox{\hyperlink{struct_tree}{Tree}} \texorpdfstring{$\ast$}{*}tree, char \texorpdfstring{$\ast$}{*}img\+\_\+filename)
 \begin{DoxyCompactList}\small\item\em Dumps tree to dot img file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{dump_8cpp_a2c034e10dd598a8b95a1fd38ef206d6f}{tree\+\_\+print\+\_\+error}} (const int err\+\_\+code)
 \begin{DoxyCompactList}\small\item\em Prints text error to log file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structLogFileData}{Log\+File\+Data}} \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\+\_\+file}}
+\mbox{\hyperlink{struct_log_file_data}{Log\+File\+Data}} \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\+\_\+file}}
 \end{DoxyCompactItemize}
 
 
@@ -47,7 +47,7 @@ void \mbox{\hyperlink{dump_8cpp_a2c034e10dd598a8b95a1fd38ef206d6f}{tree\+\_\+pri
 \index{dump.cpp@{dump.cpp}!BACKGROUND\_COLOR@{BACKGROUND\_COLOR}}
 \index{BACKGROUND\_COLOR@{BACKGROUND\_COLOR}!dump.cpp@{dump.cpp}}
 \doxysubsubsection{\texorpdfstring{BACKGROUND\_COLOR}{BACKGROUND\_COLOR}}
-{\footnotesize\ttfamily \#define BACKGROUND\+\_\+\+COLOR~"{}\textbackslash{}"{}\#1f1f1f\textbackslash{}"{}"{}}
+{\footnotesize\ttfamily \#define BACKGROUND\+\_\+\+COLOR~\"{}\textbackslash{}\"{}\#1f1f1f\textbackslash{}\"{}\"{}}
 
 
 
@@ -57,7 +57,7 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00229}{229}} of file \mbox
 \index{dump.cpp@{dump.cpp}!FONT\_COLOR@{FONT\_COLOR}}
 \index{FONT\_COLOR@{FONT\_COLOR}!dump.cpp@{dump.cpp}}
 \doxysubsubsection{\texorpdfstring{FONT\_COLOR}{FONT\_COLOR}}
-{\footnotesize\ttfamily \#define FONT\+\_\+\+COLOR~"{}\textbackslash{}"{}\#000000\textbackslash{}"{}"{}}
+{\footnotesize\ttfamily \#define FONT\+\_\+\+COLOR~\"{}\textbackslash{}\"{}\#000000\textbackslash{}\"{}\"{}}
 
 
 
@@ -67,7 +67,7 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00230}{230}} of file \mbox
 \index{dump.cpp@{dump.cpp}!FPRINTF\_@{FPRINTF\_}}
 \index{FPRINTF\_@{FPRINTF\_}!dump.cpp@{dump.cpp}}
 \doxysubsubsection{\texorpdfstring{FPRINTF\_}{FPRINTF\_}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \#define FPRINTF\+\_\+(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~if (fprintf(file, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+) == 0) return \mbox{\hyperlink{Tree_8h_a852e727421a8b2b124ed021e50d4ae4eabb1ca97ec761fc37101737ba0aa2e7c5}{Tree\+Node\+Action\+Res\+::\+ERROR}}}
+{\footnotesize\ttfamily \#define FPRINTF\+\_\+(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~if (fprintf(file, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+) == 0) return \mbox{\hyperlink{releases_2_tree_2_tree_8h_a852e727421a8b2b124ed021e50d4ae4eacd22bad976363fdd1bfbf6759fede482}{Tree\+Node\+Action\+Res\+::\+ERR}}}
 
 
 
@@ -97,7 +97,7 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00012}{12}} of file \mbox{
 \index{dump.cpp@{dump.cpp}!NODE\_PARAMS@{NODE\_PARAMS}}
 \index{NODE\_PARAMS@{NODE\_PARAMS}!dump.cpp@{dump.cpp}}
 \doxysubsubsection{\texorpdfstring{NODE\_PARAMS}{NODE\_PARAMS}}
-{\footnotesize\ttfamily \#define NODE\+\_\+\+PARAMS~"{}shape=\textbackslash{}"{}plaintext\textbackslash{}"{}, style=\textbackslash{}"{}filled\textbackslash{}"{}, fillcolor=\textbackslash{}"{}\#6e7681\textbackslash{}"{}"{}}
+{\footnotesize\ttfamily \#define NODE\+\_\+\+PARAMS~\"{}shape=\textbackslash{}\"{}plaintext\textbackslash{}\"{}, style=\textbackslash{}\"{}filled\textbackslash{}\"{}, fillcolor=\textbackslash{}\"{}\#6e7681\textbackslash{}\"{}\"{}}
 
 
 
@@ -107,7 +107,7 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00232}{232}} of file \mbox
 \index{dump.cpp@{dump.cpp}!NODE\_PREFIX@{NODE\_PREFIX}}
 \index{NODE\_PREFIX@{NODE\_PREFIX}!dump.cpp@{dump.cpp}}
 \doxysubsubsection{\texorpdfstring{NODE\_PREFIX}{NODE\_PREFIX}}
-{\footnotesize\ttfamily \#define NODE\+\_\+\+PREFIX~"{}elem\+\_\+"{}}
+{\footnotesize\ttfamily \#define NODE\+\_\+\+PREFIX~\"{}elem\+\_\+\"{}}
 
 
 
@@ -130,16 +130,11 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00231}{231}} of file \mbox
 
 Definition at line \mbox{\hyperlink{dump_8cpp_source_l00329}{329}} of file \mbox{\hyperlink{dump_8cpp_source}{dump.\+cpp}}.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{stringliteral}{"{}\ descr\ "{}}\(\backslash\)n\textcolor{stringliteral}{"{})));}}
-
-\end{DoxyCode}
 \Hypertarget{dump_8cpp_aaff2fdf8ba0bd580713a7c161f89529f}\label{dump_8cpp_aaff2fdf8ba0bd580713a7c161f89529f} 
 \index{dump.cpp@{dump.cpp}!ZERO\_NODE\_PARAMS@{ZERO\_NODE\_PARAMS}}
 \index{ZERO\_NODE\_PARAMS@{ZERO\_NODE\_PARAMS}!dump.cpp@{dump.cpp}}
 \doxysubsubsection{\texorpdfstring{ZERO\_NODE\_PARAMS}{ZERO\_NODE\_PARAMS}}
-{\footnotesize\ttfamily \#define ZERO\+\_\+\+NODE\+\_\+\+PARAMS~"{}shape=\textbackslash{}"{}plaintext\textbackslash{}"{}, style=\textbackslash{}"{}filled\textbackslash{}"{}, fillcolor=\textbackslash{}"{}\#6e7681\textbackslash{}"{}, color=yellow"{}}
+{\footnotesize\ttfamily \#define ZERO\+\_\+\+NODE\+\_\+\+PARAMS~\"{}shape=\textbackslash{}\"{}plaintext\textbackslash{}\"{}, style=\textbackslash{}\"{}filled\textbackslash{}\"{}, fillcolor=\textbackslash{}\"{}\#6e7681\textbackslash{}\"{}, color=yellow\"{}}
 
 
 
@@ -152,7 +147,7 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00233}{233}} of file \mbox
 \index{dump.cpp@{dump.cpp}!tree\_dump@{tree\_dump}}
 \index{tree\_dump@{tree\_dump}!dump.cpp@{dump.cpp}}
 \doxysubsubsection{\texorpdfstring{tree\_dump()}{tree\_dump()}}
-{\footnotesize\ttfamily void tree\+\_\+dump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTree}{Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{const \mbox{\hyperlink{structVarCodeData}{Var\+Code\+Data}}}]{var\+\_\+data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void tree\+\_\+dump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tree}{Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{const \mbox{\hyperlink{struct_var_code_data}{Var\+Code\+Data}}}]{var\+\_\+data }\end{DoxyParamCaption})}
 
 
 
@@ -178,18 +173,18 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00162}{162}} of file \mbox
 \DoxyCodeLine{00166\ }
 \DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\ \ \ \ tree\_dump()\ called\ from\ \%s:\%d\ \%s\(\backslash\)n"{}}}
 \DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ \%s[\%p]\ initialised\ in\ \%s:\%d\ \%s\ \(\backslash\)n"{}},}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ call\_data.\mbox{\hyperlink{structVarCodeData_a25347ec3ab07e84f5ac1b2e1220ef388}{file}},\ call\_data.\mbox{\hyperlink{structVarCodeData_a57de68d99a4698c17ae07e31c8e6de6c}{line}},\ call\_data.\mbox{\hyperlink{structVarCodeData_a6da889b7111ab8c530acba167462bb95}{func}},}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ tree-\/>\mbox{\hyperlink{structTree_ad7c76730c28c19500ec415650ddbb472}{var\_data}}.\mbox{\hyperlink{structVarCodeData_a0bde6b05c83fb7bdf1a0f20fa4677762}{name}},\ tree,}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ tree-\/>\mbox{\hyperlink{structTree_ad7c76730c28c19500ec415650ddbb472}{var\_data}}.\mbox{\hyperlink{structVarCodeData_a25347ec3ab07e84f5ac1b2e1220ef388}{file}},\ tree-\/>\mbox{\hyperlink{structTree_ad7c76730c28c19500ec415650ddbb472}{var\_data}}.\mbox{\hyperlink{structVarCodeData_a57de68d99a4698c17ae07e31c8e6de6c}{line}},\ tree-\/>\mbox{\hyperlink{structTree_ad7c76730c28c19500ec415650ddbb472}{var\_data}}.\mbox{\hyperlink{structVarCodeData_a6da889b7111ab8c530acba167462bb95}{func}});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ call\_data.\mbox{\hyperlink{struct_var_code_data_a25347ec3ab07e84f5ac1b2e1220ef388}{file}},\ call\_data.\mbox{\hyperlink{struct_var_code_data_a57de68d99a4698c17ae07e31c8e6de6c}{line}},\ call\_data.\mbox{\hyperlink{struct_var_code_data_a6da889b7111ab8c530acba167462bb95}{func}},}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ tree-\/>\mbox{\hyperlink{struct_tree_ad7c76730c28c19500ec415650ddbb472}{var\_data}}.\mbox{\hyperlink{struct_var_code_data_a0bde6b05c83fb7bdf1a0f20fa4677762}{name}},\ tree,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ tree-\/>\mbox{\hyperlink{struct_tree_ad7c76730c28c19500ec415650ddbb472}{var\_data}}.\mbox{\hyperlink{struct_var_code_data_a25347ec3ab07e84f5ac1b2e1220ef388}{file}},\ tree-\/>\mbox{\hyperlink{struct_tree_ad7c76730c28c19500ec415650ddbb472}{var\_data}}.\mbox{\hyperlink{struct_var_code_data_a57de68d99a4698c17ae07e31c8e6de6c}{line}},\ tree-\/>\mbox{\hyperlink{struct_tree_ad7c76730c28c19500ec415650ddbb472}{var\_data}}.\mbox{\hyperlink{struct_var_code_data_a6da889b7111ab8c530acba167462bb95}{func}});}
 \DoxyCodeLine{00172\ }
 \DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\ \ \ \ \{\(\backslash\)n"{}});}
-\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\ \ \ \ size\ =\ \%zd\(\backslash\)n"{}},\ tree-\/>\mbox{\hyperlink{structTree_af4e7a6220b7940f6ddc831ec5354e491}{size}});}
-\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\ \ \ \ root\ =\ \%p\(\backslash\)n"{}},\ tree-\/>\mbox{\hyperlink{structTree_a6476a2d8d5ce40b66d725a99af143f65}{root}});}
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\ \ \ \ size\ =\ \%zd\(\backslash\)n"{}},\ tree-\/>\mbox{\hyperlink{struct_tree_af4e7a6220b7940f6ddc831ec5354e491}{size}});}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\ \ \ \ root\ =\ \%p\(\backslash\)n"{}},\ tree-\/>\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}});}
 \DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \{\(\backslash\)n"{}});}
 \DoxyCodeLine{00177\ }
-\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{ptr__valid_8h_abe64e0238d870af22a8183bd558f893a}{is\_ptr\_valid}}(tree-\/>\mbox{\hyperlink{structTree_a6476a2d8d5ce40b66d725a99af143f65}{root}}))\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{ptr__valid_8h_abe64e0238d870af22a8183bd558f893a}{is\_ptr\_valid}}(tree-\/>\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}}))\ \{}
 \DoxyCodeLine{00179\ }
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tree-\/>\mbox{\hyperlink{structTree_af4e7a6220b7940f6ddc831ec5354e491}{size}}\ !=\ 0\ \&\&\ \mbox{\hyperlink{Tree_8h_a6d4c1adfbea0f30e6f72eb4db145257c}{tree\_is\_initialised}}(tree))}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tree-\/>\mbox{\hyperlink{struct_tree_af4e7a6220b7940f6ddc831ec5354e491}{size}}\ !=\ 0\ \&\&\ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a6d4c1adfbea0f30e6f72eb4db145257c}{tree\_is\_initialised}}(tree))}
 \DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\mbox{\hyperlink{html_8h_aeff0254241bdd079cf60aa19016e3c44}{HTML\_RED}}(\textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ can't\ read\ (invalid\ pointer)\(\backslash\)n"{}}));}
 \DoxyCodeLine{00182\ }
 \DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \}\(\backslash\)n"{}}}
@@ -199,28 +194,28 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00162}{162}} of file \mbox
 \DoxyCodeLine{00187\ }
 \DoxyCodeLine{00188\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ "{}}\textcolor{stringliteral}{"{}\ prefix:\ \ "{}});}
 \DoxyCodeLine{00189\ }
-\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{Tree_8h_a0f56a17b194f57e1dfcd91cd33f98c38}{TreeNodeAction}}*\ pre\_actions[4]\ =\ \{\&tree\_dump\_log\_open\_node\_val,\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a0f56a17b194f57e1dfcd91cd33f98c38}{TreeNodeAction}}*\ pre\_actions[4]\ =\ \{\&tree\_dump\_log\_open\_node\_val,\ \textcolor{keyword}{nullptr},}
 \DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&tree\_dump\_log\_close\_node,\ \&tree\_dump\_log\_nil\};}
 \DoxyCodeLine{00192\ }
-\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{Tree_8h_a75e7ad4be8361db4261586d1d0244da0}{tree\_traversal}}(tree,\ \&tree-\/>\mbox{\hyperlink{structTree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ pre\_actions);}
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a75e7ad4be8361db4261586d1d0244da0}{tree\_traversal}}(tree,\ \&tree-\/>\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ pre\_actions);}
 \DoxyCodeLine{00194\ }
 \DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
 \DoxyCodeLine{00196\ }
 \DoxyCodeLine{00197\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ "{}}\textcolor{stringliteral}{"{}\ infix:\ \ \ "{}});}
 \DoxyCodeLine{00198\ }
-\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{Tree_8h_a0f56a17b194f57e1dfcd91cd33f98c38}{TreeNodeAction}}*\ in\_actions[4]\ =\ \{\&tree\_dump\_log\_open\_node,\ \&tree\_dump\_log\_val,}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a0f56a17b194f57e1dfcd91cd33f98c38}{TreeNodeAction}}*\ in\_actions[4]\ =\ \{\&tree\_dump\_log\_open\_node,\ \&tree\_dump\_log\_val,}
 \DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&tree\_dump\_log\_close\_node,\ \&tree\_dump\_log\_nil\};}
 \DoxyCodeLine{00201\ }
-\DoxyCodeLine{00202\ \ \ \ \ \mbox{\hyperlink{Tree_8h_a75e7ad4be8361db4261586d1d0244da0}{tree\_traversal}}(tree,\ \&tree-\/>\mbox{\hyperlink{structTree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ in\_actions);}
+\DoxyCodeLine{00202\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a75e7ad4be8361db4261586d1d0244da0}{tree\_traversal}}(tree,\ \&tree-\/>\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ in\_actions);}
 \DoxyCodeLine{00203\ }
 \DoxyCodeLine{00204\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
 \DoxyCodeLine{00205\ }
 \DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ "{}}\textcolor{stringliteral}{"{}\ postfix:\ "{}});}
 \DoxyCodeLine{00207\ }
-\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{Tree_8h_a0f56a17b194f57e1dfcd91cd33f98c38}{TreeNodeAction}}*\ post\_actions[4]\ =\ \{\&tree\_dump\_log\_open\_node,\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a0f56a17b194f57e1dfcd91cd33f98c38}{TreeNodeAction}}*\ post\_actions[4]\ =\ \{\&tree\_dump\_log\_open\_node,\ \textcolor{keyword}{nullptr},}
 \DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&tree\_dump\_log\_close\_node\_val,\ \&tree\_dump\_log\_nil\};}
 \DoxyCodeLine{00210\ }
-\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{Tree_8h_a75e7ad4be8361db4261586d1d0244da0}{tree\_traversal}}(tree,\ \&tree-\/>\mbox{\hyperlink{structTree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ post\_actions);}
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a75e7ad4be8361db4261586d1d0244da0}{tree\_traversal}}(tree,\ \&tree-\/>\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ post\_actions);}
 \DoxyCodeLine{00212\ }
 \DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
 \DoxyCodeLine{00214\ }
@@ -228,7 +223,7 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00162}{162}} of file \mbox
 \DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a355f7906784ddec79b09abb331083dc6}{LOG\_}}(\textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \}\(\backslash\)n"{}}}
 \DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ \}\(\backslash\)n"{}}\ \mbox{\hyperlink{html_8h_a2df8677bea55f26352fc8982b34337f2}{HTML\_END}});}
 \DoxyCodeLine{00218\ }
-\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{char}\ img\_filename[\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}}]\ =\ \{\};}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{char}\ img\_filename[\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{struct_log_file_data_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}}]\ =\ \{\};}
 \DoxyCodeLine{00220\ }
 \DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a34a004d95122c89e43a5cc5cb23a7300}{tree\_dump\_dot}}(tree,\ img\_filename);}
 \DoxyCodeLine{00222\ }
@@ -238,13 +233,13 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00162}{162}} of file \mbox
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{macros_8h_source_l00036}{Var\+Code\+Data\+::file}}, \mbox{\hyperlink{macros_8h_source_l00038}{Var\+Code\+Data\+::func}}, \mbox{\hyperlink{html_8h_source_l00005}{HTML\+\_\+\+BEGIN}}, \mbox{\hyperlink{html_8h_source_l00007}{HTML\+\_\+\+END}}, \mbox{\hyperlink{html_8h_source_l00018}{HTML\+\_\+\+RED}}, \mbox{\hyperlink{ptr__valid_8h_abe64e0238d870af22a8183bd558f893a}{is\+\_\+ptr\+\_\+valid()}}, \mbox{\hyperlink{macros_8h_source_l00037}{Var\+Code\+Data\+::line}}, \mbox{\hyperlink{dump_8cpp_source_l00012}{LOG\+\_\+}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, \mbox{\hyperlink{log_8h_source_l00033}{Log\+File\+Data\+::\+MAX\+\_\+\+FILENAME\+\_\+\+LEN}}, \mbox{\hyperlink{macros_8h_source_l00035}{Var\+Code\+Data\+::name}}, \mbox{\hyperlink{Tree_8h_source_l00085}{Tree\+::root}}, \mbox{\hyperlink{Tree_8h_source_l00083}{Tree\+::size}}, \mbox{\hyperlink{dump_8cpp_source_l00285}{tree\+\_\+dump\+\_\+dot()}}, \mbox{\hyperlink{Tree_8h_source_l00221}{tree\+\_\+is\+\_\+initialised()}}, \mbox{\hyperlink{tree_8cpp_source_l00252}{tree\+\_\+traversal()}}, and \mbox{\hyperlink{TreeDebug_8h_source_l00090}{Tree\+::var\+\_\+data}}.
+References \mbox{\hyperlink{macros_8h_source_l00036}{Var\+Code\+Data\+::file}}, \mbox{\hyperlink{macros_8h_source_l00038}{Var\+Code\+Data\+::func}}, \mbox{\hyperlink{html_8h_source_l00005}{HTML\+\_\+\+BEGIN}}, \mbox{\hyperlink{html_8h_source_l00007}{HTML\+\_\+\+END}}, \mbox{\hyperlink{html_8h_source_l00018}{HTML\+\_\+\+RED}}, \mbox{\hyperlink{ptr__valid_8h_abe64e0238d870af22a8183bd558f893a}{is\+\_\+ptr\+\_\+valid()}}, \mbox{\hyperlink{macros_8h_source_l00037}{Var\+Code\+Data\+::line}}, \mbox{\hyperlink{dump_8cpp_source_l00012}{LOG\+\_\+}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, \mbox{\hyperlink{log_8h_source_l00044}{Log\+File\+Data\+::\+MAX\+\_\+\+FILENAME\+\_\+\+LEN}}, \mbox{\hyperlink{macros_8h_source_l00035}{Var\+Code\+Data\+::name}}, \mbox{\hyperlink{releases_2_tree_2_tree_8h_source_l00086}{Tree\+::root}}, \mbox{\hyperlink{releases_2_tree_2_tree_8h_source_l00084}{Tree\+::size}}, \mbox{\hyperlink{dump_8cpp_source_l00285}{tree\+\_\+dump\+\_\+dot()}}, \mbox{\hyperlink{releases_2_tree_2_tree_8h_source_l00243}{tree\+\_\+is\+\_\+initialised()}}, \mbox{\hyperlink{tree_8cpp_source_l00294}{tree\+\_\+traversal()}}, and \mbox{\hyperlink{_tree_debug_8h_source_l00091}{Tree\+::var\+\_\+data}}.
 
 \Hypertarget{dump_8cpp_a34a004d95122c89e43a5cc5cb23a7300}\label{dump_8cpp_a34a004d95122c89e43a5cc5cb23a7300} 
 \index{dump.cpp@{dump.cpp}!tree\_dump\_dot@{tree\_dump\_dot}}
 \index{tree\_dump\_dot@{tree\_dump\_dot}!dump.cpp@{dump.cpp}}
 \doxysubsubsection{\texorpdfstring{tree\_dump\_dot()}{tree\_dump\_dot()}}
-{\footnotesize\ttfamily bool tree\+\_\+dump\+\_\+dot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTree}{Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{char \texorpdfstring{$\ast$}{*}}]{img\+\_\+filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool tree\+\_\+dump\+\_\+dot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tree}{Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{char \texorpdfstring{$\ast$}{*}}]{img\+\_\+filename }\end{DoxyParamCaption})}
 
 
 
@@ -274,12 +269,12 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00285}{285}} of file \mbox
 \DoxyCodeLine{00288\ }
 \DoxyCodeLine{00289\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ dot\_number\ =\ 0;}
 \DoxyCodeLine{00290\ }
-\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{char}\ dot\_filename[\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}}]\ =\ \{\};}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{char}\ dot\_filename[\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{struct_log_file_data_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}}]\ =\ \{\};}
 \DoxyCodeLine{00292\ }
-\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(dot\_filename,\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
-\DoxyCodeLine{00294\ \ \ \ \ snprintf(dot\_filename\ +\ str\_len,\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}}\ -\/\ str\_len,}
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(dot\_filename,\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{struct_log_file_data_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{struct_log_file_data_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
+\DoxyCodeLine{00294\ \ \ \ \ snprintf(dot\_filename\ +\ str\_len,\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{struct_log_file_data_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}}\ -\/\ str\_len,}
 \DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\%zd"{}},\ dot\_number);}
-\DoxyCodeLine{00296\ \ \ \ \ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(dot\_filename,\ \textcolor{stringliteral}{"{}.dot"{}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
+\DoxyCodeLine{00296\ \ \ \ \ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(dot\_filename,\ \textcolor{stringliteral}{"{}.dot"{}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{struct_log_file_data_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
 \DoxyCodeLine{00297\ }
 \DoxyCodeLine{00298\ \ \ \ \ FILE*\ file\ =\ fopen(dot\_filename,\ \textcolor{stringliteral}{"{}wb"{}});}
 \DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ ==\ \textcolor{keyword}{nullptr})}
@@ -290,7 +285,7 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00285}{285}} of file \mbox
 \DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ node[color=white,\ fontcolor="{}}\ \mbox{\hyperlink{dump_8cpp_ad59310326ec82ad265f67389cb8f4906}{FONT\_COLOR}}\ \textcolor{stringliteral}{"{},\ fontsize=14,\ "{}}}
 \DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}fontname=\(\backslash\)"{}verdana\(\backslash\)"{},\ style=\(\backslash\)"{}filled\(\backslash\)"{},\ fillcolor=\(\backslash\)"{}\#6e7681\(\backslash\)"{}];\(\backslash\)n\(\backslash\)n"{}});}
 \DoxyCodeLine{00306\ }
-\DoxyCodeLine{00307\ \ \ \ \ \mbox{\hyperlink{Tree_8h_a47cb5d8934a3dade4562789eb2ef91ba}{tree\_preorder}}(tree,\ \&tree-\/>\mbox{\hyperlink{structTree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ \&tree\_dump\_dot\_log\_node\_,\ file);}
+\DoxyCodeLine{00307\ \ \ \ \ \mbox{\hyperlink{releases_2_tree_2_tree_8h_a47cb5d8934a3dade4562789eb2ef91ba}{tree\_preorder}}(tree,\ \&tree-\/>\mbox{\hyperlink{struct_tree_a6476a2d8d5ce40b66d725a99af143f65}{root}},\ \&tree\_dump\_dot\_log\_node\_,\ file);}
 \DoxyCodeLine{00308\ }
 \DoxyCodeLine{00309\ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a25dae98ac1b989ae4b73921f69e0b565}{FPRINTF\_}}(\textcolor{stringliteral}{"{}\}\(\backslash\)n"{}});}
 \DoxyCodeLine{00310\ }
@@ -299,9 +294,9 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00285}{285}} of file \mbox
 \DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00314\ \ \ \ \ \}}
 \DoxyCodeLine{00315\ }
-\DoxyCodeLine{00316\ \ \ \ \ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(img\_filename,\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{structLogFileData_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
-\DoxyCodeLine{00317\ \ \ \ \ snprintf(img\_filename\ +\ str\_len,\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}}\ -\/\ str\_len,\ \textcolor{stringliteral}{"{}\%zd"{}},\ dot\_number++);}
-\DoxyCodeLine{00318\ \ \ \ \ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(img\_filename,\ \textcolor{stringliteral}{"{}.svg"{}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{structLogFileData_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
+\DoxyCodeLine{00316\ \ \ \ \ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(img\_filename,\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{struct_log_file_data_a6590abf896eaa61ac742810928e553e4}{timestamp\_dir}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{struct_log_file_data_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
+\DoxyCodeLine{00317\ \ \ \ \ snprintf(img\_filename\ +\ str\_len,\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{struct_log_file_data_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}}\ -\/\ str\_len,\ \textcolor{stringliteral}{"{}\%zd"{}},\ dot\_number++);}
+\DoxyCodeLine{00318\ \ \ \ \ str\_len\ =\ \mbox{\hyperlink{text__lib_8cpp_abe1b59a7bb5e8a59513928094867ca90}{strncat\_len}}(img\_filename,\ \textcolor{stringliteral}{"{}.svg"{}},\ \mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}}.\mbox{\hyperlink{struct_log_file_data_ab9f84da35b2dba4a3a3e5dba3aa7b9b5}{MAX\_FILENAME\_LEN}});}
 \DoxyCodeLine{00319\ }
 \DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{graph__log_8cpp_a7638af32477a4647619469c995c46edc}{create\_img}}(dot\_filename,\ img\_filename))\ \{}
 \DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Error\ creating\ dot\ graph\(\backslash\)n"{}});}
@@ -314,7 +309,7 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00285}{285}} of file \mbox
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{dump_8cpp_source_l00229}{BACKGROUND\+\_\+\+COLOR}}, \mbox{\hyperlink{graph__log_8cpp_source_l00003}{create\+\_\+img()}}, \mbox{\hyperlink{dump_8cpp_source_l00230}{FONT\+\_\+\+COLOR}}, \mbox{\hyperlink{dump_8cpp_source_l00227}{FPRINTF\+\_\+}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, \mbox{\hyperlink{log_8h_source_l00033}{Log\+File\+Data\+::\+MAX\+\_\+\+FILENAME\+\_\+\+LEN}}, \mbox{\hyperlink{Tree_8h_source_l00085}{Tree\+::root}}, \mbox{\hyperlink{text__lib_8cpp_source_l00003}{strncat\+\_\+len()}}, \mbox{\hyperlink{log_8h_source_l00035}{Log\+File\+Data\+::timestamp\+\_\+dir}}, and \mbox{\hyperlink{tree_8cpp_source_l00273}{tree\+\_\+preorder()}}.
+References \mbox{\hyperlink{dump_8cpp_source_l00229}{BACKGROUND\+\_\+\+COLOR}}, \mbox{\hyperlink{graph__log_8cpp_source_l00003}{create\+\_\+img()}}, \mbox{\hyperlink{dump_8cpp_source_l00230}{FONT\+\_\+\+COLOR}}, \mbox{\hyperlink{dump_8cpp_source_l00227}{FPRINTF\+\_\+}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, \mbox{\hyperlink{log_8h_source_l00044}{Log\+File\+Data\+::\+MAX\+\_\+\+FILENAME\+\_\+\+LEN}}, \mbox{\hyperlink{releases_2_tree_2_tree_8h_source_l00086}{Tree\+::root}}, \mbox{\hyperlink{text__lib_8cpp_source_l00003}{strncat\+\_\+len()}}, \mbox{\hyperlink{log_8h_source_l00046}{Log\+File\+Data\+::timestamp\+\_\+dir}}, and \mbox{\hyperlink{tree_8cpp_source_l00316}{tree\+\_\+preorder()}}.
 
 
 
@@ -342,7 +337,7 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00332}{332}} of file \mbox
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordflow}{if}\ (err\_code\ ==\ \mbox{\hyperlink{structTree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{Tree::OK}})\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordflow}{if}\ (err\_code\ ==\ \mbox{\hyperlink{struct_tree_a817c3cb647deac6a6be0155631f2e06dab5167160e061ef836369025cffff41d3}{Tree::OK}})\ \{}
 \DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{log_8cpp_adab5e89ed01fa9fb9c55544d3a21629b}{log\_printf}}(\&\mbox{\hyperlink{dump_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}},\ \mbox{\hyperlink{html_8h_af5420035dccd3dfd5325ca0638081475}{HTML\_TEXT}}(\mbox{\hyperlink{html_8h_a3208c6e370f00379a74f19180fbc6462}{HTML\_GREEN}}(\textcolor{stringliteral}{"{}No\ error\(\backslash\)n"{}})));}
 \DoxyCodeLine{00335\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
 \DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dump_8cpp_a4f9e8dba978737f226f1698e5d4ac66f}{PRINT\_ERR\_}}(ALLOC\_ERR,\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Can't\ allocate\ memory"{}});}
@@ -364,7 +359,7 @@ Definition at line \mbox{\hyperlink{dump_8cpp_source_l00332}{332}} of file \mbox
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{html_8h_source_l00019}{HTML\+\_\+\+GREEN}}, \mbox{\hyperlink{html_8h_source_l00016}{HTML\+\_\+\+TEXT}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}, \mbox{\hyperlink{Tree_8h_source_l00066}{Tree\+::\+OK}}, and \mbox{\hyperlink{dump_8cpp_source_l00329}{PRINT\+\_\+\+ERR\+\_\+}}.
+References \mbox{\hyperlink{html_8h_source_l00019}{HTML\+\_\+\+GREEN}}, \mbox{\hyperlink{html_8h_source_l00016}{HTML\+\_\+\+TEXT}}, \mbox{\hyperlink{main_8cpp_source_l00004}{log\+\_\+file}}, \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}, \mbox{\hyperlink{releases_2_tree_2_tree_8h_source_l00067}{Tree\+::\+OK}}, and \mbox{\hyperlink{dump_8cpp_source_l00329}{PRINT\+\_\+\+ERR\+\_\+}}.
 
 
 
@@ -373,18 +368,13 @@ References \mbox{\hyperlink{html_8h_source_l00019}{HTML\+\_\+\+GREEN}}, \mbox{\h
 \index{dump.cpp@{dump.cpp}!log\_file@{log\_file}}
 \index{log\_file@{log\_file}!dump.cpp@{dump.cpp}}
 \doxysubsubsection{\texorpdfstring{log\_file}{log\_file}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structLogFileData}{Log\+File\+Data}} log\+\_\+file\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_log_file_data}{Log\+File\+Data}} log\+\_\+file\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Definition at line \mbox{\hyperlink{main_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00004\ \{\textcolor{stringliteral}{"{}log"{}}\};}
 
-\end{DoxyCode}
-
-
-Referenced by \mbox{\hyperlink{log_8cpp_source_l00076}{log\+\_\+close\+\_\+file()}}, \mbox{\hyperlink{log_8cpp_source_l00050}{log\+\_\+create\+\_\+timestamp\+\_\+dir()}}, \mbox{\hyperlink{log_8cpp_source_l00026}{log\+\_\+open\+\_\+file()}}, \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}, \mbox{\hyperlink{dump_8cpp_source_l00162}{tree\+\_\+dump()}}, \mbox{\hyperlink{dump_8cpp_source_l00285}{tree\+\_\+dump\+\_\+dot()}}, and \mbox{\hyperlink{dump_8cpp_source_l00332}{tree\+\_\+print\+\_\+error()}}.
+Referenced by \mbox{\hyperlink{log_8cpp_source_l00078}{log\+\_\+close\+\_\+file()}}, \mbox{\hyperlink{log_8cpp_source_l00050}{log\+\_\+create\+\_\+timestamp\+\_\+dir()}}, \mbox{\hyperlink{log_8cpp_source_l00026}{log\+\_\+open\+\_\+file()}}, \mbox{\hyperlink{log_8cpp_source_l00003}{log\+\_\+printf()}}, \mbox{\hyperlink{dump_8cpp_source_l00162}{tree\+\_\+dump()}}, \mbox{\hyperlink{dump_8cpp_source_l00285}{tree\+\_\+dump\+\_\+dot()}}, and \mbox{\hyperlink{dump_8cpp_source_l00332}{tree\+\_\+print\+\_\+error()}}.
 

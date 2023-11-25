@@ -110,9 +110,13 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a6cee51f74b20002956d076717f2a416c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6590abf896eaa61ac742810928e553e4"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_log_file_data.html#a6590abf896eaa61ac742810928e553e4">timestamp_dir</a> [<a class="el" href="struct_log_file_data.html#ab9f84da35b2dba4a3a3e5dba3aa7b9b5">MAX_FILENAME_LEN</a>] = {}</td></tr>
 <tr class="separator:a6590abf896eaa61ac742810928e553e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a204a1bf7afd30702698b5a9732a7d1f6"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_log_file_data.html#a204a1bf7afd30702698b5a9732a7d1f6">last_write</a> = 0</td></tr>
+<tr class="separator:a204a1bf7afd30702698b5a9732a7d1f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
+<tr class="memitem:ae8da3a5dca4294186725f72fe5dad5b9"><td class="memItemLeft" align="right" valign="top">static const long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_log_file_data.html#ae8da3a5dca4294186725f72fe5dad5b9">LIFETIME</a> = 1</td></tr>
+<tr class="separator:ae8da3a5dca4294186725f72fe5dad5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9f84da35b2dba4a3a3e5dba3aa7b9b5"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_log_file_data.html#ab9f84da35b2dba4a3a3e5dba3aa7b9b5">MAX_FILENAME_LEN</a> = 256</td></tr>
 <tr class="separator:ab9f84da35b2dba4a3a3e5dba3aa7b9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -120,7 +124,7 @@ Static Public Attributes</h2></td></tr>
 <div class="textblock"><p>Log file data struct. </p>
 <dl class="section attention"><dt>Attention</dt><dd>You may use <a class="el" href="struct_log_file_data.html" title="Log file data struct.">LogFileData</a> as global var </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="log_8h_source.html#l00026">26</a> of file <a class="el" href="log_8h_source.html">log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="log_8h_source.html#l00037">37</a> of file <a class="el" href="log_8h_source.html">log.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a08317b020a10b14f4a31d35d4c2237fb" name="a08317b020a10b14f4a31d35d4c2237fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a08317b020a10b14f4a31d35d4c2237fb">&#9670;&#160;</a></span>dir</h2>
@@ -134,7 +138,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="log_8h_source.html#l00027">27</a> of file <a class="el" href="log_8h_source.html">log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="log_8h_source.html#l00041">41</a> of file <a class="el" href="log_8h_source.html">log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="log_8cpp_source.html#l00050">log_create_timestamp_dir()</a>, and <a class="el" href="log_8cpp_source.html#l00026">log_open_file()</a>.</p>
 
@@ -152,9 +156,53 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="log_8h_source.html#l00028">28</a> of file <a class="el" href="log_8h_source.html">log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="log_8h_source.html#l00042">42</a> of file <a class="el" href="log_8h_source.html">log.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="log_8cpp_source.html#l00072">log_close_file()</a>, <a class="el" href="log_8cpp_source.html#l00026">log_open_file()</a>, and <a class="el" href="log_8cpp_source.html#l00003">log_printf()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="log_8cpp_source.html#l00078">log_close_file()</a>, <a class="el" href="log_8cpp_source.html#l00026">log_open_file()</a>, and <a class="el" href="log_8cpp_source.html#l00003">log_printf()</a>.</p>
+
+</div>
+</div>
+<a id="a204a1bf7afd30702698b5a9732a7d1f6" name="a204a1bf7afd30702698b5a9732a7d1f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a204a1bf7afd30702698b5a9732a7d1f6">&#9670;&#160;</a></span>last_write</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t LogFileData::last_write = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="log_8h_source.html#l00047">47</a> of file <a class="el" href="log_8h_source.html">log.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="log_8cpp_source.html#l00050">log_create_timestamp_dir()</a>.</p>
+
+</div>
+</div>
+<a id="ae8da3a5dca4294186725f72fe5dad5b9" name="ae8da3a5dca4294186725f72fe5dad5b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8da3a5dca4294186725f72fe5dad5b9">&#9670;&#160;</a></span>LIFETIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const long LogFileData::LIFETIME = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="log_8h_source.html#l00039">39</a> of file <a class="el" href="log_8h_source.html">log.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="log_8cpp_source.html#l00050">log_create_timestamp_dir()</a>.</p>
 
 </div>
 </div>
@@ -178,9 +226,9 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="log_8h_source.html#l00030">30</a> of file <a class="el" href="log_8h_source.html">log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="log_8h_source.html#l00044">44</a> of file <a class="el" href="log_8h_source.html">log.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="log_8cpp_source.html#l00050">log_create_timestamp_dir()</a>, and <a class="el" href="log_8cpp_source.html#l00026">log_open_file()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="log_8cpp_source.html#l00050">log_create_timestamp_dir()</a>, <a class="el" href="log_8cpp_source.html#l00026">log_open_file()</a>, <a class="el" href="dump_8cpp_source.html#l00162">tree_dump()</a>, and <a class="el" href="dump_8cpp_source.html#l00285">tree_dump_dot()</a>.</p>
 
 </div>
 </div>
@@ -196,9 +244,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="log_8h_source.html#l00031">31</a> of file <a class="el" href="log_8h_source.html">log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="log_8h_source.html#l00046">46</a> of file <a class="el" href="log_8h_source.html">log.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="log_8cpp_source.html#l00050">log_create_timestamp_dir()</a>, and <a class="el" href="log_8cpp_source.html#l00026">log_open_file()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="log_8cpp_source.html#l00050">log_create_timestamp_dir()</a>, <a class="el" href="log_8cpp_source.html#l00026">log_open_file()</a>, and <a class="el" href="dump_8cpp_source.html#l00285">tree_dump_dot()</a>.</p>
 
 </div>
 </div>

@@ -4,8 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-
-#include "../utils/text/text_lib.h"
+#include <stdio.h>
 
 bool create_img(const char* input_filename, const char* output_filename);
 

@@ -29,10 +29,11 @@ static int tree_node_dtor_(Tree* tree, TreeNode** node);
  * @param actions
  * @param depth
  * @param side
+ * @param exit must be false at enter point
  * @return int
  */
 static int tree_traversal_(Tree* tree, TreeNode** node, va_list* args, TreeNodeAction* actions[4],
-                           size_t depth, TreeChildSide side);
+                           size_t depth, TreeChildSide side, bool* exit);
 
 /**
  * @brief Traversal node deletion action function
@@ -73,9 +74,11 @@ int tree_dtor(Tree* tree) {
 
     int res = TREE_ASSERT(tree);
 
-    res |= tree_delete(tree, &tree->root, true);
-    if (res != Tree::OK)
-        return res;
+    if (tree->root != nullptr) {
+        res |= tree_delete(tree, &tree->root, true);
+        if (res != Tree::OK)
+            return res;
+    }
 
     assert(tree->root == nullptr);
 
@@ -142,6 +145,38 @@ static int tree_node_dtor_(Tree* tree, TreeNode** node) {
     return res;
 }
 
+int tree_get_elem(Tree* tree, const TreeNode* node, void** dest) {
+    assert(tree);
+    assert(dest);
+    assert(*dest == nullptr);
+
+    int res = TREE_NODE_ASSERT(tree, node, 0);
+
+    *dest = node->elem;
+
+    return res;
+}
+
+int tree_set_elem(Tree* tree, TreeNode* node, void* src, bool dtor) {
+    assert(tree);
+    assert(src);
+
+    int res = TREE_NODE_ASSERT(tree, node, 0);
+
+    if (dtor && tree->node_elem_t_dtor != nullptr) {
+        if (!tree->node_elem_t_dtor(node->elem)) {
+            res |= Tree::CANNOT_DELETE;
+            TREE_OK(tree, res);
+            return res;
+        }
+    }
+
+    memcpy(node->elem, src, tree->elem_size);
+
+    res |= TREE_NODE_ASSERT(tree, node, 0);
+    return res;
+}
+
 int tree_insert(Tree* tree, TreeNode** node, TreeNode* parent, void* elem) {
     assert(tree);
     assert(node);
@@ -171,9 +206,9 @@ static TreeNodeActionRes tree_delete_node_(Tree* tree, TreeNode** node, va_list*
 
     int res = tree_node_dtor_(tree, node);
     if (res != Tree::OK)
-        return TreeNodeActionRes::ERROR;
+        return TreeNodeActionRes::ERR;
 
-    return TreeNodeActionRes::EXIT;
+    return TreeNodeActionRes::EXIT_NODE;
 }
 
 int tree_delete(Tree* tree, TreeNode** node, bool recursive) {
@@ -201,24 +236,31 @@ int tree_delete(Tree* tree, TreeNode** node, bool recursive) {
 }
 
 #define DO_ACTION_(action_) do {                                                                        \
-                                if (action_ == nullptr)                                                 \
-                                    continue;                                                           \
+                                if (*exit) return res;                                                  \
+                                                                                                        \
+                                if (action_ == nullptr) continue;                                       \
                                                                                                         \
                                 TreeNodeActionRes action_res = action_(tree, node, args, depth, side);  \
-                                if (action_res == TreeNodeActionRes::ERROR) {                           \
+                                if (action_res == TreeNodeActionRes::ERR) {                             \
                                     res |= Tree::ACTION_ERROR;                                          \
                                     return res;                                                         \
                                 }                                                                       \
                                                                                                         \
-                                if (action_res == TreeNodeActionRes::EXIT)                              \
+                                if (action_res == TreeNodeActionRes::EXIT_FULL) {                       \
+                                    *exit = true;                                                       \
                                     return res;                                                         \
+                                }                                                                       \
+                                                                                                        \
+                                if (action_res == TreeNodeActionRes::EXIT_NODE) return res;             \
                             } while (0)
 
 static int tree_traversal_(Tree* tree, TreeNode** node, va_list* args, TreeNodeAction* actions[4],
-                           size_t depth, TreeChildSide side) {
+                           size_t depth, TreeChildSide side, bool* exit) {
     assert(tree);
     assert(node);
     assert(args);
+    assert(exit);
+    assert(!(depth == 0 && *exit));
 
     int res = tree->OK;
 
@@ -233,13 +275,13 @@ static int tree_traversal_(Tree* tree, TreeNode** node, va_list* args, TreeNodeA
 
     DO_ACTION_(actions[0]);
 
-    res |= tree_traversal_(tree, &(*node)->left, args, actions, depth + 1, TreeChildSide::LEFT);
+    res |= tree_traversal_(tree, &(*node)->left, args, actions, depth + 1, TreeChildSide::LEFT, exit);
     if (res != Tree::OK)
         return res;
 
     DO_ACTION_(actions[1]);
 
-    res |= tree_traversal_(tree, &(*node)->right, args, actions, depth + 1, TreeChildSide::RIGHT);
+    res |= tree_traversal_(tree, &(*node)->right, args, actions, depth + 1, TreeChildSide::RIGHT, exit);
     if (res != Tree::OK)
         return res;
 
@@ -259,7 +301,8 @@ int tree_traversal(Tree* tree, TreeNode** root, TreeNodeAction* actions[4], ...)
     va_list args = {};
     va_start(args, actions);
 
-    res |= tree_traversal_(tree, root, &args, actions, 0, TreeChildSide::ROOT);
+    bool exit = false;
+    res |= tree_traversal_(tree, root, &args, actions, 0, TreeChildSide::ROOT, &exit);
 
     va_end(args);
 
@@ -282,7 +325,8 @@ int tree_preorder(Tree* tree, TreeNode** root, TreeNodeAction* action, ...) {
 
     TreeNodeAction* actions[4] = {action, nullptr, nullptr, nullptr};
 
-    res |= tree_traversal_(tree, root, &args, actions, 0, TreeChildSide::ROOT);
+    bool exit = false;
+    res |= tree_traversal_(tree, root, &args, actions, 0, TreeChildSide::ROOT, &exit);
 
     va_end(args);
 
@@ -305,7 +349,8 @@ int tree_inorder(Tree* tree, TreeNode** root, TreeNodeAction* action, ...) {
 
     TreeNodeAction* actions[4] = {nullptr, action, nullptr, nullptr};
 
-    res |= tree_traversal_(tree, root, &args, actions, 0, TreeChildSide::ROOT);
+    bool exit = false;
+    res |= tree_traversal_(tree, root, &args, actions, 0, TreeChildSide::ROOT, &exit);
 
     va_end(args);
 
@@ -328,7 +373,8 @@ int tree_postorder(Tree* tree, TreeNode** root, TreeNodeAction* action, ...) {
 
     TreeNodeAction* actions[4] = {nullptr, nullptr, action, nullptr};
 
-    res |= tree_traversal_(tree, root, &args, actions, 0, TreeChildSide::ROOT);
+    bool exit = false;
+    res |= tree_traversal_(tree, root, &args, actions, 0, TreeChildSide::ROOT, &exit);
 
     va_end(args);
 

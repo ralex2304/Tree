@@ -22,9 +22,10 @@ enum class TreeChildSide {
  * @brief Traversal action function result
  */
 enum class TreeNodeActionRes {
-    EXIT  = -1,
-    ERROR =  0,
-    OK    =  1,
+    EXIT_FULL = -2,
+    EXIT_NODE = -1,
+    ERR       =  0,
+    OK        =  1,
 };
 
 /**
@@ -123,6 +124,27 @@ int tree_ctor(Tree* tree, const size_t elem_size, Elem_t_func* elem_t_dtor);
  * @return int
  */
 int tree_dtor(Tree* tree);
+
+/**
+ * @brief Get element value from TreeNode
+ *
+ * @param tree
+ * @param node
+ * @param dest
+ * @return int
+ */
+int tree_get_elem(Tree* tree, const TreeNode* node, void** dest);
+
+/**
+ * @brief Set element value in TreeNode
+ *
+ * @param tree
+ * @param node
+ * @param src
+ * @param dtor do dtor on old value?
+ * @return int
+ */
+int tree_set_elem(Tree* tree, TreeNode* node, void* src, bool dtor = true);
 
 /**
  * @brief Insert node in tree

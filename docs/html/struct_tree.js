@@ -134,8 +134,8 @@ var struct_tree =
     ] ],
     [ "elem_size", "struct_tree.html#a89756c94ede1566589695e9d2274933b", null ],
     [ "node_elem_t_dtor", "struct_tree.html#a50de21bd338de0aee6355686b0690fe1", null ],
-    [ "node_elem_t_val_str", "struct_tree.html#aac492462a75d560e10d46ca48baf07e7", null ],
-    [ "node_elem_t_verify", "struct_tree.html#a14559dbf39cc57a78748434c525be95d", null ],
+    [ "node_elem_t_val_str", "struct_tree.html#a3dad8a1aefc6b7f5198d756bd524f933", null ],
+    [ "node_elem_t_verify", "struct_tree.html#a89540614032db714299260c16d8133cd", null ],
     [ "root", "struct_tree.html#a6476a2d8d5ce40b66d725a99af143f65", null ],
     [ "size", "struct_tree.html#af4e7a6220b7940f6ddc831ec5354e491", null ],
     [ "var_data", "struct_tree.html#ad7c76730c28c19500ec415650ddbb472", null ]

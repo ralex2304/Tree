@@ -56,7 +56,7 @@ static TreeNodeActionRes tree_dump_log_val(Tree* tree, TreeNode** node, va_list*
         char* val = tree->node_elem_t_val_str((*node)->elem);
 
         if (val == nullptr)
-            return TreeNodeActionRes::ERROR;
+            return TreeNodeActionRes::ERR;
 
         LOG_("%s ", val);
 
@@ -224,7 +224,7 @@ void tree_dump(Tree* tree, const VarCodeData call_data) {
 }
 #undef LOG_
 
-#define FPRINTF_(...) if (fprintf(file, __VA_ARGS__) == 0) return TreeNodeActionRes::ERROR
+#define FPRINTF_(...) if (fprintf(file, __VA_ARGS__) == 0) return TreeNodeActionRes::ERR
 
 #define BACKGROUND_COLOR "\"#1f1f1f\""
 #define FONT_COLOR       "\"#000000\""
@@ -258,7 +258,7 @@ static TreeNodeActionRes tree_dump_dot_log_node_(Tree* tree, TreeNode** node, va
         char* val = tree->node_elem_t_val_str((*node)->elem);
 
         if (val == nullptr)
-            return TreeNodeActionRes::ERROR;
+            return TreeNodeActionRes::ERR;
 
         FPRINTF_(NODE_PREFIX "%p [label=\"%s\"]\n", *node, val);
 

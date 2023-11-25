@@ -7,10 +7,12 @@ bool create_img(const char* input_filename, const char* output_filename) {
     static const size_t MAX_COMMAND_LEN = 256;
     char command[MAX_COMMAND_LEN] = {};
 
-    strncat_len(command, "dot -Tsvg ", MAX_COMMAND_LEN);
-    strncat_len(command, input_filename, MAX_COMMAND_LEN);
-    strncat_len(command, " > ", MAX_COMMAND_LEN);
-    strncat_len(command, output_filename, MAX_COMMAND_LEN);
+#ifdef _WIN32
+    snprintf(command, MAX_COMMAND_LEN, "type %s | iconv -f cp1251 -t utf-8 | dot -Tsvg -o %s",
+                                             input_filename,                   output_filename);
+#else //< #ifndef _WIN32
+    snprintf(command, MAX_COMMAND_LEN, "dot -Tsvg %s > %s", input_filename, output_filename);
+#endif //< #ifdef _WIN32
 
     if (system(command) != 0) {
         fprintf(stderr, "Error executing \"%s\"\n", command);
