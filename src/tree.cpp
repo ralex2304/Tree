@@ -1,26 +1,6 @@
 #include "tree.h"
 
 /**
- * @brief Node constructor
- *
- * @param node
- * @param elem
- * @param elem_size
- * @param parent
- * @return int
- */
-static int tree_node_ctor_(TreeNode** node, void* elem, size_t elem_size, TreeNode* parent);
-
-/**
- * @brief Node destructor
- *
- * @param tree
- * @param node
- * @return int
- */
-static int tree_node_dtor_(Tree* tree, TreeNode** node);
-
-/**
  * @brief Recursive traversal function
  *
  * @param tree
@@ -82,13 +62,14 @@ int tree_dtor(Tree* tree) {
 
     assert(tree->root == nullptr);
 
+    tree->node_elem_t_dtor = nullptr;
     tree->size = Tree::UNITIALISED_VAL;
     tree->elem_size = Tree::UNITIALISED_VAL;
 
     return res;
 }
 
-static int tree_node_ctor_(TreeNode** node, void* elem, size_t elem_size, TreeNode* parent) {
+int tree_node_ctor(TreeNode** node, void* elem, size_t elem_size, TreeNode* parent) {
     assert(node);
     assert(elem);
     assert(elem_size > 0);
@@ -115,7 +96,7 @@ static int tree_node_ctor_(TreeNode** node, void* elem, size_t elem_size, TreeNo
     return res;
 }
 
-static int tree_node_dtor_(Tree* tree, TreeNode** node) {
+int tree_node_dtor(Tree* tree, TreeNode** node) {
     assert(tree);
     assert(node);
 
@@ -184,7 +165,7 @@ int tree_insert(Tree* tree, TreeNode** node, TreeNode* parent, void* elem) {
 
     int res = TREE_ASSERT(tree);
 
-    res |= tree_node_ctor_(node, elem, tree->elem_size, parent);
+    res |= tree_node_ctor(node, elem, tree->elem_size, parent);
     if (res != Tree::OK) {
         TREE_OK(tree, res);
         return res;
@@ -204,9 +185,11 @@ static TreeNodeActionRes tree_delete_node_(Tree* tree, TreeNode** node, va_list*
     (void) side;
     assert(node);
 
-    int res = tree_node_dtor_(tree, node);
+    int res = tree_node_dtor(tree, node);
     if (res != Tree::OK)
         return TreeNodeActionRes::ERR;
+
+    tree->size--;
 
     return TreeNodeActionRes::EXIT_NODE;
 }
@@ -220,17 +203,17 @@ int tree_delete(Tree* tree, TreeNode** node, bool recursive) {
         return res;
     }
 
-    if (recursive)
+    if (recursive) {
         res |= tree_postorder(tree, node, &tree_delete_node_);
-    else
-        res |= tree_node_dtor_(tree, node);
+    } else {
+        res |= tree_node_dtor(tree, node);
+        tree->size--;
+    }
 
     if (res != Tree::OK) {
         TREE_OK(tree, res);
         return res;
     }
-
-    tree->size--;
 
     return res;
 }

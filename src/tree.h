@@ -245,6 +245,26 @@ inline bool tree_is_initialised(const Tree* tree) {
              tree->node_elem_t_dtor == nullptr);
 }
 
+/**
+ * @brief Node constructor
+ *
+ * @param node
+ * @param elem
+ * @param elem_size
+ * @param parent
+ * @return int
+ */
+int tree_node_ctor(TreeNode** node, void* elem, size_t elem_size, TreeNode* parent);
+
+/**
+ * @brief Node destructor
+ *
+ * @param tree
+ * @param node
+ * @return int
+ */
+int tree_node_dtor(Tree* tree, TreeNode** node);
+
 #ifdef TREE_DEBUG
     /**
      * @brief Prints text error to log file
