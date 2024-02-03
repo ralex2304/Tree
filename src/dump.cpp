@@ -268,10 +268,18 @@ static TreeNodeActionRes tree_dump_dot_log_node_(Tree* tree, TreeNode** node, va
 
     if ((*node)->left != nullptr) {
         FPRINTF_(NODE_PREFIX "%p->" NODE_PREFIX "%p[color=green]\n", *node, (*node)->left);
+
+        if ((*node)->left->parent != nullptr)
+            FPRINTF_(NODE_PREFIX "%p->" NODE_PREFIX "%p[color=yellow]\n", (*node)->left,
+                                                                          (*node)->left->parent);
     }
 
     if ((*node)->right != nullptr) {
         FPRINTF_(NODE_PREFIX "%p->" NODE_PREFIX "%p[color=green]\n", *node, (*node)->right);
+
+        if ((*node)->right->parent != nullptr)
+            FPRINTF_(NODE_PREFIX "%p->" NODE_PREFIX "%p[color=yellow]\n", (*node)->right,
+                                                                          (*node)->right->parent);
     }
 
     va_end(args_dup);
