@@ -1,5 +1,5 @@
-#ifndef GRAPH_LOG_H_
-#define GRAPH_LOG_H_
+#ifndef DOT_LOG_H_
+#define DOT_LOG_H_
 
 #include <stdlib.h>
 #include <string.h>
@@ -8,4 +8,4 @@
 
 bool create_img(const char* input_filename, const char* output_filename);
 
-#endif //< #ifndef GRAPH_LOG_H_
+#endif //< #ifndef DOT_LOG_H_

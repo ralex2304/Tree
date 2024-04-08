@@ -12,8 +12,6 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-#include "../utils/text/text_lib.h"
-
 #ifdef _WIN32
 
 #define WIN(...) __VA_ARGS__

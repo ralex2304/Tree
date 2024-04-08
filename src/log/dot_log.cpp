@@ -1,4 +1,4 @@
-#include "graph_log.h"
+#include "dot_log.h"
 
 bool create_img(const char* input_filename, const char* output_filename) {
     assert(input_filename);

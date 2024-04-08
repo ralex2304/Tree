@@ -5,7 +5,7 @@
 #include "utils/html.h"
 #include "utils/ptr_valid.h"
 #include "log/log.h"
-#include "log/graph_log.h"
+#include "log/dot_log.h"
 
 extern LogFileData log_file;
 
@@ -298,10 +298,9 @@ bool tree_dump_dot(Tree* tree, char* img_filename) {
 
     char dot_filename[log_file.MAX_FILENAME_LEN] = {};
 
-    size_t str_len = strncat_len(dot_filename, log_file.timestamp_dir, log_file.MAX_FILENAME_LEN);
-    snprintf(dot_filename + str_len, log_file.MAX_FILENAME_LEN - str_len,
-             "%zd", dot_number);
-    str_len = strncat_len(dot_filename, ".dot", log_file.MAX_FILENAME_LEN);
+    if (snprintf(dot_filename, log_file.MAX_FILENAME_LEN,
+                 "%s%zd.dot", log_file.timestamp_dir, dot_number) <= 0)
+        return 0;
 
     FILE* file = fopen(dot_filename, "wb");
     if (file == nullptr)
@@ -321,9 +320,9 @@ bool tree_dump_dot(Tree* tree, char* img_filename) {
         return false;
     }
 
-    str_len = strncat_len(img_filename, log_file.timestamp_dir, log_file.MAX_FILENAME_LEN);
-    snprintf(img_filename + str_len, log_file.MAX_FILENAME_LEN - str_len, "%zd", dot_number++);
-    str_len = strncat_len(img_filename, ".svg", log_file.MAX_FILENAME_LEN);
+    if (snprintf(img_filename, log_file.MAX_FILENAME_LEN,
+                 "%s%zd.svg", log_file.timestamp_dir, dot_number++) <= 0)
+        return false;
 
     if (!create_img(dot_filename, img_filename)) {
         fprintf(stderr, "Error creating dot graph\n");

@@ -2,7 +2,7 @@
 
 #ifdef LINUX_MANUAL_PTR_VALIDATION
 
-bool is_ptr_valid(const void* p) {
+bool is_ptr_valid(void* p) {
     uintptr_t begin = 0;
     uintptr_t end = 0;
 
@@ -40,18 +40,18 @@ bool is_ptr_valid(const void* p) {
 
 #ifdef _WIN32
 
-bool is_ptr_valid(const void* p) {
+bool is_ptr_valid(void* p) {
     // Thanks to God-blessed library "TxLib.h"
 
     MEMORY_BASIC_INFORMATION mbi = {};
-    if (!VirtualQuery (p, &mbi, sizeof (mbi))) return false;
+    if (!VirtualQuery (p, &mbi, sizeof (mbi))) return true;
 
-    if (mbi.Protect & (PAGE_GUARD | PAGE_NOACCESS))  return false;  // Guard page -> bad ptr
+    if (mbi.Protect & (PAGE_GUARD | PAGE_NOACCESS))  return true;  // Guard page -> bad ptr
 
     DWORD readRights = PAGE_READONLY | PAGE_READWRITE | PAGE_WRITECOPY | PAGE_EXECUTE_READ
                                      | PAGE_EXECUTE_READWRITE | PAGE_EXECUTE_WRITECOPY;
 
-    return (mbi.Protect & readRights);
+    return !(mbi.Protect & readRights);
 }
 
 #else // #ifndef _WIN32
@@ -59,7 +59,7 @@ bool is_ptr_valid(const void* p) {
 #if defined(unix) || defined(__APPLE__)
 
 
-bool is_ptr_valid(const void* p) {
+bool is_ptr_valid(void* p) {
     char filename[] = "/tmp/kurwa_ptr.XXXXXX";
     int file = mkstemp(filename);
 

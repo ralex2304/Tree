@@ -3,4 +3,5 @@
 /main.exe
 /build
 /log
-/releases
+/releases/*
+!/releases/Makefile

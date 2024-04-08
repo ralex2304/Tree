@@ -13,7 +13,6 @@
 
 #ifdef _WIN32
 
-#include <windows.h>
 #include <io.h>
 #include <winnt.h>
 #include <memoryapi.h>
@@ -40,6 +39,6 @@
  * @return true is valid
  * @return false is not valid
  */
-bool is_ptr_valid(const void* p);
+bool is_ptr_valid(void* p);
 
 #endif /// #ifndef PTR_VALID_H_
