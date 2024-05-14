@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['varcodedata_0',['VarCodeData',['../struct_var_code_data.html',1,'']]]
+  ['varcodedata_0',['VarCodeData',['../structVarCodeData.html',1,'']]]
 ];

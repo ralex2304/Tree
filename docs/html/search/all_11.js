@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['unitialised_0',['UNITIALISED',['../struct_tree.html#a817c3cb647deac6a6be0155631f2e06dae49d605404aa8211b735fb0496de7b9e',1,'Tree']]],
-  ['unitialised_5fval_1',['UNITIALISED_VAL',['../struct_tree.html#ae05e207c9782d93e767bf318c833dc46',1,'Tree']]],
-  ['unix_2',['UNIX',['../log_8h.html#a35f7f858d0df12378f463b39d5e16c78',1,'log.h']]]
+  ['var_5fcode_5fdata_0',['VAR_CODE_DATA',['../macros_8h.html#a68960fb933bea9b067598ca388e5b6d5',1,'macros.h']]],
+  ['var_5fcode_5fdata_5fptr_1',['VAR_CODE_DATA_PTR',['../macros_8h.html#a8b6dac4dee6062b891084db600caa7ec',1,'macros.h']]],
+  ['var_5fdata_2',['var_data',['../structTree.html#ad7c76730c28c19500ec415650ddbb472',1,'Tree']]],
+  ['varcodedata_3',['VarCodeData',['../structVarCodeData.html',1,'']]]
 ];

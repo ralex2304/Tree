@@ -42,7 +42,7 @@ int tree_ctor(Tree* tree, const size_t elem_size, Elem_t_func* elem_t_dtor) {
     }
 
     tree->size = 0;
-    tree->elem_size = elem_size;
+    tree->elem_size = (ssize_t)elem_size;
     tree->node_elem_t_dtor = elem_t_dtor;
 
     res |= TREE_ASSERT(tree);
@@ -127,7 +127,7 @@ int tree_node_dtor(Tree* tree, TreeNode** node) {
 }
 
 int tree_get_elem(Tree* tree, const TreeNode* node, void** dest) {
-    assert(tree);
+    assert(tree);   (void) tree;
     assert(dest);
     assert(*dest == nullptr);
 
@@ -152,7 +152,8 @@ int tree_set_elem(Tree* tree, TreeNode* node, void* src, bool dtor) {
         }
     }
 
-    memcpy(node->elem, src, tree->elem_size);
+    assert(tree->elem_size > 0);
+    memcpy(node->elem, src, (size_t)tree->elem_size);
 
     res |= TREE_NODE_ASSERT(tree, node, 0);
     return res;
@@ -165,7 +166,7 @@ int tree_insert(Tree* tree, TreeNode** node, TreeNode* parent, void* elem) {
 
     int res = TREE_ASSERT(tree);
 
-    res |= tree_node_ctor(node, elem, tree->elem_size, parent);
+    res |= tree_node_ctor(node, elem, (size_t)tree->elem_size, parent);
     if (res != Tree::OK) {
         TREE_OK(tree, res);
         return res;
@@ -374,8 +375,8 @@ static TreeNodeActionRes tree_node_count_(Tree* tree, TreeNode** node, va_list* 
                                           size_t depth, const TreeChildSide side) {
     (void) depth;
     (void) side;
-    assert(tree);
-    assert(node);
+    assert(tree); (void) tree;
+    assert(node); (void) node;
 
     va_list args_dup = {};
     va_copy(args_dup, *args);

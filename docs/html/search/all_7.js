@@ -1,15 +1,12 @@
 var searchData=
 [
-  ['html_2eh_0',['html.h',['../html_8h.html',1,'']]],
-  ['html_5fbegin_1',['HTML_BEGIN',['../html_8h.html#a010fbac8fc4096415b18c664d84b12da',1,'html.h']]],
-  ['html_5fend_2',['HTML_END',['../html_8h.html#a2df8677bea55f26352fc8982b34337f2',1,'html.h']]],
-  ['html_5fend_5ffont_3',['HTML_END_FONT',['../html_8h.html#ac6fb27458082955e7224ade5783bd229',1,'html.h']]],
-  ['html_5ffont_5fgreen_4',['HTML_FONT_GREEN',['../html_8h.html#a73b206148938552599ef8836e6c6e850',1,'html.h']]],
-  ['html_5ffont_5fred_5',['HTML_FONT_RED',['../html_8h.html#a436e7328a8ecee2a70a733687b38baa7',1,'html.h']]],
-  ['html_5fgreen_6',['HTML_GREEN',['../html_8h.html#a3208c6e370f00379a74f19180fbc6462',1,'html.h']]],
-  ['html_5fh1_7',['HTML_H1',['../html_8h.html#a9f5368223c1b5d131b7614bd65aa3dbd',1,'html.h']]],
-  ['html_5fh2_8',['HTML_H2',['../html_8h.html#a4f37d26f15ba36163d63280545df246b',1,'html.h']]],
-  ['html_5fh3_9',['HTML_H3',['../html_8h.html#af97a9d1e610abb2dccfa0419ac5361ed',1,'html.h']]],
-  ['html_5fred_10',['HTML_RED',['../html_8h.html#aeff0254241bdd079cf60aa19016e3c44',1,'html.h']]],
-  ['html_5ftext_11',['HTML_TEXT',['../html_8h.html#af5420035dccd3dfd5325ca0638081475',1,'html.h']]]
+  ['installation_0',['Installation',['../index.html#autotoc_md1',1,'']]],
+  ['int_5fdtor_1',['int_dtor',['../main_8cpp.html#a468262eb5368d09c2dddc4e5ed3d1c63',1,'main.cpp']]],
+  ['int_5fpoison_5fval_2',['INT_POISON_VAL',['../main_8cpp.html#a72cb9d9634ba1c64bca895929d3c9edc',1,'main.cpp']]],
+  ['int_5fstr_3',['int_str',['../main_8cpp.html#a590c0827253a6f7a392ba9bd6c2b39aa',1,'main.cpp']]],
+  ['int_5fverify_4',['int_verify',['../main_8cpp.html#a91a85896133196cfa1d5e3161eef4c63',1,'main.cpp']]],
+  ['invalid_5felem_5ft_5fsize_5',['INVALID_ELEM_T_SIZE',['../structTree.html#a817c3cb647deac6a6be0155631f2e06da2f73866a2049774edfbc2ecdb064ad1f',1,'Tree']]],
+  ['invalid_5fnode_5fptr_6',['INVALID_NODE_PTR',['../structTree.html#a817c3cb647deac6a6be0155631f2e06daba5b277015886e165d230a6933c1bbe8',1,'Tree']]],
+  ['invalid_5fsize_7',['INVALID_SIZE',['../structTree.html#a817c3cb647deac6a6be0155631f2e06dac774b4cab5827bc0fc3521224efec4fd',1,'Tree']]],
+  ['is_5fptr_5fvalid_8',['is_ptr_valid',['../ptr__valid_8h.html#a9118aa9878b41057b6d2067e5d5dff2b',1,'ptr_valid.h']]]
 ];

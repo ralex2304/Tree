@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['var_5fcode_5fdata_0',['VAR_CODE_DATA',['../macros_8h.html#a68960fb933bea9b067598ca388e5b6d5',1,'macros.h']]],
-  ['var_5fcode_5fdata_5fptr_1',['VAR_CODE_DATA_PTR',['../macros_8h.html#a8b6dac4dee6062b891084db600caa7ec',1,'macros.h']]],
-  ['var_5fdata_2',['var_data',['../struct_tree.html#ad7c76730c28c19500ec415650ddbb472',1,'Tree']]],
-  ['varcodedata_3',['VarCodeData',['../struct_var_code_data.html',1,'']]]
+  ['win_0',['WIN',['../log_8h.html#abd7b8d268b425fedb60e580f77892f02',1,'log.h']]]
 ];

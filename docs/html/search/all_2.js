@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cannot_5fdelete_0',['CANNOT_DELETE',['../struct_tree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3',1,'Tree']]],
+  ['cannot_5fdelete_0',['CANNOT_DELETE',['../structTree.html#a817c3cb647deac6a6be0155631f2e06daa566fd9ee184ad8d811b96d2a77517e3',1,'Tree']]],
   ['check_5ferr_5f_1',['CHECK_ERR_',['../tree_8cpp.html#a0f2905892855073ba849455a73cd569b',1,'tree.cpp']]],
   ['color_5fblack_2',['COLOR_BLACK',['../console_8h.html#aba2a7fe77a7501e5844370eec0185207',1,'console.h']]],
   ['color_5fblue_3',['COLOR_BLUE',['../console_8h.html#a23c70d699a5a775bc2e1ebeb8603f630',1,'console.h']]],
@@ -11,5 +11,5 @@ var searchData=
   ['console_2eh_8',['console.h',['../console_8h.html',1,'']]],
   ['console_5fgreen_9',['CONSOLE_GREEN',['../console_8h.html#a3d65c0a458538bfc412e586e89dbf130',1,'console.h']]],
   ['console_5fred_10',['CONSOLE_RED',['../console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba',1,'console.h']]],
-  ['create_5fimg_11',['create_img',['../graph__log_8cpp.html#a7638af32477a4647619469c995c46edc',1,'create_img(const char *input_filename, const char *output_filename):&#160;graph_log.cpp'],['../graph__log_8h.html#a7638af32477a4647619469c995c46edc',1,'create_img(const char *input_filename, const char *output_filename):&#160;graph_log.cpp']]]
+  ['create_5fimg_11',['create_img',['../dot__log_8cpp.html#a7638af32477a4647619469c995c46edc',1,'create_img(const char *input_filename, const char *output_filename):&#160;dot_log.cpp'],['../dot__log_8h.html#a7638af32477a4647619469c995c46edc',1,'create_img(const char *input_filename, const char *output_filename):&#160;dot_log.cpp']]]
 ];

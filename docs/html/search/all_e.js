@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['recalloc_1',['recalloc',['../macros_8h.html#a3e542cb9c488f76f1d0cb4b6ef234203',1,'macros.h']]],
-  ['results_2',['Results',['../struct_tree.html#a817c3cb647deac6a6be0155631f2e06d',1,'Tree::Results'],['../struct_tree.html#a817c3cb647deac6a6be0155631f2e06d',1,'Tree::Results'],['../struct_tree.html#a817c3cb647deac6a6be0155631f2e06d',1,'Tree::Results']]],
-  ['right_3',['right',['../struct_tree_node.html#a4ee04f4c92e653bced3aca6723df1c08',1,'TreeNode']]],
-  ['right_4',['RIGHT',['../releases_2_tree_2_tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403',1,'RIGHT:&#160;Tree.h'],['../_tree_debug_8h.html#afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403',1,'RIGHT:&#160;TreeDebug.h'],['../src_2_tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403',1,'RIGHT:&#160;tree.h'],['../releases_2_tree_2_tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403',1,'RIGHT:&#160;Tree.h'],['../_tree_debug_8h.html#afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403',1,'RIGHT:&#160;TreeDebug.h'],['../src_2_tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403',1,'RIGHT:&#160;tree.h'],['../releases_2_tree_2_tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403',1,'RIGHT:&#160;Tree.h'],['../_tree_debug_8h.html#afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403',1,'RIGHT:&#160;TreeDebug.h'],['../src_2_tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2a21507b40c80068eda19865706fdc2403',1,'RIGHT:&#160;tree.h']]],
-  ['root_5',['root',['../struct_tree.html#a6476a2d8d5ce40b66d725a99af143f65',1,'Tree']]],
-  ['root_6',['ROOT',['../releases_2_tree_2_tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32',1,'ROOT:&#160;Tree.h'],['../_tree_debug_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32',1,'ROOT:&#160;TreeDebug.h'],['../src_2_tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32',1,'ROOT:&#160;tree.h'],['../releases_2_tree_2_tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32',1,'ROOT:&#160;Tree.h'],['../_tree_debug_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32',1,'ROOT:&#160;TreeDebug.h'],['../src_2_tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32',1,'ROOT:&#160;tree.h'],['../releases_2_tree_2_tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32',1,'ROOT:&#160;Tree.h'],['../_tree_debug_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32',1,'ROOT:&#160;TreeDebug.h'],['../src_2_tree_8h.html#afd68fcfce0df22ea3adc45677b85efd2aea2adde5c377cb5e09d14b71935c6f32',1,'ROOT:&#160;tree.h']]]
+  ['size_0',['size',['../structTree.html#af4e7a6220b7940f6ddc831ec5354e491',1,'Tree']]],
+  ['style_5fblink_5foff_1',['STYLE_BLINK_OFF',['../console_8h.html#a90d5198d0e1fdba8fc116dcafc4a3f55',1,'console.h']]],
+  ['style_5fbold_2',['STYLE_BOLD',['../console_8h.html#a7ce3d6fee94f21c9e3d0ffdd90aadc2e',1,'console.h']]],
+  ['style_5ffaint_3',['STYLE_FAINT',['../console_8h.html#a52bc634953ffb7fb8a57e58aa51f88cd',1,'console.h']]],
+  ['style_5ffast_5fblink_4',['STYLE_FAST_BLINK',['../console_8h.html#aafd75a8728fea5c6148ccf6e4d9a4e4e',1,'console.h']]],
+  ['style_5fitalic_5',['STYLE_ITALIC',['../console_8h.html#aab0b220352da214508a3426e00700d5d',1,'console.h']]],
+  ['style_5freset_6',['STYLE_RESET',['../console_8h.html#a0afe503629a0074b6d24bbce318f85f2',1,'console.h']]],
+  ['style_5fslow_5fblink_7',['STYLE_SLOW_BLINK',['../console_8h.html#a53711348a801f028fe80a96a5401b923',1,'console.h']]],
+  ['style_5funderlined_8',['STYLE_UNDERLINED',['../console_8h.html#a921c029ea8b2b3b621ba2b5d36380489',1,'console.h']]]
 ];

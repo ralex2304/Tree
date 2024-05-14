@@ -5,3 +5,5 @@
 /log
 /releases/*
 !/releases/Makefile
+/compile_commands.json
+/.cache

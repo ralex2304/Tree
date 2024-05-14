@@ -1,0 +1,50 @@
+\doxysection{src/log/dot\+\_\+log.cpp File Reference}
+\hypertarget{dot__log_8cpp}{}\label{dot__log_8cpp}\index{src/log/dot\_log.cpp@{src/log/dot\_log.cpp}}
+{\ttfamily \#include "{}dot\+\_\+log.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{dot__log_8cpp_a7638af32477a4647619469c995c46edc}{create\+\_\+img}} (const char \texorpdfstring{$\ast$}{*}input\+\_\+filename, const char \texorpdfstring{$\ast$}{*}output\+\_\+filename)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dot__log_8cpp_a7638af32477a4647619469c995c46edc}\label{dot__log_8cpp_a7638af32477a4647619469c995c46edc} 
+\index{dot\_log.cpp@{dot\_log.cpp}!create\_img@{create\_img}}
+\index{create\_img@{create\_img}!dot\_log.cpp@{dot\_log.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_img()}{create\_img()}}
+{\footnotesize\ttfamily bool create\+\_\+img (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{input\+\_\+filename,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{output\+\_\+filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dot__log_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{dot__log_8cpp_source}{dot\+\_\+log.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ \ \ \ \ assert(input\_filename);}
+\DoxyCodeLine{00005\ \ \ \ \ assert(output\_filename);}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ MAX\_COMMAND\_LEN\ =\ 256;}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{char}\ command[MAX\_COMMAND\_LEN]\ =\ \{\};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00011\ \ \ \ \ snprintf(command,\ MAX\_COMMAND\_LEN,\ \textcolor{stringliteral}{"{}type\ \%s\ |\ iconv\ -\/f\ cp1251\ -\/t\ utf-\/8\ |\ dot\ -\/Tsvg\ -\/o\ \%s"{}},}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input\_filename,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\_filename);}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//<\ \#ifndef\ \_WIN32}}
+\DoxyCodeLine{00014\ \ \ \ \ snprintf(command,\ MAX\_COMMAND\_LEN,\ \textcolor{stringliteral}{"{}dot\ -\/Tsvg\ \%s\ >\ \%s"{}},\ input\_filename,\ output\_filename);}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifdef\ \_WIN32}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (system(command)\ !=\ 0)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Error\ executing\ \(\backslash\)"{}\%s\(\backslash\)"{}\(\backslash\)n"{}},\ command);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{dump_8cpp_source_l00293}{tree\+\_\+dump\+\_\+dot()}}.
+

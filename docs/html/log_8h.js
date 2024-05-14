@@ -1,6 +1,6 @@
 var log_8h =
 [
-    [ "LogFileData", "struct_log_file_data.html", "struct_log_file_data" ],
+    [ "LogFileData", "structLogFileData.html", "structLogFileData" ],
     [ "UNIX", "log_8h.html#a35f7f858d0df12378f463b39d5e16c78", null ],
     [ "WIN", "log_8h.html#abd7b8d268b425fedb60e580f77892f02", null ],
     [ "log_close_file", "log_8h.html#adbd07eb33ee1a2336466f870015e1270", null ],

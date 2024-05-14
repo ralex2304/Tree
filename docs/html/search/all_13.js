@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['win_0',['WIN',['../log_8h.html#abd7b8d268b425fedb60e580f77892f02',1,'log.h']]]
+  ['zero_5fnode_5fparams_0',['ZERO_NODE_PARAMS',['../dump_8cpp.html#aaff2fdf8ba0bd580713a7c161f89529f',1,'dump.cpp']]]
 ];

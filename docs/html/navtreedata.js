@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "Tree", "index.html", [
-    [ "Binary tree", "index.html", null ],
+    [ "Binary tree", "index.html", "index" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -52,8 +52,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_tree_debug_8h.html",
-"src_2_tree_8h.html#a852e727421a8b2b124ed021e50d4ae4ead22060eb2ff91b68d71f601b712dc72f"
+"TreeDebug_8h.html",
+"structTree.html#a817c3cb647deac6a6be0155631f2e06da043533c800818b5f56a103903f209e71"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

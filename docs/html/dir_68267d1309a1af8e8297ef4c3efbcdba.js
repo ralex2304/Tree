@@ -5,5 +5,5 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "dump.cpp", "dump_8cpp.html", "dump_8cpp" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
     [ "tree.cpp", "tree_8cpp.html", "tree_8cpp" ],
-    [ "tree.h", "src_2_tree_8h.html", "src_2_tree_8h" ]
+    [ "tree.h", "tree_8h.html", "tree_8h" ]
 ];

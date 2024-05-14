@@ -5,7 +5,7 @@
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_var_code_data}{Var\+Code\+Data}}
+struct \mbox{\hyperlink{structVarCodeData}{Var\+Code\+Data}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
@@ -47,6 +47,18 @@ void \mbox{\hyperlink{macros_8h_ad912cc7e09788a9730d3a7133b5c4251}{fill}} (void 
 
 
 Definition at line \mbox{\hyperlink{macros_8h_source_l00010}{10}} of file \mbox{\hyperlink{macros_8h_source}{macros.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ FREE(ptr)\ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ free(ptr);\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptr\ =\ nullptr;\ \ \(\backslash\)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while\ (0)}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{tree_8cpp_source_l00099}{tree\+\_\+node\+\_\+dtor()}}.
 
 \Hypertarget{macros_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{macros_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f} 
 \index{macros.h@{macros.h}!MAX@{MAX}}
